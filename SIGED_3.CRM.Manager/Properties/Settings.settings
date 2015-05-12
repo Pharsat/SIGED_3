@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIGED_3.CRM.Manager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NombreCompania" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Easy Process Company</Value>
+    </Setting>
+    <Setting Name="EmisorDeLosCorreos" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mail@easyprocesscompany.co</Value>
+    </Setting>
+    <Setting Name="URLCompania" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://siged2.azurewebsites.net/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

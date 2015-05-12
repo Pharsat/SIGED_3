@@ -1,0 +1,192 @@
+﻿body
+{
+	width: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #EEEEEE;
+	font-family: Calibri;
+	background-attachment: fixed; 
+	background-repeat:repeat-x;
+}
+.MarcoPPal
+{
+	width: 1000px;
+	background-color: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+	border-top: 1px solid #333333;
+	border-left: 1px solid #333333;
+}
+.Logo
+{
+	width: 1000px;
+	height: 250px; /*235img*/
+	padding: 10px;
+}
+.Contenido
+{
+	width: 1000px;
+}
+.MenuAbierto
+{
+	position: fixed;
+	top: 100px;
+	width: 250px;
+	float: left;
+	display: inline;
+	float: left;
+	background-color: White;
+	z-index: 5000;
+}
+.MenuCerrado
+{
+	position: fixed;
+	top: 100px;
+	width: 0px;
+	float: left;
+	display: none;
+	float: left;
+	background-color: White;
+	z-index: 5000;
+}
+.MenuAbierto td
+{
+	height: 65px;
+}
+.MenuCerrado td
+{
+	height: 65px;
+}
+.NoMenuAbierto
+{
+	position: fixed;
+	top: 100px;
+	width: 28px;
+	height: 510px;
+	display: inline;
+	float: left;
+	background-color: White;
+	z-index: 5000;
+}
+.NoMenuCerrado
+{
+	position: fixed;
+	top: 100px;
+	width: 0px;
+	height: 510px;
+	float: left;
+	display: none;
+	background-color: White;
+	z-index: 5000;
+}
+.Formulario
+{
+	width: 710px;
+	float: right;
+	background-color: transparent;
+	display: inline;
+	position: relative;
+	padding: 20px 20px 20px 20px;
+}
+.Formulario_2
+{
+	width: 960px;
+	float: right;
+	background-color: transparent;
+	display: inline;
+	position: relative;
+	padding: 20px 20px 20px 20px;
+}
+.Formulario img
+{
+	border-style: none;
+}
+.NombresModulo
+{
+	font-size: 28px;
+	color: #70545E;
+	vertical-align: middle;
+}
+.CentrarElemento
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+.RadMenu
+{
+	border: none !important;
+	background-color: transparent;
+	background-image: none;
+}
+.RadMenu_Default .rmRootGroup
+{
+	border: none !important;
+	background-color: transparent;
+	background-image: none;
+}
+#PieDePagina
+{
+	width: 1000px;
+	clear: both;
+	color: #333;
+	margin: 0px 0px 10px 0px;
+}
+.FormulariosTextos thead
+{
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+	color: #8F0383;
+}
+.Etiquetas
+{
+	text-align: right;
+	color: #F51B5C;
+	padding-right: 2px;
+}
+.FormViewC
+{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.RadTabStripC
+{
+	width: 100%;
+}
+.InfoUsuario
+{
+	position: fixed;
+	top: 70px;
+	right: 0px;
+	float: right;
+	display: inline;
+	z-index: 5000;
+	border-top: 2px solid #623988;
+	border-bottom: 2px solid #623988;
+	border-left: 2px solid #623988;
+	padding: 10px;
+	background-color: rgba(255,255,255,0.7);
+}
+.overlay
+{
+	position: fixed;
+	z-index: 500000;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgba(255,255,255,0.7);
+}
+.overlayContent
+{
+	z-index: 500001;
+	margin: 250px auto;
+	width: 80px;
+	height: 80px;
+}

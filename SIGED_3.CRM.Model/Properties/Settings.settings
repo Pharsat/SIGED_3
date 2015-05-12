@@ -1,0 +1,65 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIGED_3.CRM.Model.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Local" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=PHARSAT-PC\PHARSATSQL;Initial Catalog=SID_2;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=PHARSAT-PC\PHARSATSQL;Initial Catalog=SID_2;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="Externa" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*</Value>
+    </Setting>
+    <Setting Name="SmtpClientCredencialUsuario" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">areatecnica@easyprocesscompany.com</Value>
+    </Setting>
+    <Setting Name="SmtpClientCredencialContrasena" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CristianFelipe</Value>
+    </Setting>
+    <Setting Name="SmtpClientPuerto" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="SmtpClientHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="SmtpClientSSL" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EmisorDeLosCorreos" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">areatecnica@easyprocesscompany.com</Value>
+    </Setting>
+    <Setting Name="NombreCompania" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Easy Process Company</Value>
+    </Setting>
+    <Setting Name="URLCompania" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://siged2.azurewebsites.net/</Value>
+    </Setting>
+    <Setting Name="URLCorreoImagen" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://siged2.azurewebsites.net/Recursos/Diseno/Imagenes/PAGSLOGOTIPO.png</Value>
+    </Setting>
+    <Setting Name="Seek" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=174.36.80.52,25000;Initial Catalog=DB7890_SID2;Persist Security Info=True;User ID=DB7890_SID2;Password=wapreal1&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=174.36.80.52,25000;Initial Catalog=DB7890_SID2;Persist Security Info=True;User ID=DB7890_SID2;Password=wapreal1</Value>
+    </Setting>
+    <Setting Name="SID_2ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

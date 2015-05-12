@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+  </configSections>
+  <connectionStrings />
+  <system.web>
+    <pages theme="SIGED" />
+    <compilation targetFramework="4.0" />
+    <httpRuntime />
+    <httpHandlers>
+      <add path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource" verb="*" validate="false" />
+    </httpHandlers>
+<customErrors mode="Off"/>
+      </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <handlers>
+      <add name="Telerik_Web_UI_WebResource_axd" verb="*" preCondition="integratedMode" path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource" />
+    </handlers>
+    <defaultDocument enabled="true">
+      <files>
+        <clear />
+        <add value="Index.aspx" />
+      </files>
+    </defaultDocument>
+    <modules runAllManagedModulesForAllRequests="true" />
+    <httpErrors errorMode="Custom" />
+  </system.webServer>
+</configuration>

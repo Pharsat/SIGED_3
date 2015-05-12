@@ -1,0 +1,1553 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SID_2" Class="ModeloDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64" SettingsObjectName="SIGED_3.CRM.Model.Properties.Settings" SettingsPropertyName="Externa" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bodega" Member="Bodega">
+    <Type Name="Bodega">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Bodega_Venta_Detalle" Member="Venta_Detalle" ThisKey="Id" OtherKey="Id_Bodega" Type="Venta_Detalle" />
+      <Association Name="Bodega_Compra_Detalle" Member="Compra_Detalle" ThisKey="Id" OtherKey="Id_Bodega" Type="Compra_Detalle" />
+      <Association Name="Bodega_EntradaOSalida" Member="EntradaOSalida" ThisKey="Id" OtherKey="Id_Bodega_Desde" Type="EntradaOSalida" />
+      <Association Name="Bodega_EntradaOSalida1" Member="EntradaOSalida1" ThisKey="Id" OtherKey="Id_Bodega_Hasta" Type="EntradaOSalida" />
+      <Association Name="Bodega_Inventario" Member="Inventario" ThisKey="Id" OtherKey="Id_Bodega" Type="Inventario" />
+      <Association Name="Ciudad_Bodega" Member="Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="Ciudad" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Bodega" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Pais_Bodega" Member="Pais" ThisKey="Id_Pais" OtherKey="Id" Type="Pais" IsForeignKey="true" />
+      <Association Name="Provincia_Bodega" Member="Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="Provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venta_Detalle" Member="Venta_Detalle">
+    <Type Name="Venta_Detalle">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Venta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Producto" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripccion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Bodega_Venta_Detalle" Member="Bodega" ThisKey="Id_Bodega" OtherKey="Id" Type="Bodega" IsForeignKey="true" />
+      <Association Name="Recurso_Venta_Detalle" Member="Recurso" ThisKey="Id_Producto" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+      <Association Name="Venta_Venta_Detalle" Member="Venta" ThisKey="Id_Venta" OtherKey="Id" Type="Venta" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ciudad" Member="Ciudad">
+    <Type Name="Ciudad">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Ciudad_Bodega" Member="Bodega" ThisKey="Id" OtherKey="Id_Ciudad" Type="Bodega" />
+      <Association Name="Ciudad_Cliente" Member="Cliente" ThisKey="Id" OtherKey="Id_Ciudad" Type="Cliente" />
+      <Association Name="Ciudad_GrupoDeMiembros" Member="GrupoDeMiembros" ThisKey="Id" OtherKey="Id_Ciudad" Type="GrupoDeMiembros" />
+      <Association Name="Ciudad_Proveedor" Member="Proveedor" ThisKey="Id" OtherKey="Id_Ciudad" Type="Proveedor" />
+      <Association Name="Provincia_Ciudad" Member="Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="Provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cliente" Member="Cliente">
+    <Type Name="Cliente">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_TipoDeDocumento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PrecioQueSeVende" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Cliente_Cliente_Contacto" Member="Cliente_Contacto" ThisKey="Id" OtherKey="Id_Cliente" Type="Cliente_Contacto" />
+      <Association Name="Cliente_Pedido" Member="Pedido" ThisKey="Id" OtherKey="Id_Cliente" Type="Pedido" />
+      <Association Name="Cliente_Venta" Member="Venta" ThisKey="Id" OtherKey="Id_Cliente" Type="Venta" />
+      <Association Name="Ciudad_Cliente" Member="Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="Ciudad" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Cliente" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Pais_Cliente" Member="Pais" ThisKey="Id_Pais" OtherKey="Id" Type="Pais" IsForeignKey="true" />
+      <Association Name="Provincia_Cliente" Member="Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="Provincia" IsForeignKey="true" />
+      <Association Name="TipoDeDocumento_Cliente" Member="TipoDeDocumento" ThisKey="Id_TipoDeDocumento" OtherKey="Id" Type="TipoDeDocumento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cliente_Contacto" Member="Cliente_Contacto">
+    <Type Name="Cliente_Contacto">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Cliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Sede" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Cliente_Cliente_Contacto" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="Cliente" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodigosDeActivacion" Member="CodigosDeActivacion">
+    <Type Name="CodigosDeActivacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_CuentaActivadora" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Solicitante_Usuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Miembro_Destino" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CodigoDeActivacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NroUsosMax" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NroUsosActuales" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Aprobado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaActivacion_Cuenta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Cuentas_CodigosDeActivacion" Member="Cuentas" ThisKey="Id_CuentaActivadora" OtherKey="Id" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Cuentas_CodigosDeActivacion1" Member="Cuentas1" ThisKey="Id_Solicitante_Usuario" OtherKey="Id" Type="Cuentas" IsForeignKey="true" />
+      <Association Name="Miembro_CodigosDeActivacion" Member="Miembro" ThisKey="Id_Miembro_Destino" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Color" Member="Color">
+    <Type Name="Color">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Color" Member="Color1" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Association Name="Color_FichaTecnica_Color" Member="FichaTecnica_Color" ThisKey="Id" OtherKey="Id_Color" Type="FichaTecnica_Color" />
+      <Association Name="Color_Recurso" Member="Recurso" ThisKey="Id" OtherKey="Id_Color" Type="Recurso" />
+      <Association Name="GrupoDeMiembros_Color" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Compra" Member="Compra">
+    <Type Name="Compra">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Comprador" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Proveedor" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalEnLetras" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Compra_Compra_Detalle" Member="Compra_Detalle" ThisKey="Id" OtherKey="Id_Compra" Type="Compra_Detalle" />
+      <Association Name="GrupoDeMiembros_Compra" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Miembro_Compra" Member="Miembro" ThisKey="Id_Comprador" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+      <Association Name="Proveedor_Compra" Member="Proveedor" ThisKey="Id_Proveedor" OtherKey="Id" Type="Proveedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Compra_Detalle" Member="Compra_Detalle">
+    <Type Name="Compra_Detalle">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Compra" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Bodega_Compra_Detalle" Member="Bodega" ThisKey="Id_Bodega" OtherKey="Id" Type="Bodega" IsForeignKey="true" />
+      <Association Name="Compra_Compra_Detalle" Member="Compra" ThisKey="Id_Compra" OtherKey="Id" Type="Compra" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Recurso_Compra_Detalle" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Consecutivos" Member="Consecutivos">
+    <Type Name="Consecutivos">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Modulo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Serie" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Posicion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Desde" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Hasta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="GrupoDeMiembros_Consecutivos" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Modulo_Consecutivos" Member="Modulo" ThisKey="Id_Modulo" OtherKey="Id" Type="Modulo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Costo" Member="Costo">
+    <Type Name="Costo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDeCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CostoDeRecursos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoDeProcesos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoDeProduccion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoConValirizacion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioVentaFinal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioPublico" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioDistrbuidor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Costo_Costo_ProcesoDeFabricacion" Member="Costo_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_Costo" Type="Costo_ProcesoDeFabricacion" />
+      <Association Name="Costo_Costo_Recurso" Member="Costo_Recurso" ThisKey="Id" OtherKey="Id_Costo" Type="Costo_Recurso" />
+      <Association Name="Costo_Costo_Valorizacion" Member="Costo_Valorizacion" ThisKey="Id" OtherKey="Id_Costo" Type="Costo_Valorizacion" />
+      <Association Name="GrupoDeMiembros_Costo" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Recurso_Costo" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Costo_ProcesoDeFabricacion" Member="Costo_ProcesoDeFabricacion">
+    <Type Name="Costo_ProcesoDeFabricacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Costo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Proceso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Costo_Costo_ProcesoDeFabricacion" Member="Costo" ThisKey="Id_Costo" OtherKey="Id" Type="Costo" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="ProcesoDeFabricacion_Costo_ProcesoDeFabricacion" Member="ProcesoDeFabricacion" ThisKey="Id_Proceso" OtherKey="Id" Type="ProcesoDeFabricacion" IsForeignKey="true" />
+      <Association Name="UnidadDeMedida_Costo_ProcesoDeFabricacion" Member="UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Costo_Recurso" Member="Costo_Recurso">
+    <Type Name="Costo_Recurso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Costo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consumo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValoUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Costo_Costo_Recurso" Member="Costo" ThisKey="Id_Costo" OtherKey="Id" Type="Costo" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Recurso_Costo_Recurso" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+      <Association Name="UnidadDeMedida_Costo_Recurso" Member="UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Costo_Valorizacion" Member="Costo_Valorizacion">
+    <Type Name="Costo_Valorizacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Costo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Porcentaje" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Posicion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValorHastaElMomento" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Costo_Costo_Valorizacion" Member="Costo" ThisKey="Id_Costo" OtherKey="Id" Type="Costo" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cuentas" Member="Cuentas">
+    <Type Name="Cuentas">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Miembro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Contrasena" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ContrasenaProvisional" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dtFechaApertura" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtFechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstadoDeActivacion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CodigoDeActivacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Cuentas_CodigosDeActivacion" Member="CodigosDeActivacion" ThisKey="Id" OtherKey="Id_CuentaActivadora" Type="CodigosDeActivacion" />
+      <Association Name="Cuentas_CodigosDeActivacion1" Member="CodigosDeActivacion1" ThisKey="Id" OtherKey="Id_Solicitante_Usuario" Type="CodigosDeActivacion" />
+      <Association Name="Cuentas_Publicaciones" Member="Publicaciones" ThisKey="Id" OtherKey="Id_Cuenta" Type="Publicaciones" />
+      <Association Name="GrupoDeMiembros_Cuentas" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Miembro_Cuentas" Member="Miembro" ThisKey="Id_Miembro" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+      <Association Name="Roles_Cuentas" Member="Roles" ThisKey="Id_Rol" OtherKey="Id" Type="Roles" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EntradaOSalida" Member="EntradaOSalida">
+    <Type Name="EntradaOSalida">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega_Desde" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega_Hasta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Movimiento" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Cantiidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Bodega_EntradaOSalida" Member="Bodega" ThisKey="Id_Bodega_Desde" OtherKey="Id" Type="Bodega" IsForeignKey="true" />
+      <Association Name="Bodega_EntradaOSalida1" Member="Bodega1" ThisKey="Id_Bodega_Hasta" OtherKey="Id" Type="Bodega" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_EntradaOSalida" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Recurso_EntradaOSalida" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EstadosDelProceso" Member="EstadosDelProceso">
+    <Type Name="EstadosDelProceso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="EstadosDelProceso_OrdenesDeTrabajo" Member="OrdenesDeTrabajo" ThisKey="Id" OtherKey="Id_Estado" Type="OrdenesDeTrabajo" />
+      <Association Name="EstadosDelProceso_Pedido" Member="Pedido" ThisKey="Id" OtherKey="Estado" Type="Pedido" />
+      <Association Name="EstadosDelProceso_Recibidos" Member="Recibidos" ThisKey="Id" OtherKey="Id_Estado" Type="Recibidos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaTecnica" Member="FichaTecnica">
+    <Type Name="FichaTecnica">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Imagen" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaActualizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tela" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TelaComplemento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TipoPrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICCoserCerrado" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICCoserPesPunteado" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICTipoRecubridora" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICAgujaNro" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICPiezasFusionadas" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICCuales" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICPuntadasPorPulgadaCerrado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ICPuntadasPorPulgadaPespunteado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MATexto" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MAUbicacione" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MAAltura" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLPlancha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLVaporizacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMRecubridora" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMPLana" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMFileteSencillo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMEspeciales" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMTipoAjuste" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMAncho" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMFileteConseguridad" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ATPies" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ATFolders" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ATPlantillas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ICOCosturasAbiertas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ICOCosturasCerradas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ICOCosturasConPespunte" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="FichaTecnica_FichaTecnica_Color" Member="FichaTecnica_Color" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="FichaTecnica_Color" />
+      <Association Name="FichaTecnica_FichaTecnica_Hilo" Member="FichaTecnica_Hilo" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="FichaTecnica_Hilo" />
+      <Association Name="FichaTecnica_FichaTecnica_Marquilla" Member="FichaTecnica_Marquilla" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="FichaTecnica_Marquilla" />
+      <Association Name="FichaTecnica_FichaTecnica_PasosDeConfeccion" Member="FichaTecnica_PasosDeConfeccion" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="FichaTecnica_PasosDeConfeccion" />
+      <Association Name="FichaTecnica_FichaTecnica_ProcesosDetallados" Member="FichaTecnica_ProcesosDetallados" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="FichaTecnica_ProcesosDetallados" />
+      <Association Name="FichaTecnica_FichaTecnica_Talla" Member="FichaTecnica_Talla" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="FichaTecnica_Talla" />
+      <Association Name="FichaTecnica_Recurso" Member="Recurso" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="Recurso" />
+      <Association Name="GrupoDeMiembros_FichaTecnica" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Imagenes_FichaTecnica" Member="Imagenes" ThisKey="Id_Imagen" OtherKey="Id" Type="Imagenes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaTecnica_Color" Member="FichaTecnica_Color">
+    <Type Name="FichaTecnica_Color">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Color" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Color_FichaTecnica_Color" Member="Color" ThisKey="Id_Color" OtherKey="Id" Type="Color" IsForeignKey="true" />
+      <Association Name="FichaTecnica_FichaTecnica_Color" Member="FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="FichaTecnica" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaTecnica_Hilo" Member="FichaTecnica_Hilo">
+    <Type Name="FichaTecnica_Hilo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Calibre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="FichaTecnica_FichaTecnica_Hilo" Member="FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="FichaTecnica" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaTecnica_Marquilla" Member="FichaTecnica_Marquilla">
+    <Type Name="FichaTecnica_Marquilla">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Imagen" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Altura" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="FichaTecnica_FichaTecnica_Marquilla" Member="FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="FichaTecnica" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Imagenes_FichaTecnica_Marquilla" Member="Imagenes" ThisKey="Id_Imagen" OtherKey="Id" Type="Imagenes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaTecnica_PasosDeConfeccion" Member="FichaTecnica_PasosDeConfeccion">
+    <Type Name="FichaTecnica_PasosDeConfeccion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Numeracion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="FichaTecnica_FichaTecnica_PasosDeConfeccion" Member="FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="FichaTecnica" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Recurso_FichaTecnica_PasosDeConfeccion" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaTecnica_ProcesosDetallados" Member="FichaTecnica_ProcesosDetallados">
+    <Type Name="FichaTecnica_ProcesosDetallados">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Proceso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Imagen" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="FichaTecnica_FichaTecnica_ProcesosDetallados" Member="FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="FichaTecnica" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Imagenes_FichaTecnica_ProcesosDetallados" Member="Imagenes" ThisKey="Id_Imagen" OtherKey="Id" Type="Imagenes" IsForeignKey="true" />
+      <Association Name="ProcesoDeFabricacion_FichaTecnica_ProcesosDetallados" Member="ProcesoDeFabricacion" ThisKey="Id_Proceso" OtherKey="Id" Type="ProcesoDeFabricacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichaTecnica_Talla" Member="FichaTecnica_Talla">
+    <Type Name="FichaTecnica_Talla">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="FichaTecnica_FichaTecnica_Talla" Member="FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="FichaTecnica" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GrupoDeMiembros" Member="GrupoDeMiembros">
+    <Type Name="GrupoDeMiembros">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Imagen" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="GrupoDeMiembros_Bodega" Member="Bodega" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Bodega" />
+      <Association Name="GrupoDeMiembros_Cliente" Member="Cliente" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Cliente" />
+      <Association Name="GrupoDeMiembros_Color" Member="Color" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Color" />
+      <Association Name="GrupoDeMiembros_Compra" Member="Compra" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Compra" />
+      <Association Name="GrupoDeMiembros_Consecutivos" Member="Consecutivos" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Consecutivos" />
+      <Association Name="GrupoDeMiembros_Costo" Member="Costo" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Costo" />
+      <Association Name="GrupoDeMiembros_Cuentas" Member="Cuentas" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Cuentas" />
+      <Association Name="GrupoDeMiembros_EntradaOSalida" Member="EntradaOSalida" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="EntradaOSalida" />
+      <Association Name="GrupoDeMiembros_FichaTecnica" Member="FichaTecnica" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="FichaTecnica" />
+      <Association Name="GrupoDeMiembros_Inventario" Member="Inventario" ThisKey="Id" OtherKey="Id_GrupoDeMiemros" Type="Inventario" />
+      <Association Name="GrupoDeMiembros_OrdenesDeTrabajo" Member="OrdenesDeTrabajo" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="OrdenesDeTrabajo" />
+      <Association Name="GrupoDeMiembros_Pedido" Member="Pedido" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Pedido" />
+      <Association Name="GrupoDeMiembros_ProcesoDeFabricacion" Member="ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="ProcesoDeFabricacion" />
+      <Association Name="GrupoDeMiembros_Proveedor" Member="Proveedor" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Proveedor" />
+      <Association Name="GrupoDeMiembros_Recibidos" Member="Recibidos" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Recibidos" />
+      <Association Name="GrupoDeMiembros_Recurso" Member="Recurso" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Recurso" />
+      <Association Name="GrupoDeMiembros_Roles" Member="Roles" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Roles" />
+      <Association Name="GrupoDeMiembros_Venta" Member="Venta" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="Venta" />
+      <Association Name="Ciudad_GrupoDeMiembros" Member="Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="Ciudad" IsForeignKey="true" />
+      <Association Name="Imagenes_GrupoDeMiembros" Member="Imagenes" ThisKey="Id_Imagen" OtherKey="Id" Type="Imagenes" IsForeignKey="true" />
+      <Association Name="Pais_GrupoDeMiembros" Member="Pais" ThisKey="Id_Pais" OtherKey="Id" Type="Pais" IsForeignKey="true" />
+      <Association Name="Provincia_GrupoDeMiembros" Member="Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="Provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Imagenes" Member="Imagenes">
+    <Type Name="Imagenes">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Miembro_Salvado" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NombreOriginal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Fecha_Salvado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Imagenes_FichaTecnica" Member="FichaTecnica" ThisKey="Id" OtherKey="Id_Imagen" Type="FichaTecnica" />
+      <Association Name="Imagenes_FichaTecnica_Marquilla" Member="FichaTecnica_Marquilla" ThisKey="Id" OtherKey="Id_Imagen" Type="FichaTecnica_Marquilla" />
+      <Association Name="Imagenes_FichaTecnica_ProcesosDetallados" Member="FichaTecnica_ProcesosDetallados" ThisKey="Id" OtherKey="Id_Imagen" Type="FichaTecnica_ProcesosDetallados" />
+      <Association Name="Imagenes_GrupoDeMiembros" Member="GrupoDeMiembros" ThisKey="Id" OtherKey="Id_Imagen" Type="GrupoDeMiembros" />
+      <Association Name="Imagenes_Miembro" Member="Miembro1" ThisKey="Id" OtherKey="Id_Imagen" Type="Miembro" />
+      <Association Name="Miembro_Imagenes" Member="Miembro" ThisKey="Id_Miembro_Salvado" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inventario" Member="Inventario">
+    <Type Name="Inventario">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiemros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Existencia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Minimo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Maximo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Bodega_Inventario" Member="Bodega" ThisKey="Id_Bodega" OtherKey="Id" Type="Bodega" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Inventario" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiemros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Recurso_Inventario" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Miembro" Member="Miembro">
+    <Type Name="Miembro">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_TipoDeDocumento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Imagen" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Identificacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDeNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Miembro_CodigosDeActivacion" Member="CodigosDeActivacion" ThisKey="Id" OtherKey="Id_Miembro_Destino" Type="CodigosDeActivacion" />
+      <Association Name="Miembro_Compra" Member="Compra" ThisKey="Id" OtherKey="Id_Comprador" Type="Compra" />
+      <Association Name="Miembro_Cuentas" Member="Cuentas" ThisKey="Id" OtherKey="Id_Miembro" Type="Cuentas" />
+      <Association Name="Miembro_Imagenes" Member="Imagenes" ThisKey="Id" OtherKey="Id_Miembro_Salvado" Type="Imagenes" />
+      <Association Name="Miembro_Miembro" Member="Miembro2" ThisKey="Id" OtherKey="Id" Type="Miembro" Cardinality="One" />
+      <Association Name="Miembro_OrdenesDeTrabajo" Member="OrdenesDeTrabajo" ThisKey="Id" OtherKey="Id_Solicitante" Type="OrdenesDeTrabajo" />
+      <Association Name="Miembro_Pedido" Member="Pedido" ThisKey="Id" OtherKey="Id_Miembro" Type="Pedido" />
+      <Association Name="Miembro_Recibidos" Member="Recibidos" ThisKey="Id" OtherKey="Id_Receptor" Type="Recibidos" />
+      <Association Name="Miembro_Venta" Member="Venta" ThisKey="Id" OtherKey="Id_Facturador" Type="Venta" />
+      <Association Name="Imagenes_Miembro" Member="Imagenes1" ThisKey="Id_Imagen" OtherKey="Id" Type="Imagenes" IsForeignKey="true" />
+      <Association Name="Miembro_Miembro" Member="Miembro1" ThisKey="Id" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modulo" Member="Modulo">
+    <Type Name="Modulo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UsaConsecutivos" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Id_Modulo_Padre" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NumMenu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumOrden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="URLImagen" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="GeneralParaPublico" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Modulo_Consecutivos" Member="Consecutivos" ThisKey="Id" OtherKey="Id_Modulo" Type="Consecutivos" />
+      <Association Name="Modulo_Modulo" Member="Modulo2" ThisKey="Id" OtherKey="Id_Modulo_Padre" Type="Modulo" />
+      <Association Name="Modulo_Permisos" Member="Permisos" ThisKey="Id" OtherKey="Id_Modulo" Type="Permisos" />
+      <Association Name="Modulo_Modulo" Member="Modulo1" ThisKey="Id_Modulo_Padre" OtherKey="Id" Type="Modulo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdenesDeTrabajo" Member="OrdenesDeTrabajo">
+    <Type Name="OrdenesDeTrabajo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Solicitante" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Estado" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaGeneracion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaFinalizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="OrdenesDeTrabajo_OrdenesDeTrabajo_Recursos" Member="OrdenesDeTrabajo_Recursos" ThisKey="Id" OtherKey="Id_OrdenDeTrabajo" Type="OrdenesDeTrabajo_Recursos" />
+      <Association Name="EstadosDelProceso_OrdenesDeTrabajo" Member="EstadosDelProceso" ThisKey="Id_Estado" OtherKey="Id" Type="EstadosDelProceso" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_OrdenesDeTrabajo" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Miembro_OrdenesDeTrabajo" Member="Miembro" ThisKey="Id_Solicitante" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdenesDeTrabajo_Recursos" Member="OrdenesDeTrabajo_Recursos">
+    <Type Name="OrdenesDeTrabajo_Recursos">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_OrdenDeTrabajo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pedido_Detalle" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="OrdenesDeTrabajo_Recursos_Recibidos_Recursos" Member="Recibidos_Recursos" ThisKey="Id" OtherKey="Id_OrdenesDeTrabajo_Recurso" Type="Recibidos_Recursos" />
+      <Association Name="OrdenesDeTrabajo_OrdenesDeTrabajo_Recursos" Member="OrdenesDeTrabajo" ThisKey="Id_OrdenDeTrabajo" OtherKey="Id" Type="OrdenesDeTrabajo" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Pedido_Detalle_OrdenesDeTrabajo_Recursos" Member="Pedido_Detalle" ThisKey="Id_Pedido_Detalle" OtherKey="Id" Type="Pedido_Detalle" IsForeignKey="true" />
+      <Association Name="Recurso_OrdenesDeTrabajo_Recursos" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+      <Association Name="UnidadDeMedida_OrdenesDeTrabajo_Recursos" Member="UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pais" Member="Pais">
+    <Type Name="Pais">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Pais_Bodega" Member="Bodega" ThisKey="Id" OtherKey="Id_Pais" Type="Bodega" />
+      <Association Name="Pais_Cliente" Member="Cliente" ThisKey="Id" OtherKey="Id_Pais" Type="Cliente" />
+      <Association Name="Pais_GrupoDeMiembros" Member="GrupoDeMiembros" ThisKey="Id" OtherKey="Id_Pais" Type="GrupoDeMiembros" />
+      <Association Name="Pais_Proveedor" Member="Proveedor" ThisKey="Id" OtherKey="Id_Pais" Type="Proveedor" />
+      <Association Name="Pais_Provincia" Member="Provincia" ThisKey="Id" OtherKey="Id_Pais" Type="Provincia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pedido" Member="Pedido">
+    <Type Name="Pedido">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Cliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Miembro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDerealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDePedido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaADespachar" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TipoPrecioVenta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Pedido_Pedido_Detalle" Member="Pedido_Detalle" ThisKey="Id" OtherKey="Id_Pedido" Type="Pedido_Detalle" />
+      <Association Name="Cliente_Pedido" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="EstadosDelProceso_Pedido" Member="EstadosDelProceso" ThisKey="Estado" OtherKey="Id" Type="EstadosDelProceso" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Pedido" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Miembro_Pedido" Member="Miembro" ThisKey="Id_Miembro" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+      <Association Name="TipoPrecioEscogido_Pedido" Member="TipoPrecioEscogido" ThisKey="TipoPrecioVenta" OtherKey="Id" Type="TipoPrecioEscogido" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pedido_Detalle" Member="Pedido_Detalle">
+    <Type Name="Pedido_Detalle">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Pedido" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Pedido_Detalle_OrdenesDeTrabajo_Recursos" Member="OrdenesDeTrabajo_Recursos" ThisKey="Id" OtherKey="Id_Pedido_Detalle" Type="OrdenesDeTrabajo_Recursos" />
+      <Association Name="Pedido_Pedido_Detalle" Member="Pedido" ThisKey="Id_Pedido" OtherKey="Id" Type="Pedido" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Recurso_Pedido_Detalle" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+      <Association Name="UnidadDeMedida_Pedido_Detalle" Member="UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permisos" Member="Permisos">
+    <Type Name="Permisos">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_Modulo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsultarLista" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ConsultarDetalle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ActualizarDetalle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EliminarRegistro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CrearRegistro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Modulo_Permisos" Member="Modulo" ThisKey="Id_Modulo" OtherKey="Id" Type="Modulo" IsForeignKey="true" />
+      <Association Name="Roles_Permisos" Member="Roles" ThisKey="Id_Rol" OtherKey="Id" Type="Roles" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProcesoDeFabricacion" Member="ProcesoDeFabricacion">
+    <Type Name="ProcesoDeFabricacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ProcesoDeFabricacion_Costo_ProcesoDeFabricacion" Member="Costo_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_Proceso" Type="Costo_ProcesoDeFabricacion" />
+      <Association Name="ProcesoDeFabricacion_FichaTecnica_ProcesosDetallados" Member="FichaTecnica_ProcesosDetallados" ThisKey="Id" OtherKey="Id_Proceso" Type="FichaTecnica_ProcesosDetallados" />
+      <Association Name="GrupoDeMiembros_ProcesoDeFabricacion" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="UnidadDeMedida_ProcesoDeFabricacion" Member="UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proveedor" Member="Proveedor">
+    <Type Name="Proveedor">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_TiposDeDocumento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Identficacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ProveedorPrincipal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Proveedor_Compra" Member="Compra" ThisKey="Id" OtherKey="Id_Proveedor" Type="Compra" />
+      <Association Name="Proveedor_Proveedor_Contacto" Member="Proveedor_Contacto" ThisKey="Id" OtherKey="Id_Proveedor" Type="Proveedor_Contacto" />
+      <Association Name="Ciudad_Proveedor" Member="Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="Ciudad" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Proveedor" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Pais_Proveedor" Member="Pais" ThisKey="Id_Pais" OtherKey="Id" Type="Pais" IsForeignKey="true" />
+      <Association Name="Provincia_Proveedor" Member="Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="Provincia" IsForeignKey="true" />
+      <Association Name="TipoDeDocumento_Proveedor" Member="TipoDeDocumento" ThisKey="Id_TiposDeDocumento" OtherKey="Id" Type="TipoDeDocumento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proveedor_Contacto" Member="Proveedor_Contacto">
+    <Type Name="Proveedor_Contacto">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Proveedor" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Sede" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Proveedor_Proveedor_Contacto" Member="Proveedor" ThisKey="Id_Proveedor" OtherKey="Id" Type="Proveedor" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Provincia" Member="Provincia">
+    <Type Name="Provincia">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Provincia_Bodega" Member="Bodega" ThisKey="Id" OtherKey="Id_Provincia" Type="Bodega" />
+      <Association Name="Provincia_Ciudad" Member="Ciudad" ThisKey="Id" OtherKey="Id_Provincia" Type="Ciudad" />
+      <Association Name="Provincia_Cliente" Member="Cliente" ThisKey="Id" OtherKey="Id_Provincia" Type="Cliente" />
+      <Association Name="Provincia_GrupoDeMiembros" Member="GrupoDeMiembros" ThisKey="Id" OtherKey="Id_Provincia" Type="GrupoDeMiembros" />
+      <Association Name="Provincia_Proveedor" Member="Proveedor" ThisKey="Id" OtherKey="Id_Provincia" Type="Proveedor" />
+      <Association Name="Pais_Provincia" Member="Pais" ThisKey="Id_Pais" OtherKey="Id" Type="Pais" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Publicaciones" Member="Publicaciones">
+    <Type Name="Publicaciones">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Cuenta" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FechaPublicacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Publicacion" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Association Name="Cuentas_Publicaciones" Member="Cuentas" ThisKey="Id_Cuenta" OtherKey="Id" Type="Cuentas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recibidos" Member="Recibidos">
+    <Type Name="Recibidos">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Receptor" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Estado" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaRecibido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Recibidos_Recibidos_Recursos" Member="Recibidos_Recursos" ThisKey="Id" OtherKey="Id_Recibido" Type="Recibidos_Recursos" />
+      <Association Name="EstadosDelProceso_Recibidos" Member="EstadosDelProceso" ThisKey="Id_Estado" OtherKey="Id" Type="EstadosDelProceso" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Recibidos" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Miembro_Recibidos" Member="Miembro" ThisKey="Id_Receptor" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recibidos_Recursos" Member="Recibidos_Recursos">
+    <Type Name="Recibidos_Recursos">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Recibido" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_OrdenesDeTrabajo_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="OrdenesDeTrabajo_Recursos_Recibidos_Recursos" Member="OrdenesDeTrabajo_Recursos" ThisKey="Id_OrdenesDeTrabajo_Recurso" OtherKey="Id" Type="OrdenesDeTrabajo_Recursos" IsForeignKey="true" />
+      <Association Name="Recibidos_Recibidos_Recursos" Member="Recibidos" ThisKey="Id_Recibido" OtherKey="Id" Type="Recibidos" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Recurso_Recibidos_Recursos" Member="Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="Recurso" IsForeignKey="true" />
+      <Association Name="UnidadDeMedida_Recibidos_Recursos" Member="UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recurso" Member="Recurso">
+    <Type Name="Recurso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Color" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_TipoDeRecurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Recurso_Venta_Detalle" Member="Venta_Detalle" ThisKey="Id" OtherKey="Id_Producto" Type="Venta_Detalle" />
+      <Association Name="Recurso_Compra_Detalle" Member="Compra_Detalle" ThisKey="Id" OtherKey="Id_Recurso" Type="Compra_Detalle" />
+      <Association Name="Recurso_Costo" Member="Costo" ThisKey="Id" OtherKey="Id_Recurso" Type="Costo" />
+      <Association Name="Recurso_Costo_Recurso" Member="Costo_Recurso" ThisKey="Id" OtherKey="Id_Recurso" Type="Costo_Recurso" />
+      <Association Name="Recurso_EntradaOSalida" Member="EntradaOSalida" ThisKey="Id" OtherKey="Id_Recurso" Type="EntradaOSalida" />
+      <Association Name="Recurso_FichaTecnica_PasosDeConfeccion" Member="FichaTecnica_PasosDeConfeccion" ThisKey="Id" OtherKey="Id_Recurso" Type="FichaTecnica_PasosDeConfeccion" />
+      <Association Name="Recurso_Inventario" Member="Inventario" ThisKey="Id" OtherKey="Id_Recurso" Type="Inventario" />
+      <Association Name="Recurso_OrdenesDeTrabajo_Recursos" Member="OrdenesDeTrabajo_Recursos" ThisKey="Id" OtherKey="Id_Recurso" Type="OrdenesDeTrabajo_Recursos" />
+      <Association Name="Recurso_Pedido_Detalle" Member="Pedido_Detalle" ThisKey="Id" OtherKey="Id_Recurso" Type="Pedido_Detalle" />
+      <Association Name="Recurso_Recibidos_Recursos" Member="Recibidos_Recursos" ThisKey="Id" OtherKey="Id_Recurso" Type="Recibidos_Recursos" />
+      <Association Name="Color_Recurso" Member="Color" ThisKey="Id_Color" OtherKey="Id" Type="Color" IsForeignKey="true" />
+      <Association Name="FichaTecnica_Recurso" Member="FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="FichaTecnica" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Recurso" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="TipoDeRecurso_Recurso" Member="TipoDeRecurso" ThisKey="Id_TipoDeRecurso" OtherKey="Id" Type="TipoDeRecurso" IsForeignKey="true" />
+      <Association Name="UnidadDeMedida_Recurso" Member="UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Roles">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Roles_Cuentas" Member="Cuentas" ThisKey="Id" OtherKey="Id_Rol" Type="Cuentas" />
+      <Association Name="Roles_Permisos" Member="Permisos" ThisKey="Id" OtherKey="Id_Rol" Type="Permisos" />
+      <Association Name="GrupoDeMiembros_Roles" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoDeDocumento" Member="TipoDeDocumento">
+    <Type Name="TipoDeDocumento">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TipoDeDocumento_Cliente" Member="Cliente" ThisKey="Id" OtherKey="Id_TipoDeDocumento" Type="Cliente" />
+      <Association Name="TipoDeDocumento_Proveedor" Member="Proveedor" ThisKey="Id" OtherKey="Id_TiposDeDocumento" Type="Proveedor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoDeRecurso" Member="TipoDeRecurso">
+    <Type Name="TipoDeRecurso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TipoDeRecurso_Recurso" Member="Recurso" ThisKey="Id" OtherKey="Id_TipoDeRecurso" Type="Recurso" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoPrecioEscogido" Member="TipoPrecioEscogido">
+    <Type Name="TipoPrecioEscogido">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Abreviacion" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoPrecioEscogido" Member="TipoPrecioEscogido1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TipoPrecioEscogido_Pedido" Member="Pedido" ThisKey="Id" OtherKey="TipoPrecioVenta" Type="Pedido" />
+      <Association Name="TipoPrecioEscogido_Venta" Member="Venta" ThisKey="Id" OtherKey="TipoPrecioVenta" Type="Venta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UnidadDeMedida" Member="UnidadDeMedida">
+    <Type Name="UnidadDeMedida">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Base" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Posicionamiento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UnidadDeMedida_Costo_ProcesoDeFabricacion" Member="Costo_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="Costo_ProcesoDeFabricacion" />
+      <Association Name="UnidadDeMedida_Costo_Recurso" Member="Costo_Recurso" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="Costo_Recurso" />
+      <Association Name="UnidadDeMedida_OrdenesDeTrabajo_Recursos" Member="OrdenesDeTrabajo_Recursos" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="OrdenesDeTrabajo_Recursos" />
+      <Association Name="UnidadDeMedida_Pedido_Detalle" Member="Pedido_Detalle" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="Pedido_Detalle" />
+      <Association Name="UnidadDeMedida_ProcesoDeFabricacion" Member="ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="ProcesoDeFabricacion" />
+      <Association Name="UnidadDeMedida_Recibidos_Recursos" Member="Recibidos_Recursos" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="Recibidos_Recursos" />
+      <Association Name="UnidadDeMedida_Recurso" Member="Recurso" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="Recurso" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venta" Member="Venta">
+    <Type Name="Venta">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Facturador" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Cliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalEnLetras" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TipoPrecioVenta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Venta_Venta_Detalle" Member="Venta_Detalle" ThisKey="Id" OtherKey="Id_Venta" Type="Venta_Detalle" />
+      <Association Name="Cliente_Venta" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="GrupoDeMiembros_Venta" Member="GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="Miembro_Venta" Member="Miembro" ThisKey="Id_Facturador" OtherKey="Id" Type="Miembro" IsForeignKey="true" />
+      <Association Name="TipoPrecioEscogido_Venta" Member="TipoPrecioEscogido" ThisKey="TipoPrecioVenta" OtherKey="Id" Type="TipoPrecioEscogido" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.R_Ventas" Method="R_Ventas">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="R_VentasResult">
+      <Column Name="IdCompra" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreFacturador" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="ConsecutivoVenta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalEnLetras" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LC_FichasTecnicasColores" Method="LC_FichasTecnicasColores">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_RecursoActual" Parameter="id_RecursoActual" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LC_FichasTecnicasColoresResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombrePrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPrenda" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LC_Recursos_ConCosto" Method="LC_Recursos_ConCosto">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LC_Recursos_ConCostoResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="NombreRecurso" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TipoRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LC_Recursos_Mezclados" Method="LC_Recursos_Mezclados">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_ProductoNoTerminado" Parameter="id_ProductoNoTerminado" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LC_Recursos_MezcladosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="NombreRecurso" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TipoRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LC_Recursos_NoProductoTerminado" Method="LC_Recursos_NoProductoTerminado">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_ProductoNoTerminado" Parameter="id_ProductoNoTerminado" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LC_Recursos_NoProductoTerminadoResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="NombreRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TipoRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Bodegas" Method="LP_Bodegas">
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="LP_BodegasResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Clientes" Method="LP_Clientes">
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Identificacion" Parameter="identificacion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="LP_ClientesResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Colores" Method="LP_Colores">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="LP_ColoresResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Compras" Method="LP_Compras">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="LP_ComprasResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Comprador" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="Proveedor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Total" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Consecutivos" Method="LP_Consecutivos">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LP_ConsecutivosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Serie" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Desde" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Hasta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Posicion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Costos" Method="LP_Costos">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TipoPrenda" Parameter="tipoPrenda" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="LP_CostosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoPrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CostoDeProduccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CostoConValirizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_FichasTecnicas" Method="LP_FichasTecnicas">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TipoPrenda" Parameter="tipoPrenda" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="LP_FichasTecnicasResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoPrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaActualizacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_OrdenesDeTrabajo" Method="LP_OrdenesDeTrabajo">
+    <Parameter Name="Id_Estado" Parameter="id_Estado" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Cliente" Parameter="id_Cliente" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Consecutivo" Parameter="consecutivo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="LP_OrdenesDeTrabajoResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Solicitante" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="ConsecutivoPedido" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NombreCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstadoOrden" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaGeneracion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaFinalizacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Pedidos" Method="LP_Pedidos">
+    <Parameter Name="Estado" Parameter="estado" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Cliente" Parameter="id_Cliente" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TipoPrenda" Parameter="tipoPrenda" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Consecutivo" Parameter="consecutivo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DesdeFP" Parameter="desdeFP" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HastaFP" Parameter="hastaFP" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DesdeFR" Parameter="desdeFR" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HastaFR" Parameter="hastaFR" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DesdeFD" Parameter="desdeFD" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HastaFD" Parameter="hastaFD" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="LP_PedidosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDerealizacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaDePedido" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaADespachar" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreRegistrador" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Personas" Method="LP_Personas">
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Identificacion" Parameter="identificacion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LP_PersonasResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_ProductosTerminados" Method="LP_ProductosTerminados">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="LP_ProductosTerminadosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="FichaTecnica" Type="System.String" DbType="VarChar(154)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Proveedores" Method="LP_Proveedores">
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Identificacion" Parameter="identificacion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="LP_ProveedoresResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Identficacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Publicaciones" Method="LP_Publicaciones">
+    <ElementType Name="LP_PublicacionesResult">
+      <Column Name="FechaPublicacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Cuenta" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Publicacion" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="Publicacion_Corta" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreMiembro" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Recibidos" Method="LP_Recibidos">
+    <Parameter Name="Id_Estado" Parameter="id_Estado" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Cliente" Parameter="id_Cliente" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Consecutivo" Parameter="consecutivo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="LP_RecibidosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Solicitante" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="ConsecutivoPedido" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsecutivoOrden" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NombreCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstadoORecibido" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaGeneracion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Recursos" Method="LP_Recursos">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id_TipoDeRecurso" Parameter="id_TipoDeRecurso" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LP_RecursosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Ventas" Method="LP_Ventas">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="LP_VentasResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Facturador" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Total" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Compra_Detalle" Method="LS_Compra_Detalle">
+    <Parameter Name="Id_Compra" Parameter="id_Compra" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Compra_DetalleResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Costo_Procesos" Method="LS_Costo_Procesos">
+    <Parameter Name="Id_Costo" Parameter="id_Costo" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Costo_ProcesosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Costo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="UnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Costo_Recursos" Method="LS_Costo_Recursos">
+    <Parameter Name="Id_Costo" Parameter="id_Costo" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Costo_RecursosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Material" Type="System.String" DbType="VarChar(204)" CanBeNull="true" />
+      <Column Name="UnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Consumo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValoUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_OrdenesDeTrabajo_Recurso" Method="LS_OrdenesDeTrabajo_Recurso">
+    <Parameter Name="Id_OrdenDeTrabajo" Parameter="id_OrdenDeTrabajo" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_OrdenesDeTrabajo_RecursoResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CantidadFaltantePorOrdenar" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CantidadOrdenada" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CantidadPedida" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Recibidos_Recurso" Method="LS_Recibidos_Recurso">
+    <Parameter Name="Id_Recibido" Parameter="id_Recibido" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Recibidos_RecursoResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CantidadFaltantePorRecibir" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CantidadRecibida" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CantidadPedida" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Venta_Detalle" Method="LS_Venta_Detalle">
+    <Parameter Name="Id_Venta" Parameter="id_Venta" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Venta_DetalleResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_Compras" Method="R_Compras">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Id_Proveedor" Parameter="id_Proveedor" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Recurso" Parameter="id_Recurso" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_ComprasResult">
+      <Column Name="IdVenta" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreComprador" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="ConsecutivoVenta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalEnLetras" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_Costos_Cabecera" Method="R_Costos_Cabecera">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Recurso" Parameter="id_Recurso" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_Costos_CabeceraResult">
+      <Column Name="FechaDeCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CostoDeRecursos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoDeProcesos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoDeProduccion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoConValirizacion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioVentaFinal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioPublico" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioDistrbuidor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_Costos_Procesos" Method="R_Costos_Procesos">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Recurso" Parameter="id_Recurso" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_Costos_ProcesosResult">
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_Costos_Recursos" Method="R_Costos_Recursos">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Recurso" Parameter="id_Recurso" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_Costos_RecursosResult">
+      <Column Name="FichaProducto" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Consumo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValoUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_Costos_Valorizacion" Method="R_Costos_Valorizacion">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Recurso" Parameter="id_Recurso" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_Costos_ValorizacionResult">
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Porcentaje" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Posicion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValorHastaElMomento" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_ImagenDelGrupo" Method="R_ImagenDelGrupo">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_ImagenDelGrupoResult">
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Grupo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pais" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_Inventario" Method="R_Inventario">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Bodega" Parameter="id_Bodega" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_InventarioResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Recurso" Type="System.String" DbType="VarChar(268)" CanBeNull="true" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Existencia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Maximo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Minimo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_OrdenesDeTrabajo" Method="R_OrdenesDeTrabajo">
+    <Parameter Name="Consecutivo" Parameter="consecutivo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_OrdenesDeTrabajoResult">
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaGeneracion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaFinalizacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pedido" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OrdenesDeTrabajor" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="FichaProducto" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+      <Column Name="Recibidos" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Faltantes" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_Pedidos" Method="R_Pedidos">
+    <Parameter Name="Consecutivo" Parameter="consecutivo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_PedidosResult">
+      <Column Name="Consecutivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaADespachar" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaDePedido" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pedidor" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="FichaProducto" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+      <Column Name="Ordenados" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Faltantes" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.R_PlanDeCompras" Method="R_PlanDeCompras">
+    <Parameter Name="Consecutivo" Parameter="consecutivo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="R_PlanDeComprasResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnidadDeMedidaRequerida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ColorDelRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.J_EliminarCuentasNoActivadas" Method="J_EliminarCuentasNoActivadas">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.S_ConfiguracionPermisos" Method="S_ConfiguracionPermisos">
+    <Parameter Name="Id_Cuenta" Parameter="id_Cuenta" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="S_ConfiguracionPermisosResult">
+      <Column Name="Id_Modulo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsultarLista" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ConsultarDetalle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ActualizarDetalle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EliminarRegistro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CrearRegistro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.S_ConfiguracionMenu" Method="S_ConfiguracionMenu">
+    <Parameter Name="Id_Cuenta" Parameter="id_Cuenta" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="S_ConfiguracionMenuResult">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Id_Modulo_Padre" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NumMenu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumOrden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="URLImagen" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Roles" Method="LP_Roles">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LP_RolesResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Permisos" Method="LS_Permisos">
+    <Parameter Name="Id_Rol" Parameter="id_Rol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LS_PermisosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Modulo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActualizarDetalle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ConsultarDetalle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ConsultarLista" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CrearRegistro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EliminarRegistro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LC_Modulos_Permitidos" Method="LC_Modulos_Permitidos">
+    <Parameter Name="Id_Rol" Parameter="id_Rol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id_Cuenta" Parameter="id_Cuenta" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Id_Modulo" Parameter="id_Modulo" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LC_Modulos_PermitidosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Usuarios_X_Cuentas_Rol" Method="LP_Usuarios_X_Cuentas_Rol">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="NombreDeUsuario" Parameter="nombreDeUsuario" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="LP_Usuarios_X_Cuentas_RolResult">
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Cuenta" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Miembro" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_EntradasOSalidas" Method="LP_EntradasOSalidas">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Nombre50" Parameter="nombre50" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="LP_EntradasOSalidasResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Movimiento" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Recurso" Type="System.String" DbType="VarChar(268)" CanBeNull="true" />
+      <Column Name="Cantiidad" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Fecha2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Miembros" Method="LP_Miembros">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LP_MiembrosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FechaDeNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_TipoDeDocumento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Identificacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pais" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cuenta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CodigoDeActivacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_CodigosDeActivacionNuevosUsuarios" Method="LP_CodigosDeActivacionNuevosUsuarios">
+    <ElementType Name="LP_CodigosDeActivacionNuevosUsuariosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Aprobado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CodigoDeActivacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaActivacion_Cuenta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Id_CuentaActivadora" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Miembro_Destino" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Solicitante_Usuario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NroUsosActuales" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NroUsosMax" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Grupo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Documento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NombresPersona" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_ProcesosDeFabricacion" Method="LP_ProcesosDeFabricacion">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="LP_ProcesosDeFabricacionResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_FichaTecnica" Method="I_FichaTecnica">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_FichaTecnicaResult">
+      <Column Name="NombrePrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ReferenciaPrenda" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaActuPrenda" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaterialPPal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MaterialSecundario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_FichaTecnica_Tallas" Method="I_FichaTecnica_Tallas">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_FichaTecnica_TallasResult">
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_FichaTecnica_Colores" Method="I_FichaTecnica_Colores">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_FichaTecnica_ColoresResult">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_FichaTecnica_Hilos" Method="I_FichaTecnica_Hilos">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_FichaTecnica_HilosResult">
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Calibre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_FichaTecnica_Marquillas" Method="I_FichaTecnica_Marquillas">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_FichaTecnica_MarquillasResult">
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Altura" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Tipo1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_FichaTecnica_PasosDeConfeccion" Method="I_FichaTecnica_PasosDeConfeccion">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_FichaTecnica_PasosDeConfeccionResult">
+      <Column Name="Numeracion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ColorMaqui" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_FichaTecnica_ProcesosDetallados" Method="I_FichaTecnica_ProcesosDetallados">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_FichaTecnica_ProcesosDetalladosResult">
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Proceso" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LC_Recursos_Maquinaria" Method="LC_Recursos_Maquinaria">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LC_Recursos_MaquinariaResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="UnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Pedido_Detalle" Method="LS_Pedido_Detalle">
+    <Parameter Name="Id_Pedido" Parameter="id_Pedido" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Pedido_DetalleResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Inventario" Method="LP_Inventario">
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Nombre100" Parameter="nombre100" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Id_Bodega" Parameter="id_Bodega" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="LP_InventarioResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Recurso" Type="System.String" DbType="VarChar(268)" CanBeNull="true" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Existencia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Maximo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Minimo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIGED_3.CRM.Migration.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DB3894_SIDConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=DB3894_SID;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=DB3894_SID;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*</Value>
+    </Setting>
+    <Setting Name="SID_2ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=PHARSAT-PC\PHARSATSQL;Initial Catalog=SID_2;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=PHARSAT-PC\PHARSATSQL;Initial Catalog=SID_2;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SID_2ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64;Password=abc123_*</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

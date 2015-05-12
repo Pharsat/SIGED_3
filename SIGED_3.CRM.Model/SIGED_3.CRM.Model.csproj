@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF674B61-BDD4-4A45-9794-D2216C909A61}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIGED_3.CRM.Model</RootNamespace>
+    <AssemblyName>SIGED_3.CRM.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoDeRecursos\OAD\BodegaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\CiudadOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ClienteOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Cliente_ContactoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\CodigosDeActivacionOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ColorOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\CompraOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Compra_DetalleOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ConsecutivosOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\EstadosDelProcesoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\PermisosOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\PublicacionesOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\RolesOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\TipoPrecioEscogidoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\CostoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Costo_ProcesoDeFabricacionOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Costo_RecursoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Costo_ValorizacionOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\CuentasOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\EntradaOSalidaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\FichaTecnicaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\FichaTecnica_ColorOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\FichaTecnica_HiloOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\FichaTecnica_MarquillaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\FichaTecnica_PasosDeConfeccionOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\FichaTecnica_ProcesosDetalladosOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\FichaTecnica_TallaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\GrupoDeMiembrosOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ImagenesOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\InventarioOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\MiembroOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ModuloOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\OrdenesDeTrabajoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\OrdenesDeTrabajo_RecursosOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\PaisOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\PedidoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Pedido_DetalleOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ProcesoDeFabricacionOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ProveedorOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Proveedor_ContactoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\ProvinciaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\RecibidosOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Recibidos_RecursosOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\RecursoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\TipoDeDocumentoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\TipoDeRecursoOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\UnidadDeMedidaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\VentaOAD.cs" />
+    <Compile Include="AccesoDeRecursos\OAD\Venta_DetalleOAD.cs" />
+    <Compile Include="AccesoDeRecursos\SQL\QuerysSQL.cs" />
+    <Compile Include="Negocio\Entidades\Bodega.cs" />
+    <Compile Include="Negocio\Entidades\Cliente.cs" />
+    <Compile Include="Negocio\Entidades\Cliente_Contacto.cs" />
+    <Compile Include="Negocio\Entidades\Color.cs" />
+    <Compile Include="Negocio\Entidades\Compra.cs" />
+    <Compile Include="Negocio\Entidades\EstadoDeSesion.cs" />
+    <Compile Include="Negocio\Entidades\LP_MiembrosResult.cs" />
+    <Compile Include="Negocio\Entidades\Modelo.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\Entidades\OrdenesDeTrabajo.cs" />
+    <Compile Include="Negocio\Entidades\OrdenesDeTrabajo_Recursos.cs" />
+    <Compile Include="Negocio\Entidades\ParametrosBD.cs" />
+    <Compile Include="Negocio\Entidades\Pedido.cs" />
+    <Compile Include="Negocio\Entidades\FichaTecnica.cs" />
+    <Compile Include="Negocio\Entidades\FichaTecnica_Color.cs" />
+    <Compile Include="Negocio\Entidades\FichaTecnica_Marquilla.cs" />
+    <Compile Include="Negocio\Entidades\FichaTecnica_PasosDeConfeccion.cs" />
+    <Compile Include="Negocio\Entidades\FichaTecnica_ProcesosDetallados.cs" />
+    <Compile Include="Negocio\Entidades\GrupoDeMiembros.cs" />
+    <Compile Include="Negocio\Entidades\Imagenes.cs" />
+    <Compile Include="Negocio\Entidades\Miembro.cs" />
+    <Compile Include="Negocio\Entidades\ProcesoDeFabricacion.cs" />
+    <Compile Include="Negocio\Entidades\Proveedor.cs" />
+    <Compile Include="Negocio\Entidades\Proveedor_Contacto.cs" />
+    <Compile Include="Negocio\Entidades\Recibidos.cs" />
+    <Compile Include="Negocio\Entidades\Recibidos_Recursos.cs" />
+    <Compile Include="Negocio\Entidades\Recurso.cs" />
+    <Compile Include="Negocio\Entidades\S_ConfiguracionMenuResult.cs" />
+    <Compile Include="Negocio\Entidades\Venta.cs" />
+    <Compile Include="Negocio\Logica\BodegaLN.cs" />
+    <Compile Include="Negocio\Logica\CiudadLN.cs" />
+    <Compile Include="Negocio\Logica\ClienteLN.cs" />
+    <Compile Include="Negocio\Logica\Cliente_ContactoLN.cs" />
+    <Compile Include="Negocio\Logica\CodigosDeActivacionLN.cs" />
+    <Compile Include="Negocio\Logica\ColorLN.cs" />
+    <Compile Include="Negocio\Logica\CompraLN.cs" />
+    <Compile Include="Negocio\Logica\Compra_DetalleLN.cs" />
+    <Compile Include="Negocio\Logica\ConsecutivosLN.cs" />
+    <Compile Include="Negocio\Logica\EstadosDelProcesoLN.cs" />
+    <Compile Include="Negocio\Logica\PermisosLN.cs" />
+    <Compile Include="Negocio\Logica\PublicacionesLN.cs" />
+    <Compile Include="Negocio\Logica\RolesLN.cs" />
+    <Compile Include="Negocio\Logica\TipoPrecioEscogidoLN.cs" />
+    <Compile Include="Negocio\Logica\CostoLN.cs" />
+    <Compile Include="Negocio\Logica\Costo_ProcesoDeFabricacionLN.cs" />
+    <Compile Include="Negocio\Logica\Costo_RecursoLN.cs" />
+    <Compile Include="Negocio\Logica\Costo_ValorizacionLN.cs" />
+    <Compile Include="Negocio\Logica\CuentasLN.cs" />
+    <Compile Include="Negocio\Logica\EntradaOSalidaLN.cs" />
+    <Compile Include="Negocio\Logica\FichaTecnicaLN.cs" />
+    <Compile Include="Negocio\Logica\FichaTecnica_ColorLN.cs" />
+    <Compile Include="Negocio\Logica\FichaTecnica_HiloLN.cs" />
+    <Compile Include="Negocio\Logica\FichaTecnica_MarquillaLN.cs" />
+    <Compile Include="Negocio\Logica\FichaTecnica_PasosDeConfeccionLN.cs" />
+    <Compile Include="Negocio\Logica\FichaTecnica_ProcesosDetalladosLN.cs" />
+    <Compile Include="Negocio\Logica\FichaTecnica_TallaLN.cs" />
+    <Compile Include="Negocio\Logica\GrupoDeMiembrosLN.cs" />
+    <Compile Include="Negocio\Logica\ImagenesLN.cs" />
+    <Compile Include="Negocio\Logica\InventarioLN.cs" />
+    <Compile Include="Negocio\Logica\MiembroLN.cs" />
+    <Compile Include="Negocio\Logica\ModuloLN.cs" />
+    <Compile Include="Negocio\Logica\OrdenesDeTrabajoLN.cs" />
+    <Compile Include="Negocio\Logica\OrdenesDeTrabajo_RecursosLN.cs" />
+    <Compile Include="Negocio\Logica\PaisLN.cs" />
+    <Compile Include="Negocio\Logica\PedidoLN.cs" />
+    <Compile Include="Negocio\Logica\Pedido_DetalleLN.cs" />
+    <Compile Include="Negocio\Logica\ProcesoDeFabricacionLN.cs" />
+    <Compile Include="Negocio\Logica\ProveedorLN.cs" />
+    <Compile Include="Negocio\Logica\Proveedor_ContactoLN.cs" />
+    <Compile Include="Negocio\Logica\ProvinciaLN.cs" />
+    <Compile Include="Negocio\Logica\RecibidosLN.cs" />
+    <Compile Include="Negocio\Logica\Recibidos_RecursosLN.cs" />
+    <Compile Include="Negocio\Logica\RecursoLN.cs" />
+    <Compile Include="Negocio\Logica\TipoDeDocumentoLN.cs" />
+    <Compile Include="Negocio\Logica\TipoDeRecursoLN.cs" />
+    <Compile Include="Negocio\Logica\UnidadDeMedidaLN.cs" />
+    <Compile Include="Negocio\Logica\VentaLN.cs" />
+    <Compile Include="Negocio\Logica\Venta_DetalleLN.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\Fachadas\BodegaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\CiudadFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ClienteFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Cliente_ContactoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\CodigosDeActivacionFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ColorFachada.cs" />
+    <Compile Include="Servicios\Fachadas\CompraFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Compra_DetalleFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ConsecutivosFachada.cs" />
+    <Compile Include="Servicios\Fachadas\EstadosDelProcesoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\PermisosFachada.cs" />
+    <Compile Include="Servicios\Fachadas\PublicacionesFachada.cs" />
+    <Compile Include="Servicios\Fachadas\RolesFachada.cs" />
+    <Compile Include="Servicios\Fachadas\TipoPrecioEscogidoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\CostoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Costo_ProcesoDeFabricacionFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Costo_RecursoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Costo_ValorizacionFachada.cs" />
+    <Compile Include="Servicios\Fachadas\CuentasFachada.cs" />
+    <Compile Include="Servicios\Fachadas\EntradaOSalidaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\FichaTecnicaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\FichaTecnica_ColorFachada.cs" />
+    <Compile Include="Servicios\Fachadas\FichaTecnica_HiloFachada.cs" />
+    <Compile Include="Servicios\Fachadas\FichaTecnica_MarquillaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\FichaTecnica_PasosDeConfeccionFachada.cs" />
+    <Compile Include="Servicios\Fachadas\FichaTecnica_ProcesosDetalladosFachada.cs" />
+    <Compile Include="Servicios\Fachadas\FichaTecnica_TallaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\GrupoDeMiembrosFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ImagenesFachadas.cs" />
+    <Compile Include="Servicios\Fachadas\InventarioFachada.cs" />
+    <Compile Include="Servicios\Fachadas\MiembroFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ModuloFachada.cs" />
+    <Compile Include="Servicios\Fachadas\OrdenesDeTrabajoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\OrdenesDeTrabajo_RecursosFachada.cs" />
+    <Compile Include="Servicios\Fachadas\PaisFachada.cs" />
+    <Compile Include="Servicios\Fachadas\PedidoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Pedido_DetalleFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ProcesoDeFabricacionFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ProveedorFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Proveedor_ContactoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\ProvinciaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\RecibidosFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Recibidos_RecursosFachada.cs" />
+    <Compile Include="Servicios\Fachadas\RecursoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\TipoDeDocumentoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\TipoDeRecursoFachada.cs" />
+    <Compile Include="Servicios\Fachadas\UnidadDeMedidaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\VentaFachada.cs" />
+    <Compile Include="Servicios\Fachadas\Venta_DetalleFachada.cs" />
+    <Compile Include="Util\Comunicacion\CorreoElectronico.cs" />
+    <Compile Include="Util\Enum\EstadosDelProceso_Enum.cs" />
+    <Compile Include="Util\Enum\Modulo_Enum.cs" />
+    <Compile Include="Util\Enum\Roles_Enum.cs" />
+    <Compile Include="Util\Enum\TipoDeRecurso_Enum.cs" />
+    <Compile Include="Util\Enum\TipoPrecioEscogido_Enum.cs" />
+    <Compile Include="Util\Enum\UnidadDeMedida_Enum.cs" />
+    <Compile Include="Util\Error\ExceptionUtility.cs" />
+    <Compile Include="Util\Genericos\Genericos.cs" />
+    <Compile Include="Util\Session\AplicationManager.cs" />
+    <Compile Include="Util\Session\SessionManager.cs" />
+    <Compile Include="Util\Struct\MensajesAplicacion_Struct.cs" />
+    <Compile Include="Util\Struct\ProcedimientosAlmacenados.cs" />
+    <Compile Include="Util\Struct\TipoMovimiento_Struct.cs" />
+    <Compile Include="Util\Struct\TipoPrecioEscogido_Struct.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Negocio\Entidades\Modelo.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Modelo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Negocio\Entidades\Modelo.dbml.layout">
+      <DependentUpon>Modelo.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

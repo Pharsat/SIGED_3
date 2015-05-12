@@ -1,0 +1,745 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30CE09F0-525F-4DB7-B7DC-487C57AED04E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIGED_3.CRM.Web</RootNamespace>
+    <AssemblyName>SIGED_3.CRM.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\Referencias\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ErrorLog.txt" />
+    <Content Include="App_Themes\SIGED\Estilo.css" />
+    <Content Include="Configuracion\MantenerSesion\MantenerSesion.asmx" />
+    <Content Include="Global.asax" />
+    <Content Include="Index.aspx" />
+    <Content Include="Modulos\Bodega\Detalle.aspx" />
+    <Content Include="Modulos\Bodega\Lista.aspx" />
+    <Content Include="Modulos\Cliente\Detalle.aspx" />
+    <Content Include="Modulos\Cliente\Lista.aspx" />
+    <Content Include="Modulos\Color\Detalle.aspx" />
+    <Content Include="Modulos\Color\Lista.aspx" />
+    <Content Include="Modulos\Compra\Detalle.aspx" />
+    <Content Include="Modulos\Compra\Lista.aspx" />
+    <Content Include="Modulos\Consecutivo\Detalle.aspx" />
+    <Content Include="Modulos\Consecutivo\Lista.aspx" />
+    <Content Include="Modulos\Costo\Detalle.aspx" />
+    <Content Include="Modulos\Costo\Lista.aspx" />
+    <Content Include="Modulos\FichaTecnica\Detalle.aspx" />
+    <Content Include="Modulos\FichaTecnica\Lista.aspx" />
+    <Content Include="GenericErrorPage.aspx" />
+    <Content Include="Modulos\GrupoDeMiembros\Lista.aspx" />
+    <Content Include="Http404ErrorPage.aspx" />
+    <Content Include="Modulos\Informes\impFichaTecnica.aspx" />
+    <Content Include="Modulos\Informes\infCompras.aspx" />
+    <Content Include="Modulos\Informes\infCostos.aspx" />
+    <Content Include="Modulos\Informes\infInventario.aspx" />
+    <Content Include="Modulos\Informes\infOrdenesDeTrabajo.aspx" />
+    <Content Include="Modulos\Informes\infPedidos.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modulos\Informes\infPlanDeCompras.aspx" />
+    <Content Include="Modulos\Informes\infRecibidos.aspx" />
+    <Content Include="Modulos\Informes\infVentas.aspx" />
+    <Content Include="Modulos\Informes\Lista.aspx" />
+    <Content Include="Modulos\Inicio.aspx" />
+    <Content Include="Modulos\Inventario\Lista.aspx" />
+    <Content Include="Modulos\Login.aspx" />
+    <Content Include="Modulos\Miembros\Detalle.aspx" />
+    <Content Include="Modulos\Miembros\Lista.aspx" />
+    <Content Include="Modulos\Movimiento\Lista.aspx" />
+    <Content Include="Modulos\NuevoUsuario\Registro.aspx" />
+    <Content Include="Modulos\OrdenesDeTrabajo\Detalle.aspx" />
+    <Content Include="Modulos\OrdenesDeTrabajo\Lista.aspx" />
+    <Content Include="Modulos\Pedido\Detalle.aspx" />
+    <Content Include="Modulos\Pedido\Lista.aspx" />
+    <Content Include="Modulos\ProcesoDeFabricacion\Detalle.aspx" />
+    <Content Include="Modulos\ProcesoDeFabricacion\Lista.aspx" />
+    <Content Include="Modulos\Proveedor\Detalle.aspx" />
+    <Content Include="Modulos\Proveedor\Lista.aspx" />
+    <Content Include="Modulos\Publicaciones\Detalle.aspx" />
+    <Content Include="Modulos\Publicaciones\Lista.aspx" />
+    <Content Include="Modulos\Recibido\Detalle.aspx" />
+    <Content Include="Modulos\Recibido\Lista.aspx" />
+    <Content Include="Modulos\Recursos\Detalle.aspx" />
+    <Content Include="Modulos\Recursos\Lista.aspx" />
+    <Content Include="Modulos\RolesXCuenta\Lista.aspx" />
+    <Content Include="Modulos\Roles\Detalle.aspx" />
+    <Content Include="Modulos\Roles\Lista.aspx" />
+    <Content Include="Modulos\Venta\Detalle.aspx" />
+    <Content Include="Modulos\Venta\Lista.aspx" />
+    <Content Include="Modulos\RecordarContrasena\RecordarContrasena.aspx" />
+    <Content Include="Recursos\Diseno\Iconos\Agregar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Aumentar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Buscar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Button-Reload-icon.png" />
+    <Content Include="Recursos\Diseno\Iconos\Calcular.png" />
+    <Content Include="Recursos\Diseno\Iconos\CambiarContrasena.png" />
+    <Content Include="Recursos\Diseno\Iconos\Cancelar.png" />
+    <Content Include="Recursos\Diseno\Iconos\custom-reports-icon.png" />
+    <Content Include="Recursos\Diseno\Iconos\Deshabilitado.png" />
+    <Content Include="Recursos\Diseno\Iconos\Despachar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Editar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Eliminar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Entrada.png" />
+    <Content Include="Recursos\Diseno\Iconos\Espera.png" />
+    <Content Include="Recursos\Diseno\Iconos\Excluir_Big.png" />
+    <Content Include="Recursos\Diseno\Iconos\Habilitado.png" />
+    <Content Include="Recursos\Diseno\Iconos\Home.png" />
+    <Content Include="Recursos\Diseno\Iconos\Imprimir.png" />
+    <Content Include="Recursos\Diseno\Iconos\Incluir.png" />
+    <Content Include="Recursos\Diseno\Iconos\Incluir_Big.png" />
+    <Content Include="Recursos\Diseno\Iconos\Ir A.png" />
+    <Content Include="Recursos\Diseno\Iconos\Maximo.png" />
+    <Content Include="Recursos\Diseno\Iconos\Mensage Alerta.png" />
+    <Content Include="Recursos\Diseno\Iconos\Mensage Info.png" />
+    <Content Include="Recursos\Diseno\Iconos\Mensaje Error.png" />
+    <Content Include="Recursos\Diseno\Iconos\Minimo.png" />
+    <Content Include="Recursos\Diseno\Iconos\move-icon.png" />
+    <Content Include="Recursos\Diseno\Iconos\Multiplicar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Ok.png" />
+    <Content Include="Recursos\Diseno\Iconos\Recargar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Reducir.png" />
+    <Content Include="Recursos\Diseno\Iconos\Salida.png" />
+    <Content Include="Recursos\Diseno\Iconos\Seleccionar.png" />
+    <Content Include="Recursos\Diseno\Iconos\Usuario.png" />
+    <Content Include="Recursos\Diseno\Imagenes\CabSalir_e.png" />
+    <Content Include="Recursos\Diseno\Imagenes\Device-Network-icon.png" />
+    <Content Include="Recursos\Diseno\Imagenes\figurin.png" />
+    <Content Include="Recursos\Diseno\Imagenes\FIGURINES COSTADO DER.png" />
+    <Content Include="Recursos\Diseno\Imagenes\General-Private-icon.png" />
+    <Content Include="Recursos\Diseno\Imagenes\Login.gif" />
+    <Content Include="Recursos\Diseno\Imagenes\LOGOTIPO SIGED.jpg" />
+    <Content Include="Recursos\Diseno\Imagenes\Menu_1_e.png" />
+    <Content Include="Recursos\Diseno\Imagenes\Menu_2_e.png" />
+    <Content Include="Recursos\Diseno\Imagenes\Menu_3_e.png" />
+    <Content Include="Recursos\Diseno\Imagenes\Menu_4_e.png" />
+    <Content Include="Recursos\Diseno\Imagenes\Menu_5_e.png" />
+    <Content Include="Recursos\Diseno\Imagenes\Ocultar.png" />
+    <Content Include="Recursos\Diseno\Imagenes\OlvideContrasena.gif" />
+    <Content Include="Recursos\Diseno\Imagenes\PAGSLOGOTIPO.png" />
+    <Content Include="Recursos\Diseno\Imagenes\PIE DE PAG.png" />
+    <Content Include="Recursos\Diseno\Imagenes\QuieroEstar.gif" />
+    <Content Include="Recursos\Diseno\Imagenes\RecordarContrasena.gif" />
+    <Content Include="Recursos\Diseno\Imagenes\Registrar.gif" />
+    <Content Include="Recursos\Diseno\Imagenes\Ver.png" />
+    <Content Include="Recursos\Diseno\Imagenes\VerificacionCodigo.gif" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\ScriptsGenerales.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuracion\MantenerSesion\MantenerSesion.asmx.cs">
+      <DependentUpon>MantenerSesion.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Details.Master.cs">
+      <DependentUpon>Details.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Details.Master.designer.cs">
+      <DependentUpon>Details.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Details_NoUpdatePanel.Master.cs">
+      <DependentUpon>Details_NoUpdatePanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Details_NoUpdatePanel.Master.designer.cs">
+      <DependentUpon>Details_NoUpdatePanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Ppal.Master.cs">
+      <DependentUpon>Ppal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Ppal.Master.designer.cs">
+      <DependentUpon>Ppal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Ppal_NoSearch.Master.cs">
+      <DependentUpon>Ppal_NoSearch.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Ppal_NoSearch.Master.designer.cs">
+      <DependentUpon>Ppal_NoSearch.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Reports.Master.cs">
+      <DependentUpon>Reports.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Reports.Master.designer.cs">
+      <DependentUpon>Reports.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Bodega\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Bodega\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Bodega\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Bodega\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cliente\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Color\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Color\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Color\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Color\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Compra\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Compra\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Compra\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Compra\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Consecutivo\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Consecutivo\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Consecutivo\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Consecutivo\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Costo\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Costo\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Costo\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Costo\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\FichaTecnica\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\FichaTecnica\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\FichaTecnica\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\FichaTecnica\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenericErrorPage.aspx.cs">
+      <DependentUpon>GenericErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenericErrorPage.aspx.designer.cs">
+      <DependentUpon>GenericErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\GrupoDeMiembros\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\GrupoDeMiembros\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Http404ErrorPage.aspx.cs">
+      <DependentUpon>Http404ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Http404ErrorPage.aspx.designer.cs">
+      <DependentUpon>Http404ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\impFichaTecnica.aspx.cs">
+      <DependentUpon>impFichaTecnica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\impFichaTecnica.aspx.designer.cs">
+      <DependentUpon>impFichaTecnica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infCompras.aspx.cs">
+      <DependentUpon>infCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infCompras.aspx.designer.cs">
+      <DependentUpon>infCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infCostos.aspx.cs">
+      <DependentUpon>infCostos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infCostos.aspx.designer.cs">
+      <DependentUpon>infCostos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infInventario.aspx.cs">
+      <DependentUpon>infInventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infInventario.aspx.designer.cs">
+      <DependentUpon>infInventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infOrdenesDeTrabajo.aspx.cs">
+      <DependentUpon>infOrdenesDeTrabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infOrdenesDeTrabajo.aspx.designer.cs">
+      <DependentUpon>infOrdenesDeTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infPedidos.aspx.cs">
+      <DependentUpon>infPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Modulos\Informes\infPedidos.aspx.designer.cs">
+      <DependentUpon>infPedidos.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Modulos\Informes\infPlanDeCompras.aspx.cs">
+      <DependentUpon>infPlanDeCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infPlanDeCompras.aspx.designer.cs">
+      <DependentUpon>infPlanDeCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infRecibidos.aspx.cs">
+      <DependentUpon>infRecibidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infRecibidos.aspx.designer.cs">
+      <DependentUpon>infRecibidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infVentas.aspx.cs">
+      <DependentUpon>infVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infVentas.aspx.designer.cs">
+      <DependentUpon>infVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Inventario\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Inventario\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Miembros\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Miembros\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Miembros\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Miembros\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Movimiento\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Movimiento\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\NuevoUsuario\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\NuevoUsuario\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\OrdenesDeTrabajo\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\OrdenesDeTrabajo\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\OrdenesDeTrabajo\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\OrdenesDeTrabajo\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Pedido\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Pedido\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Pedido\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Pedido\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProcesoDeFabricacion\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProcesoDeFabricacion\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProcesoDeFabricacion\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProcesoDeFabricacion\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Proveedor\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Proveedor\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Proveedor\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Proveedor\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Publicaciones\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Publicaciones\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Publicaciones\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Publicaciones\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recibido\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Recibido\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recibido\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Recibido\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\RecordarContrasena\RecordarContrasena.aspx.designer.cs">
+      <DependentUpon>RecordarContrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recursos\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Recursos\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Recursos\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Recursos\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\RolesXCuenta\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\RolesXCuenta\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Roles\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Roles\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Roles\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Roles\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Venta\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Venta\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\RecordarContrasena\RecordarContrasena.aspx.cs">
+      <DependentUpon>RecordarContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\SID_2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SID_2DataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\SIGED\Etiqueta.skin" />
+    <Content Include="App_Themes\SIGED\FormView.skin" />
+    <Content Include="App_Themes\SIGED\GridView.skin" />
+    <Content Include="App_Themes\SIGED\RadTabStrip.skin" />
+    <Content Include="App_Themes\SIGED\Validadores.skin" />
+    <Content Include="MasterPage\Details.Master" />
+    <Content Include="MasterPage\Ppal.Master" />
+    <Content Include="MasterPage\Reports.Master" />
+    <Content Include="MasterPage\Ppal_NoSearch.Master" />
+    <Content Include="MasterPage\Details_NoUpdatePanel.Master" />
+    <None Include="Properties\PublishProfiles\SeekDotNet.pubxml" />
+    <None Include="Properties\PublishProfiles\siged - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\siged - Web Deploy.pubxml" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Code\SID_2DataSet.xsc">
+      <DependentUpon>SID_2DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="App_Code\SID_2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SID_2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Code\SID_2DataSet.xss">
+      <DependentUpon>SID_2DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\siged2 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\siged2 - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Browsers\" />
+    <Folder Include="Modulos\Manual\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIGED_3.CRM.Model\SIGED_3.CRM.Model.csproj">
+      <Project>{ef674b61-bdd4-4a45-9794-d2216c909a61}</Project>
+      <Name>SIGED_3.CRM.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modulos\Informes\impFichaTecnica.rdlc" />
+    <EmbeddedResource Include="Modulos\Informes\infCompras.rdlc" />
+    <EmbeddedResource Include="Modulos\Informes\infCostos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Informes\infInventario.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Informes\infOrdenesDeTrabajo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Informes\infPedidos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Informes\infPlanDeCompras.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Informes\infVentas.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4638/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

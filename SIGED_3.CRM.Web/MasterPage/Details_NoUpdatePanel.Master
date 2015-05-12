@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Details_NoUpdatePanel.master.cs" Inherits="SIGED_3.CRM.Web.MasterPage.Details_NoUpdatePanel" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <script type="text/javascript" src='<%# ResolveUrl("~/scripts/jquery-1.10.2.min.js")%>'></script>
+    <script type="text/javascript" src='<%# ResolveUrl("~/scripts/ScriptsGenerales.js")%>'></script>
+    <script type="text/javascript">
+        $(document).ready(function () { establecerSesionInfinita(); });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+        </telerik:RadScriptManager>
+        <div class="MarcoPPal" style="background-image: url('<%=ResolveUrl("~/Recursos/Diseno/Imagenes/FIGURINES COSTADO DER.png")%>'); background-position: right bottom; background-repeat: no-repeat;">
+            <div class="Logo">
+                <div style="width: 220px; height: 100%; vertical-align: top; float: left;">
+                    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Recursos/Diseno/Imagenes/LOGOTIPO SIGED.jpg"
+                        Height="70px" Width="220px" />
+                </div>
+                <div style="width: 220px; height: 100%; vertical-align: top; float: left;">
+                    <telerik:RadBinaryImage ID="rbiImagenGrupo" runat="server" Height="200px" Width="400px"
+                        ResizeMode="Fit" />
+                </div>
+            </div>
+            <div class="Contenido">
+                <div class="Formulario_2">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div id="PieDePagina">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

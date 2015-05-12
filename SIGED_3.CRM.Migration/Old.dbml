@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB3894_SID" Class="OldDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=DB3894_SID;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64" SettingsObjectName="SIGED_3.CRM.Migration.Properties.Settings" SettingsPropertyName="DB3894_SIDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Bodega" Member="tbl_Bodega">
+    <Type Name="tbl_Bodega">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Bodega_tbl_Compra" Member="tbl_Compra" ThisKey="Id" OtherKey="Id_Bodega" Type="tbl_Compra" />
+      <Association Name="tbl_Bodega_tbl_EntradaOSalida" Member="tbl_EntradaOSalida" ThisKey="Id" OtherKey="Id_Bodega_Desde" Type="tbl_EntradaOSalida" />
+      <Association Name="tbl_Bodega_tbl_EntradaOSalida1" Member="tbl_EntradaOSalida1" ThisKey="Id" OtherKey="Id_Bodega_Hasta" Type="tbl_EntradaOSalida" />
+      <Association Name="tbl_Bodega_tbl_Inventario" Member="tbl_Inventario" ThisKey="Id" OtherKey="Id_Bodega" Type="tbl_Inventario" />
+      <Association Name="tbl_Bodega_tbl_Venta" Member="tbl_Venta" ThisKey="Id" OtherKey="Id_Bodega" Type="tbl_Venta" />
+      <Association Name="tbl_Ciudad_tbl_Bodega" Member="tbl_Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="tbl_Ciudad" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Bodega" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Bodega1" Member="tbl_GrupoDeMiembros1" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Pais_tbl_Bodega" Member="tbl_Pais" ThisKey="Id_Pais" OtherKey="Id" Type="tbl_Pais" IsForeignKey="true" />
+      <Association Name="tbl_Provincia_tbl_Bodega" Member="tbl_Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="tbl_Provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Venta_Detalle" Member="tbl_Venta_Detalle">
+    <Type Name="tbl_Venta_Detalle">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Venta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Producto" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Movimiento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripccion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tbl_EntradaOSalida_tbl_Venta_Detalle" Member="tbl_EntradaOSalida" ThisKey="Id_Movimiento" OtherKey="Id" Type="tbl_EntradaOSalida" IsForeignKey="true" />
+      <Association Name="tbl_Recurso_tbl_Venta_Detalle" Member="tbl_Recurso" ThisKey="Id_Producto" OtherKey="Id" Type="tbl_Recurso" IsForeignKey="true" />
+      <Association Name="tbl_Venta_tbl_Venta_Detalle" Member="tbl_Venta" ThisKey="Id_Venta" OtherKey="Id" Type="tbl_Venta" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Ciudad" Member="tbl_Ciudad">
+    <Type Name="tbl_Ciudad">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Ciudad_tbl_Bodega" Member="tbl_Bodega" ThisKey="Id" OtherKey="Id_Ciudad" Type="tbl_Bodega" />
+      <Association Name="tbl_Ciudad_tbl_Cliente" Member="tbl_Cliente" ThisKey="Id" OtherKey="Id_Ciudad" Type="tbl_Cliente" />
+      <Association Name="tbl_Ciudad_tbl_GrupoDeMiembros" Member="tbl_GrupoDeMiembros" ThisKey="Id" OtherKey="Id_Ciudad" Type="tbl_GrupoDeMiembros" />
+      <Association Name="tbl_Ciudad_tbl_Miembro" Member="tbl_Miembro" ThisKey="Id" OtherKey="Id_Ciudad" Type="tbl_Miembro" />
+      <Association Name="tbl_Ciudad_tbl_Proveedor" Member="tbl_Proveedor" ThisKey="Id" OtherKey="Id_Ciudad" Type="tbl_Proveedor" />
+      <Association Name="tbl_Provincia_tbl_Ciudad" Member="tbl_Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="tbl_Provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Cliente" Member="tbl_Cliente">
+    <Type Name="tbl_Cliente">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_TipoDeDocumento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PrecioQueSeVende" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_Cliente_tbl_Cliente_Contacto" Member="tbl_Cliente_Contacto" ThisKey="Id" OtherKey="Id_Cliente" Type="tbl_Cliente_Contacto" />
+      <Association Name="tbl_Cliente_tbl_Credito" Member="tbl_Credito" ThisKey="Id" OtherKey="Id_Cliente" Type="tbl_Credito" />
+      <Association Name="tbl_Cliente_tbl_Pedido" Member="tbl_Pedido" ThisKey="Id" OtherKey="Id_Cliente" Type="tbl_Pedido" />
+      <Association Name="tbl_Cliente_tbl_Venta" Member="tbl_Venta" ThisKey="Id" OtherKey="Id_Cliente" Type="tbl_Venta" />
+      <Association Name="tbl_Ciudad_tbl_Cliente" Member="tbl_Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="tbl_Ciudad" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Cliente" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Pais_tbl_Cliente" Member="tbl_Pais" ThisKey="Id_Pais" OtherKey="Id" Type="tbl_Pais" IsForeignKey="true" />
+      <Association Name="tbl_Provincia_tbl_Cliente" Member="tbl_Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="tbl_Provincia" IsForeignKey="true" />
+      <Association Name="tbl_TipoDeDocumento_tbl_Cliente" Member="tbl_TipoDeDocumento" ThisKey="Id_TipoDeDocumento" OtherKey="Id" Type="tbl_TipoDeDocumento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Cliente_Contacto" Member="tbl_Cliente_Contacto">
+    <Type Name="tbl_Cliente_Contacto">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Cliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Sede" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_Cliente_tbl_Cliente_Contacto" Member="tbl_Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="tbl_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Color" Member="tbl_Color">
+    <Type Name="tbl_Color">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Color_tbl_FichaTecnica_Color" Member="tbl_FichaTecnica_Color" ThisKey="Id" OtherKey="Id_Color" Type="tbl_FichaTecnica_Color" />
+      <Association Name="tbl_Color_tbl_Recurso" Member="tbl_Recurso" ThisKey="Id" OtherKey="Id_Color" Type="tbl_Recurso" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Color" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Compra" Member="tbl_Compra">
+    <Type Name="tbl_Compra">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Comprador" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Proveedor" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalEnLetras" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Compra_tbl_Compra_Detalle" Member="tbl_Compra_Detalle" ThisKey="Id" OtherKey="Id_Compra" Type="tbl_Compra_Detalle" />
+      <Association Name="tbl_Bodega_tbl_Compra" Member="tbl_Bodega" ThisKey="Id_Bodega" OtherKey="Id" Type="tbl_Bodega" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Compra" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Miembro_tbl_Compra" Member="tbl_Miembro" ThisKey="Id_Comprador" OtherKey="Id" Type="tbl_Miembro" IsForeignKey="true" />
+      <Association Name="tbl_Proveedor_tbl_Compra" Member="tbl_Proveedor" ThisKey="Id_Proveedor" OtherKey="Id" Type="tbl_Proveedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Compra_Detalle" Member="tbl_Compra_Detalle">
+    <Type Name="tbl_Compra_Detalle">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Compra" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Movimiento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tbl_Compra_tbl_Compra_Detalle" Member="tbl_Compra" ThisKey="Id_Compra" OtherKey="Id" Type="tbl_Compra" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tbl_EntradaOSalida_tbl_Compra_Detalle" Member="tbl_EntradaOSalida" ThisKey="Id_Movimiento" OtherKey="Id" Type="tbl_EntradaOSalida" IsForeignKey="true" />
+      <Association Name="tbl_Recurso_tbl_Compra_Detalle" Member="tbl_Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="tbl_Recurso" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Consecutivos" Member="tbl_Consecutivos">
+    <Type Name="tbl_Consecutivos">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Modulo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Serie" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Posicion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Desde" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Hasta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Consecutivos" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_ModuloDeAplicacion_tbl_Consecutivos" Member="tbl_ModuloDeAplicacion" ThisKey="Id_Modulo" OtherKey="Id" Type="tbl_ModuloDeAplicacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Convencion" Member="tbl_Convencion">
+    <Type Name="tbl_Convencion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Convencion_tbl_FichaTecnica_Convencion" Member="tbl_FichaTecnica_Convencion" ThisKey="Id" OtherKey="Id_Convencion" Type="tbl_FichaTecnica_Convencion" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Convencion" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Costo" Member="tbl_Costo">
+    <Type Name="tbl_Costo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_FichaTecnica_Color" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="FechaDeCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CostoDeRecursos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoDeProcesos" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoDeProduccion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoConValirizacion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioVentaFinal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PrecioPublico" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PrecioDistrbuidor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tbl_Costo_tbl_Costo_ProcesoDeFabricacion" Member="tbl_Costo_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_Costo" Type="tbl_Costo_ProcesoDeFabricacion" />
+      <Association Name="tbl_Costo_tbl_Costo_Recurso" Member="tbl_Costo_Recurso" ThisKey="Id" OtherKey="Id_Costo" Type="tbl_Costo_Recurso" />
+      <Association Name="tbl_Costo_tbl_Costo_Valorizacion" Member="tbl_Costo_Valorizacion" ThisKey="Id" OtherKey="Id_Costo" Type="tbl_Costo_Valorizacion" />
+      <Association Name="tbl_FichaTecnica_Color_tbl_Costo" Member="tbl_FichaTecnica_Color" ThisKey="Id_FichaTecnica_Color" OtherKey="Id" Type="tbl_FichaTecnica_Color" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Costo" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Costo_ProcesoDeFabricacion" Member="tbl_Costo_ProcesoDeFabricacion">
+    <Type Name="tbl_Costo_ProcesoDeFabricacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Costo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Proceso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tbl_Costo_tbl_Costo_ProcesoDeFabricacion" Member="tbl_Costo" ThisKey="Id_Costo" OtherKey="Id" Type="tbl_Costo" IsForeignKey="true" />
+      <Association Name="tbl_ProcesoDeFabricacion_tbl_Costo_ProcesoDeFabricacion" Member="tbl_ProcesoDeFabricacion" ThisKey="Id_Proceso" OtherKey="Id" Type="tbl_ProcesoDeFabricacion" IsForeignKey="true" />
+      <Association Name="tbl_UnidadDeMedida_tbl_Costo_ProcesoDeFabricacion" Member="tbl_UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="tbl_UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Costo_Recurso" Member="tbl_Costo_Recurso">
+    <Type Name="tbl_Costo_Recurso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Costo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consumo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValoUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tbl_Costo_tbl_Costo_Recurso" Member="tbl_Costo" ThisKey="Id_Costo" OtherKey="Id" Type="tbl_Costo" IsForeignKey="true" />
+      <Association Name="tbl_Recurso_tbl_Costo_Recurso" Member="tbl_Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="tbl_Recurso" IsForeignKey="true" />
+      <Association Name="tbl_UnidadDeMedida_tbl_Costo_Recurso" Member="tbl_UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="tbl_UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Costo_Valorizacion" Member="tbl_Costo_Valorizacion">
+    <Type Name="tbl_Costo_Valorizacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Costo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Porcentaje" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Posicion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValorHastaElMomento" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tbl_Costo_tbl_Costo_Valorizacion" Member="tbl_Costo" ThisKey="Id_Costo" OtherKey="Id" Type="tbl_Costo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Credito" Member="tbl_Credito">
+    <Type Name="tbl_Credito">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Cliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fecha_Apertura" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cupo" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Credito_tbl_Credito_Referencia" Member="tbl_Credito_Referencia" ThisKey="Id" OtherKey="Id_Credito" Type="tbl_Credito_Referencia" />
+      <Association Name="tbl_Credito_tbl_Credito_Registro" Member="tbl_Credito_Registro" ThisKey="Id" OtherKey="Id_Credito" Type="tbl_Credito_Registro" />
+      <Association Name="tbl_Cliente_tbl_Credito" Member="tbl_Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="tbl_Cliente" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Credito" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Credito_Referencia" Member="tbl_Credito_Referencia">
+    <Type Name="tbl_Credito_Referencia">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Credito" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Telefono1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Telefono2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Telefono3" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Movil1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Movil2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Empleo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tbl_Credito_tbl_Credito_Referencia" Member="tbl_Credito" ThisKey="Id_Credito" OtherKey="Id" Type="tbl_Credito" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Credito_Registro" Member="tbl_Credito_Registro">
+    <Type Name="tbl_Credito_Registro">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Credito" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Venta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Valor_Real" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Porcentaje" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="Valor_Credito" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Association Name="tbl_Credito_Registro_tbl_Credito_Registro_Cuota" Member="tbl_Credito_Registro_Cuota" ThisKey="Id" OtherKey="Id_Credito_Registro" Type="tbl_Credito_Registro_Cuota" />
+      <Association Name="tbl_Credito_tbl_Credito_Registro" Member="tbl_Credito" ThisKey="Id_Credito" OtherKey="Id" Type="tbl_Credito" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tbl_Venta_tbl_Credito_Registro" Member="tbl_Venta" ThisKey="Id_Venta" OtherKey="Id" Type="tbl_Venta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Credito_Registro_Cuota" Member="tbl_Credito_Registro_Cuota">
+    <Type Name="tbl_Credito_Registro_Cuota">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Credito_Registro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fecha_Pago" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cuota" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstadoDePago" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Association Name="tbl_Credito_Registro_tbl_Credito_Registro_Cuota" Member="tbl_Credito_Registro" ThisKey="Id_Credito_Registro" OtherKey="Id" Type="tbl_Credito_Registro" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Despacho" Member="tbl_Despacho">
+    <Type Name="tbl_Despacho">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Miembro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDeDespacho" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Despacho_tbl_Despacho_Detalle" Member="tbl_Despacho_Detalle" ThisKey="Id" OtherKey="Id_Despacho" Type="tbl_Despacho_Detalle" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Despacho" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Miembro_tbl_Despacho" Member="tbl_Miembro" ThisKey="Id_Miembro" OtherKey="Id" Type="tbl_Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Despacho_Detalle" Member="tbl_Despacho_Detalle">
+    <Type Name="tbl_Despacho_Detalle">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Despacho" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pedido_Detalle" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="tbl_Despacho_tbl_Despacho_Detalle" Member="tbl_Despacho" ThisKey="Id_Despacho" OtherKey="Id" Type="tbl_Despacho" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tbl_Pedido_Detalle_tbl_Despacho_Detalle" Member="tbl_Pedido_Detalle" ThisKey="Id_Pedido_Detalle" OtherKey="Id" Type="tbl_Pedido_Detalle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_EntradaOSalida" Member="tbl_EntradaOSalida">
+    <Type Name="tbl_EntradaOSalida">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega_Desde" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega_Hasta" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Movimiento" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Cantiidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_EntradaOSalida_tbl_Venta_Detalle" Member="tbl_Venta_Detalle" ThisKey="Id" OtherKey="Id_Movimiento" Type="tbl_Venta_Detalle" />
+      <Association Name="tbl_EntradaOSalida_tbl_Compra_Detalle" Member="tbl_Compra_Detalle" ThisKey="Id" OtherKey="Id_Movimiento" Type="tbl_Compra_Detalle" />
+      <Association Name="tbl_Bodega_tbl_EntradaOSalida" Member="tbl_Bodega" ThisKey="Id_Bodega_Desde" OtherKey="Id" Type="tbl_Bodega" IsForeignKey="true" />
+      <Association Name="tbl_Bodega_tbl_EntradaOSalida1" Member="tbl_Bodega1" ThisKey="Id_Bodega_Hasta" OtherKey="Id" Type="tbl_Bodega" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_EntradaOSalida" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Recurso_tbl_EntradaOSalida" Member="tbl_Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="tbl_Recurso" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FichaTecnica" Member="tbl_FichaTecnica">
+    <Type Name="tbl_FichaTecnica">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaActualizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tela" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TelaComplemento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TipoPrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICCoserCerrado" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICCoserPesPunteado" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICTipoRecubridora" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICAgujaNro" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICPiezasFusionadas" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICCuales" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ICPuntadasPorPulgadaCerrado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ICPuntadasPorPulgadaPespunteado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MATexto" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MAUbicacione" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MAAltura" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLPlancha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PLVaporizacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMRecubridora" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMPLana" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMFileteSencillo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMEspeciales" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EMTipoAjuste" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMAncho" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMFileteConseguridad" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ATPies" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ATFolders" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ATPlantillas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ICOCosturasAbiertas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ICOCosturasCerradas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ICOCosturasConPespunte" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Color" Member="tbl_FichaTecnica_Color" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="tbl_FichaTecnica_Color" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Convencion" Member="tbl_FichaTecnica_Convencion" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="tbl_FichaTecnica_Convencion" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Hilo" Member="tbl_FichaTecnica_Hilo" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="tbl_FichaTecnica_Hilo" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Marquilla" Member="tbl_FichaTecnica_Marquilla" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="tbl_FichaTecnica_Marquilla" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_ProcesosDetallados" Member="tbl_FichaTecnica_ProcesosDetallados" ThisKey="Id" OtherKey="Id_Ficha" Type="tbl_FichaTecnica_ProcesosDetallados" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Talla" Member="tbl_FichaTecnica_Talla" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="tbl_FichaTecnica_Talla" />
+      <Association Name="tbl_FichaTecnica_tbl_PasosDeConfeccion" Member="tbl_PasosDeConfeccion" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="tbl_PasosDeConfeccion" />
+      <Association Name="tbl_FichaTecnica_tbl_Recurso" Member="tbl_Recurso" ThisKey="Id" OtherKey="Id_FichaTecnica" Type="tbl_Recurso" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_FichaTecnica" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FichaTecnica_Color" Member="tbl_FichaTecnica_Color">
+    <Type Name="tbl_FichaTecnica_Color">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Color" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="tbl_FichaTecnica_Color_tbl_Costo" Member="tbl_Costo" ThisKey="Id" OtherKey="Id_FichaTecnica_Color" Type="tbl_Costo" />
+      <Association Name="tbl_FichaTecnica_Color_tbl_Pedido_Detalle" Member="tbl_Pedido_Detalle" ThisKey="Id" OtherKey="Id_FichaTecnica_Color" Type="tbl_Pedido_Detalle" />
+      <Association Name="tbl_Color_tbl_FichaTecnica_Color" Member="tbl_Color" ThisKey="Id_Color" OtherKey="Id" Type="tbl_Color" IsForeignKey="true" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Color" Member="tbl_FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FichaTecnica_Convencion" Member="tbl_FichaTecnica_Convencion">
+    <Type Name="tbl_FichaTecnica_Convencion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Convencion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="tbl_Convencion_tbl_FichaTecnica_Convencion" Member="tbl_Convencion" ThisKey="Id_Convencion" OtherKey="Id" Type="tbl_Convencion" IsForeignKey="true" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Convencion" Member="tbl_FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FichaTecnica_Hilo" Member="tbl_FichaTecnica_Hilo">
+    <Type Name="tbl_FichaTecnica_Hilo">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Calibre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Hilo" Member="tbl_FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FichaTecnica_Marquilla" Member="tbl_FichaTecnica_Marquilla">
+    <Type Name="tbl_FichaTecnica_Marquilla">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Altura" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="imgTipo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Marquilla" Member="tbl_FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FichaTecnica_ProcesosDetallados" Member="tbl_FichaTecnica_ProcesosDetallados">
+    <Type Name="tbl_FichaTecnica_ProcesosDetallados">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Ficha" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Proceso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="imgTipo" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_ProcesosDetallados" Member="tbl_FichaTecnica" ThisKey="Id_Ficha" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+      <Association Name="tbl_ProcesoDeFabricacion_tbl_FichaTecnica_ProcesosDetallados" Member="tbl_ProcesoDeFabricacion" ThisKey="Id_Proceso" OtherKey="Id" Type="tbl_ProcesoDeFabricacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_FichaTecnica_Talla" Member="tbl_FichaTecnica_Talla">
+    <Type Name="tbl_FichaTecnica_Talla">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_FichaTecnica_tbl_FichaTecnica_Talla" Member="tbl_FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_GrupoDeMiembros" Member="tbl_GrupoDeMiembros">
+    <Type Name="tbl_GrupoDeMiembros">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Tipo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Bodega" Member="tbl_Bodega" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Bodega" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Bodega1" Member="tbl_Bodega1" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Bodega" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Cliente" Member="tbl_Cliente" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Cliente" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Color" Member="tbl_Color" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Color" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Compra" Member="tbl_Compra" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Compra" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Consecutivos" Member="tbl_Consecutivos" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Consecutivos" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Convencion" Member="tbl_Convencion" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Convencion" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Costo" Member="tbl_Costo" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Costo" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Credito" Member="tbl_Credito" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Credito" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Despacho" Member="tbl_Despacho" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Despacho" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_EntradaOSalida" Member="tbl_EntradaOSalida" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_EntradaOSalida" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_FichaTecnica" Member="tbl_FichaTecnica" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_FichaTecnica" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Inventario" Member="tbl_Inventario" ThisKey="Id" OtherKey="Id_GrupoDeMiemros" Type="tbl_Inventario" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Miembro" Member="tbl_Miembro" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Miembro" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Pedido" Member="tbl_Pedido" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Pedido" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_ProcesoDeFabricacion" Member="tbl_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_ProcesoDeFabricacion" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Proveedor" Member="tbl_Proveedor" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Proveedor" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Recurso" Member="tbl_Recurso" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Recurso" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Venta" Member="tbl_Venta" ThisKey="Id" OtherKey="Id_GrupoDeMiembros" Type="tbl_Venta" />
+      <Association Name="tbl_Ciudad_tbl_GrupoDeMiembros" Member="tbl_Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="tbl_Ciudad" IsForeignKey="true" />
+      <Association Name="tbl_Pais_tbl_GrupoDeMiembros" Member="tbl_Pais" ThisKey="Id_Pais" OtherKey="Id" Type="tbl_Pais" IsForeignKey="true" />
+      <Association Name="tbl_Provincia_tbl_GrupoDeMiembros" Member="tbl_Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="tbl_Provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Inventario" Member="tbl_Inventario">
+    <Type Name="tbl_Inventario">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiemros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Existencia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Minimo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Stock_Maximo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Bodega_tbl_Inventario" Member="tbl_Bodega" ThisKey="Id_Bodega" OtherKey="Id" Type="tbl_Bodega" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Inventario" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiemros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Recurso_tbl_Inventario" Member="tbl_Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="tbl_Recurso" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Miembro" Member="tbl_Miembro">
+    <Type Name="tbl_Miembro">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_TipoDeDocumento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Identificacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaDeNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Contrasena" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Entrada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_Miembro_tbl_Compra" Member="tbl_Compra" ThisKey="Id" OtherKey="Id_Comprador" Type="tbl_Compra" />
+      <Association Name="tbl_Miembro_tbl_Despacho" Member="tbl_Despacho" ThisKey="Id" OtherKey="Id_Miembro" Type="tbl_Despacho" />
+      <Association Name="tbl_Miembro_tbl_Miembro_Permiso" Member="tbl_Miembro_Permiso" ThisKey="Id" OtherKey="Id_Miembro" Type="tbl_Miembro_Permiso" />
+      <Association Name="tbl_Miembro_tbl_Pedido" Member="tbl_Pedido" ThisKey="Id" OtherKey="Id_Miembro" Type="tbl_Pedido" />
+      <Association Name="tbl_Miembro_tbl_Venta" Member="tbl_Venta" ThisKey="Id" OtherKey="Id_Facturador" Type="tbl_Venta" />
+      <Association Name="tbl_Ciudad_tbl_Miembro" Member="tbl_Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="tbl_Ciudad" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Miembro" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Pais_tbl_Miembro" Member="tbl_Pais" ThisKey="Id_Pais" OtherKey="Id" Type="tbl_Pais" IsForeignKey="true" />
+      <Association Name="tbl_Provincia_tbl_Miembro" Member="tbl_Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="tbl_Provincia" IsForeignKey="true" />
+      <Association Name="tbl_TipoDeDocumento_tbl_Miembro" Member="tbl_TipoDeDocumento" ThisKey="Id_TipoDeDocumento" OtherKey="Id" Type="tbl_TipoDeDocumento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Miembro_Permiso" Member="tbl_Miembro_Permiso">
+    <Type Name="tbl_Miembro_Permiso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Miembro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Modulo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consultar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Actualizar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Eliminar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Insertar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Imprimir" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Editar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Miembro_tbl_Miembro_Permiso" Member="tbl_Miembro" ThisKey="Id_Miembro" OtherKey="Id" Type="tbl_Miembro" IsForeignKey="true" />
+      <Association Name="tbl_ModuloDeAplicacion_tbl_Miembro_Permiso" Member="tbl_ModuloDeAplicacion" ThisKey="Id_Modulo" OtherKey="Id" Type="tbl_ModuloDeAplicacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ModuloDeAplicacion" Member="tbl_ModuloDeAplicacion">
+    <Type Name="tbl_ModuloDeAplicacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_ModuloDeAplicacion_tbl_Consecutivos" Member="tbl_Consecutivos" ThisKey="Id" OtherKey="Id_Modulo" Type="tbl_Consecutivos" />
+      <Association Name="tbl_ModuloDeAplicacion_tbl_Miembro_Permiso" Member="tbl_Miembro_Permiso" ThisKey="Id" OtherKey="Id_Modulo" Type="tbl_Miembro_Permiso" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Pais" Member="tbl_Pais">
+    <Type Name="tbl_Pais">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Pais_tbl_Bodega" Member="tbl_Bodega" ThisKey="Id" OtherKey="Id_Pais" Type="tbl_Bodega" />
+      <Association Name="tbl_Pais_tbl_Cliente" Member="tbl_Cliente" ThisKey="Id" OtherKey="Id_Pais" Type="tbl_Cliente" />
+      <Association Name="tbl_Pais_tbl_GrupoDeMiembros" Member="tbl_GrupoDeMiembros" ThisKey="Id" OtherKey="Id_Pais" Type="tbl_GrupoDeMiembros" />
+      <Association Name="tbl_Pais_tbl_Miembro" Member="tbl_Miembro" ThisKey="Id" OtherKey="Id_Pais" Type="tbl_Miembro" />
+      <Association Name="tbl_Pais_tbl_Proveedor" Member="tbl_Proveedor" ThisKey="Id" OtherKey="Id_Pais" Type="tbl_Proveedor" />
+      <Association Name="tbl_Pais_tbl_Provincia" Member="tbl_Provincia" ThisKey="Id" OtherKey="Id_Pais" Type="tbl_Provincia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_PasosDeConfeccion" Member="tbl_PasosDeConfeccion">
+    <Type Name="tbl_PasosDeConfeccion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Recurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Numeracion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_FichaTecnica_tbl_PasosDeConfeccion" Member="tbl_FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+      <Association Name="tbl_Recurso_tbl_PasosDeConfeccion" Member="tbl_Recurso" ThisKey="Id_Recurso" OtherKey="Id" Type="tbl_Recurso" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Pedido" Member="tbl_Pedido">
+    <Type Name="tbl_Pedido">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Cliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Miembro" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaDerealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDePedido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaADespachar" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TipoPrecioVenta" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Association Name="tbl_Pedido_tbl_Pedido_Detalle" Member="tbl_Pedido_Detalle" ThisKey="Id" OtherKey="Id_Pedido" Type="tbl_Pedido_Detalle" />
+      <Association Name="tbl_Cliente_tbl_Pedido" Member="tbl_Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="tbl_Cliente" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Pedido" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Miembro_tbl_Pedido" Member="tbl_Miembro" ThisKey="Id_Miembro" OtherKey="Id" Type="tbl_Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Pedido_Detalle" Member="tbl_Pedido_Detalle">
+    <Type Name="tbl_Pedido_Detalle">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Pedido" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_FichaTecnica_Color" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="tbl_Pedido_Detalle_tbl_Despacho_Detalle" Member="tbl_Despacho_Detalle" ThisKey="Id" OtherKey="Id_Pedido_Detalle" Type="tbl_Despacho_Detalle" />
+      <Association Name="tbl_FichaTecnica_Color_tbl_Pedido_Detalle" Member="tbl_FichaTecnica_Color" ThisKey="Id_FichaTecnica_Color" OtherKey="Id" Type="tbl_FichaTecnica_Color" IsForeignKey="true" />
+      <Association Name="tbl_Pedido_tbl_Pedido_Detalle" Member="tbl_Pedido" ThisKey="Id_Pedido" OtherKey="Id" Type="tbl_Pedido" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ProcesoDeFabricacion" Member="tbl_ProcesoDeFabricacion">
+    <Type Name="tbl_ProcesoDeFabricacion">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_ProcesoDeFabricacion_tbl_Costo_ProcesoDeFabricacion" Member="tbl_Costo_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_Proceso" Type="tbl_Costo_ProcesoDeFabricacion" />
+      <Association Name="tbl_ProcesoDeFabricacion_tbl_FichaTecnica_ProcesosDetallados" Member="tbl_FichaTecnica_ProcesosDetallados" ThisKey="Id" OtherKey="Id_Proceso" Type="tbl_FichaTecnica_ProcesosDetallados" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_ProcesoDeFabricacion" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_UnidadDeMedida_tbl_ProcesoDeFabricacion" Member="tbl_UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="tbl_UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Proveedor" Member="tbl_Proveedor">
+    <Type Name="tbl_Proveedor">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_TiposDeDocumento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Provincia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Ciudad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Identficacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ProveedorPrincipal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_Proveedor_tbl_Compra" Member="tbl_Compra" ThisKey="Id" OtherKey="Id_Proveedor" Type="tbl_Compra" />
+      <Association Name="tbl_Proveedor_tbl_Proveedor_Contacto" Member="tbl_Proveedor_Contacto" ThisKey="Id" OtherKey="Id_Proveedor" Type="tbl_Proveedor_Contacto" />
+      <Association Name="tbl_Ciudad_tbl_Proveedor" Member="tbl_Ciudad" ThisKey="Id_Ciudad" OtherKey="Id" Type="tbl_Ciudad" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Proveedor" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Pais_tbl_Proveedor" Member="tbl_Pais" ThisKey="Id_Pais" OtherKey="Id" Type="tbl_Pais" IsForeignKey="true" />
+      <Association Name="tbl_Provincia_tbl_Proveedor" Member="tbl_Provincia" ThisKey="Id_Provincia" OtherKey="Id" Type="tbl_Provincia" IsForeignKey="true" />
+      <Association Name="tbl_TipoDeDocumento_tbl_Proveedor" Member="tbl_TipoDeDocumento" ThisKey="Id_TiposDeDocumento" OtherKey="Id" Type="tbl_TipoDeDocumento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Proveedor_Contacto" Member="tbl_Proveedor_Contacto">
+    <Type Name="tbl_Proveedor_Contacto">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Proveedor" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Movil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Sede" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="tbl_Proveedor_tbl_Proveedor_Contacto" Member="tbl_Proveedor" ThisKey="Id_Proveedor" OtherKey="Id" Type="tbl_Proveedor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Provincia" Member="tbl_Provincia">
+    <Type Name="tbl_Provincia">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Pais" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Provincia_tbl_Bodega" Member="tbl_Bodega" ThisKey="Id" OtherKey="Id_Provincia" Type="tbl_Bodega" />
+      <Association Name="tbl_Provincia_tbl_Ciudad" Member="tbl_Ciudad" ThisKey="Id" OtherKey="Id_Provincia" Type="tbl_Ciudad" />
+      <Association Name="tbl_Provincia_tbl_Cliente" Member="tbl_Cliente" ThisKey="Id" OtherKey="Id_Provincia" Type="tbl_Cliente" />
+      <Association Name="tbl_Provincia_tbl_GrupoDeMiembros" Member="tbl_GrupoDeMiembros" ThisKey="Id" OtherKey="Id_Provincia" Type="tbl_GrupoDeMiembros" />
+      <Association Name="tbl_Provincia_tbl_Miembro" Member="tbl_Miembro" ThisKey="Id" OtherKey="Id_Provincia" Type="tbl_Miembro" />
+      <Association Name="tbl_Provincia_tbl_Proveedor" Member="tbl_Proveedor" ThisKey="Id" OtherKey="Id_Provincia" Type="tbl_Proveedor" />
+      <Association Name="tbl_Pais_tbl_Provincia" Member="tbl_Pais" ThisKey="Id_Pais" OtherKey="Id" Type="tbl_Pais" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Recurso" Member="tbl_Recurso">
+    <Type Name="tbl_Recurso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_UnidadDeMedida" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Color" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_TipoDeRecurso" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_FichaTecnica" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_Recurso_tbl_Venta_Detalle" Member="tbl_Venta_Detalle" ThisKey="Id" OtherKey="Id_Producto" Type="tbl_Venta_Detalle" />
+      <Association Name="tbl_Recurso_tbl_Compra_Detalle" Member="tbl_Compra_Detalle" ThisKey="Id" OtherKey="Id_Recurso" Type="tbl_Compra_Detalle" />
+      <Association Name="tbl_Recurso_tbl_Costo_Recurso" Member="tbl_Costo_Recurso" ThisKey="Id" OtherKey="Id_Recurso" Type="tbl_Costo_Recurso" />
+      <Association Name="tbl_Recurso_tbl_EntradaOSalida" Member="tbl_EntradaOSalida" ThisKey="Id" OtherKey="Id_Recurso" Type="tbl_EntradaOSalida" />
+      <Association Name="tbl_Recurso_tbl_Inventario" Member="tbl_Inventario" ThisKey="Id" OtherKey="Id_Recurso" Type="tbl_Inventario" />
+      <Association Name="tbl_Recurso_tbl_PasosDeConfeccion" Member="tbl_PasosDeConfeccion" ThisKey="Id" OtherKey="Id_Recurso" Type="tbl_PasosDeConfeccion" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Recurso" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Color_tbl_Recurso" Member="tbl_Color" ThisKey="Id_Color" OtherKey="Id" Type="tbl_Color" IsForeignKey="true" />
+      <Association Name="tbl_FichaTecnica_tbl_Recurso" Member="tbl_FichaTecnica" ThisKey="Id_FichaTecnica" OtherKey="Id" Type="tbl_FichaTecnica" IsForeignKey="true" />
+      <Association Name="tbl_TipoDeRecurso_tbl_Recurso" Member="tbl_TipoDeRecurso" ThisKey="Id_TipoDeRecurso" OtherKey="Id" Type="tbl_TipoDeRecurso" IsForeignKey="true" />
+      <Association Name="tbl_UnidadDeMedida_tbl_Recurso" Member="tbl_UnidadDeMedida" ThisKey="Id_UnidadDeMedida" OtherKey="Id" Type="tbl_UnidadDeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_TipoDeDocumento" Member="tbl_TipoDeDocumento">
+    <Type Name="tbl_TipoDeDocumento">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_TipoDeDocumento_tbl_Cliente" Member="tbl_Cliente" ThisKey="Id" OtherKey="Id_TipoDeDocumento" Type="tbl_Cliente" />
+      <Association Name="tbl_TipoDeDocumento_tbl_Miembro" Member="tbl_Miembro" ThisKey="Id" OtherKey="Id_TipoDeDocumento" Type="tbl_Miembro" />
+      <Association Name="tbl_TipoDeDocumento_tbl_Proveedor" Member="tbl_Proveedor" ThisKey="Id" OtherKey="Id_TiposDeDocumento" Type="tbl_Proveedor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_TipoDeRecurso" Member="tbl_TipoDeRecurso">
+    <Type Name="tbl_TipoDeRecurso">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_TipoDeRecurso_tbl_Recurso" Member="tbl_Recurso" ThisKey="Id" OtherKey="Id_TipoDeRecurso" Type="tbl_Recurso" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_UnidadDeMedida" Member="tbl_UnidadDeMedida">
+    <Type Name="tbl_UnidadDeMedida">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Base" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Posicionamiento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_UnidadDeMedida_tbl_Costo_ProcesoDeFabricacion" Member="tbl_Costo_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="tbl_Costo_ProcesoDeFabricacion" />
+      <Association Name="tbl_UnidadDeMedida_tbl_Costo_Recurso" Member="tbl_Costo_Recurso" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="tbl_Costo_Recurso" />
+      <Association Name="tbl_UnidadDeMedida_tbl_ProcesoDeFabricacion" Member="tbl_ProcesoDeFabricacion" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="tbl_ProcesoDeFabricacion" />
+      <Association Name="tbl_UnidadDeMedida_tbl_Recurso" Member="tbl_Recurso" ThisKey="Id" OtherKey="Id_UnidadDeMedida" Type="tbl_Recurso" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Venta" Member="tbl_Venta">
+    <Type Name="tbl_Venta">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Facturador" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Cliente" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id_Bodega" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Consecutivo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FechaDeRealizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalEnLetras" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TipoPrecioVenta" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Association Name="tbl_Venta_tbl_Venta_Detalle" Member="tbl_Venta_Detalle" ThisKey="Id" OtherKey="Id_Venta" Type="tbl_Venta_Detalle" />
+      <Association Name="tbl_Venta_tbl_Credito_Registro" Member="tbl_Credito_Registro" ThisKey="Id" OtherKey="Id_Venta" Type="tbl_Credito_Registro" />
+      <Association Name="tbl_Bodega_tbl_Venta" Member="tbl_Bodega" ThisKey="Id_Bodega" OtherKey="Id" Type="tbl_Bodega" IsForeignKey="true" />
+      <Association Name="tbl_Cliente_tbl_Venta" Member="tbl_Cliente" ThisKey="Id_Cliente" OtherKey="Id" Type="tbl_Cliente" IsForeignKey="true" />
+      <Association Name="tbl_GrupoDeMiembros_tbl_Venta" Member="tbl_GrupoDeMiembros" ThisKey="Id_GrupoDeMiembros" OtherKey="Id" Type="tbl_GrupoDeMiembros" IsForeignKey="true" />
+      <Association Name="tbl_Miembro_tbl_Venta" Member="tbl_Miembro" ThisKey="Id_Facturador" OtherKey="Id" Type="tbl_Miembro" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

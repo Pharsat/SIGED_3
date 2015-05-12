@@ -1,0 +1,237 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Ppal.master.cs" Inherits="SIGED_3.CRM.Web.MasterPage.Ppal" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript" src='<%# ResolveUrl("~/scripts/jquery-1.10.2.min.js")%>'></script>
+    <script type="text/javascript" src='<%# ResolveUrl("~/scripts/ScriptsGenerales.js")%>'></script>
+    <script type="text/javascript">
+        $(document).ready(function () { establecerSesionInfinita(); });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" defaultbutton="ctl00$ContentPlaceHolder1$btnBuscar">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+        </telerik:RadScriptManager>
+        <div id="Menu" class="MenuCerrado">
+            <table class="CentrarElemento">
+                <tr>
+                    <td>
+                        <telerik:RadMenu ID="RadMenu1" runat="server" Flow="Vertical">
+                        </telerik:RadMenu>
+                    </td>
+                    <td class="NombresModulo">Información
+                    </td>
+                    <td class="NombresModulo" rowspan="6">
+                        <asp:ImageButton ID="btnCerrarMenu" runat="server" ImageUrl="~/Recursos/Diseno/Imagenes/Ocultar.png" OnClientClick="javascript:CierraMenu();return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <telerik:RadMenu ID="RadMenu2" runat="server" Flow="Vertical" Style="top: 0px; left: 0px">
+                        </telerik:RadMenu>
+                    </td>
+                    <td class="NombresModulo">Diseño
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <telerik:RadMenu ID="RadMenu3" runat="server" Flow="Vertical">
+                        </telerik:RadMenu>
+                    </td>
+                    <td class="NombresModulo">Compras
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <telerik:RadMenu ID="RadMenu4" runat="server" Flow="Vertical" Style="top: 0px; left: 0px">
+                        </telerik:RadMenu>
+                    </td>
+                    <td class="NombresModulo">Ventas
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <telerik:RadMenu ID="RadMenu5" runat="server" Flow="Vertical">
+                        </telerik:RadMenu>
+                    </td>
+                    <td class="NombresModulo">Gerencia
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:ImageButton ID="btnSalir" runat="server" ImageUrl="~/Recursos/Diseno/Imagenes/CabSalir_e.png"
+                            OnClick="btnSalir_Click" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div id="NoMenu" class="NoMenuAbierto">
+            <asp:ImageButton ID="btnAbrirMenu" runat="server" ImageUrl="~/Recursos/Diseno/Imagenes/Ver.png" OnClientClick="javascript:AbreMenu();return false;" />
+        </div>
+        <div class="InfoUsuario">
+            <asp:UpdatePanel ID="upUsuario" runat="server">
+                <ContentTemplate>
+                    <table class="CentrarElemento">
+                        <tr>
+                            <td>
+                                <table class="CentrarElemento">
+                                    <tr>
+                                        <td style="vertical-align: middle;">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Label ID="Label1" runat="server" Text="Miembro:"></asp:Label>
+                                                        <asp:Label ID="lblNombreMiembro" runat="server" ForeColor="Black"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Label ID="lblPerfil" runat="server"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="btnCambioContrasena" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/CambiarContrasena.png"
+                                                OnClick="btnCambioContrasena_Click" Style="padding-left: 20px;" />
+                                            <asp:ImageButton ID="btnCambioImagen" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Usuario.png"
+                                                OnClick="btnCambioImagen_Click" Style="padding-left: 20px;" />
+                                            <asp:HyperLink ID="goToHome" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Home.png" Style="padding-left: 20px;" NavigateUrl="~/Modulos/Inicio.aspx"></asp:HyperLink></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Panel ID="pnlCambioContrasena" runat="server" Visible="False">
+                                    <table class="CentrarElemento">
+                                        <tr>
+                                            <td style="text-align: right;">
+                                                <asp:Label ID="Label2" runat="server" Text="Contraseña anterior"></asp:Label>
+                                            </td>
+                                            <td style="text-align: left;">
+                                                <telerik:RadTextBox ID="txtPass" runat="server" MaxLength="20" TextMode="Password"
+                                                    ValidationGroup="CambContrasena">
+                                                </telerik:RadTextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server"
+                                                    ControlToValidate="txtPass" Display="Dynamic"
+                                                    ValidationGroup="CambContrasena"></asp:RequiredFieldValidator>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;">
+                                                <asp:Label ID="Label3" runat="server" Text="Nueva contraseña"></asp:Label>
+                                            </td>
+                                            <td style="text-align: left;">
+                                                <telerik:RadTextBox ID="txtPassNueva" runat="server" MaxLength="20" TextMode="Password"
+                                                    ValidationGroup="CambContrasena">
+                                                </telerik:RadTextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server"
+                                                    ControlToValidate="txtPassNueva" Display="Dynamic"
+                                                    ValidationGroup="CambContrasena"></asp:RequiredFieldValidator>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;">
+                                                <asp:Label ID="Label4" runat="server" Text="Confirmar contraseña"></asp:Label>
+                                            </td>
+                                            <td style="text-align: left;">
+                                                <telerik:RadTextBox ID="txtPassNuevaComparar" runat="server" MaxLength="20" TextMode="Password"
+                                                    ValidationGroup="CambContrasena">
+                                                </telerik:RadTextBox>
+                                                <asp:CompareValidator ID="CompareValidator1" runat="server"
+                                                    ControlToCompare="txtPassNueva" ControlToValidate="txtPassNuevaComparar"
+                                                    Display="Dynamic" ErrorMessage="* Contraseñas no coinciden."
+                                                    ValidationGroup="CambContrasena"></asp:CompareValidator>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center;">
+                                                <asp:ImageButton ID="btnEjecutarCambio" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ok.png"
+                                                    ValidationGroup="CambContrasena" OnClick="btnEjecutarCambio_Click" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </asp:Panel>
+                                <asp:Panel ID="pnlActualizacionImagenPerfil" runat="server" Visible="False">
+                                    <table class="CentrarElemento">
+                                        <tr>
+                                            <td style="text-align: right;">
+                                                <asp:Label ID="Label5" runat="server" Text="Imagen actual"></asp:Label>
+                                            </td>
+                                            <td style="text-align: left;">
+                                                <telerik:RadBinaryImage ID="rbiPerfil" runat="server" Height="100px" ResizeMode="Fit"
+                                                    Width="100px" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;">
+                                                <asp:Label ID="Label6" runat="server" Text="Subir imagen"></asp:Label>
+                                            </td>
+                                            <td style="text-align: left;">
+                                                <telerik:RadAsyncUpload ID="rauImagenPerfil" MultipleFileSelection="Disabled" runat="server"
+                                                    AllowedFileExtensions="jpg,jpeg,gif" Width="220px" MaxFileInputsCount="1" MaxFileSize="524288">
+                                                </telerik:RadAsyncUpload>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;"></td>
+                                            <td style="text-align: left;">
+                                                <asp:Label ID="Label9" runat="server">Extensiones permitidas: jpg, jpeg, gif. Tamaño máximo: 500Kb.</asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center;">
+                                                <asp:ImageButton ID="btnActualizarImagen" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ok.png"
+                                                    ValidationGroup="CambImagen" OnClick="btnActualizarImagen_Click" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="MarcoPPal" style="background-image: url('<%=ResolveUrl("~/Recursos/Diseno/Imagenes/FIGURINES COSTADO DER.png")%>'); background-position: right bottom; background-repeat: no-repeat;">
+            <div class="Logo">
+                <div style="width: 220px; height: 100%; vertical-align: top; float: left;">
+                    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Recursos/Diseno/Imagenes/LOGOTIPO SIGED.jpg"
+                        Height="70px" Width="220px" />
+                </div>
+                <div style="width: 220px; height: 100%; vertical-align: top; float: left;">
+                    <telerik:RadBinaryImage ID="rbiImagenGrupo" runat="server" Height="200px" Width="400px"
+                        ResizeMode="Fit" />
+                </div>
+            </div>
+            <div class="Contenido">
+                <div class="Formulario_2">
+                    <asp:UpdatePanel ID="upPrincipal" runat="server">
+                        <ContentTemplate>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+            <div id="PieDePagina">
+            </div>
+        </div>
+        <asp:UpdateProgress ID="upProgresoPrincipal" runat="server" DisplayAfter="0">
+            <ProgressTemplate>
+                <div class="overlay" />
+                <div class="overlayContent">
+                    Cargando...
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </form>
+</body>
+</html>

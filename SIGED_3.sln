@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGED_3.CRM.Web", "SIGED_3.CRM.Web\SIGED_3.CRM.Web.csproj", "{30CE09F0-525F-4DB7-B7DC-487C57AED04E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGED_3.CRM.Model", "SIGED_3.CRM.Model\SIGED_3.CRM.Model.csproj", "{EF674B61-BDD4-4A45-9794-D2216C909A61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGED_3.CRM.Migration", "SIGED_3.CRM.Migration\SIGED_3.CRM.Migration.csproj", "{E8F63A8C-C5E6-4D8D-B5F4-387087E8ACC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIGED_3.CRM.Manager", "SIGED_3.CRM.Manager\SIGED_3.CRM.Manager.csproj", "{B42251A6-E205-413A-A555-80BA0ABC4E2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30CE09F0-525F-4DB7-B7DC-487C57AED04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CE09F0-525F-4DB7-B7DC-487C57AED04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CE09F0-525F-4DB7-B7DC-487C57AED04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CE09F0-525F-4DB7-B7DC-487C57AED04E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF674B61-BDD4-4A45-9794-D2216C909A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF674B61-BDD4-4A45-9794-D2216C909A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF674B61-BDD4-4A45-9794-D2216C909A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF674B61-BDD4-4A45-9794-D2216C909A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F63A8C-C5E6-4D8D-B5F4-387087E8ACC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F63A8C-C5E6-4D8D-B5F4-387087E8ACC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F63A8C-C5E6-4D8D-B5F4-387087E8ACC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F63A8C-C5E6-4D8D-B5F4-387087E8ACC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B42251A6-E205-413A-A555-80BA0ABC4E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42251A6-E205-413A-A555-80BA0ABC4E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42251A6-E205-413A-A555-80BA0ABC4E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42251A6-E205-413A-A555-80BA0ABC4E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
