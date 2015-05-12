@@ -27,7 +27,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
         {
             using (ModeloDataContext dc = new ModeloDataContext())
             {
-                if (dc.Cliente_Contacto.Any(p => p.Id == Id))
+                if (dc.Costo_Recurso.Any(p => p.Id == Id))
                 {
                     return dc.Costo_Recurso.Single(p => p.Id == Id);
                 }

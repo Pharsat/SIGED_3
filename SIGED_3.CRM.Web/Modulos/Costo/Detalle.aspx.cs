@@ -49,7 +49,7 @@ namespace SIGED_3.CRM.Web.Modulos.Costo
         {
             e.Values["Id"] = 0;
             e.Values["Id_GrupoDeMiembros"] = SessionManager.Id_GrupoDeMiembros;
-            decimal? Valor = null;
+            decimal? Valor = 0m;
             e.Values["CostoDeRecursos"] = Valor;
             e.Values["CostoDeProcesos"] = Valor;
             e.Values["CostoDeProduccion"] = Valor;
@@ -126,6 +126,11 @@ namespace SIGED_3.CRM.Web.Modulos.Costo
             }
             ((GridView)frmPpal.FindControl("gvCosto_Recursos")).DataBind();
             ((FormView)frmPpal.FindControl("frmCosto_Recurso")).ChangeMode(FormViewMode.Insert);
+
+            ObjectDataSource1.SelectParameters["Id"].DefaultValue = this.Id.ToString();
+            frmPpal.DataBind();
+            ((RadTabStrip)frmPpal.FindControl("RadTabStrip1")).SelectedIndex = 2;
+            ((RadMultiPage)frmPpal.FindControl("rmpEditar")).SelectedIndex = 1;
         }
         protected void frmCosto_Proceso_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
@@ -174,6 +179,11 @@ namespace SIGED_3.CRM.Web.Modulos.Costo
             }
             ((GridView)frmPpal.FindControl("gvCosto_Procesos")).DataBind();
             ((FormView)frmPpal.FindControl("frmCosto_Proceso")).ChangeMode(FormViewMode.Insert);
+
+            ObjectDataSource1.SelectParameters["Id"].DefaultValue = this.Id.ToString();
+            frmPpal.DataBind();
+            ((RadTabStrip)frmPpal.FindControl("RadTabStrip1")).SelectedIndex = 1;
+            ((RadMultiPage)frmPpal.FindControl("rmpEditar")).SelectedIndex = 2;
         }
         protected void frmCosto_Margen_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
@@ -221,6 +231,11 @@ namespace SIGED_3.CRM.Web.Modulos.Costo
             }
             ((GridView)frmPpal.FindControl("gvCosto_Margenes")).DataBind();
             ((FormView)frmPpal.FindControl("frmCosto_Margen")).ChangeMode(FormViewMode.Insert);
+
+            ObjectDataSource1.SelectParameters["Id"].DefaultValue = this.Id.ToString();
+            frmPpal.DataBind();
+            ((RadTabStrip)frmPpal.FindControl("RadTabStrip1")).SelectedIndex = 3;
+            ((RadMultiPage)frmPpal.FindControl("rmpEditar")).SelectedIndex = 3;
         }
         protected void ObjectDataSource1_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
         {

@@ -74,8 +74,21 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=Id>Identificativo del(a) Bodega</param>
         public void Eliminar(Costo_Valorizacion objCosto_Valorizacion)
         {
-            Costo_ValorizacionOAD _objCosto_Valorizacion = new Costo_ValorizacionOAD();
-            _objCosto_Valorizacion.Eliminar(objCosto_Valorizacion);
+            try
+            {
+                using (TransactionScope objTransaccion = new TransactionScope())
+                {
+                    objCosto_Valorizacion = this.Seleccionar_Id(objCosto_Valorizacion.Id);
+                    Costo_ValorizacionOAD _objCosto_Valorizacion = new Costo_ValorizacionOAD();
+                    _objCosto_Valorizacion.Eliminar(objCosto_Valorizacion);
+                    new CostoLN().Renovar_Valores(objCosto_Valorizacion.Id_Costo.Value);
+                    objTransaccion.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         /// <summary>
         /// Actualiza una Bodega, se basa en el identificador para actualizar el objeto.
