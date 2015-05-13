@@ -160,5 +160,12 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 return dc.R_Costos_Valorizacion(id_GrupoDeMiembros, id_Recurso).ToList();
             }
         }
+        public List<R_UtilidadesResult> Informe_Utilidades(long? id_GrupoDeMiembros, DateTime? desde, DateTime? hasta)
+        {
+            using (ModeloDataContext dc = new ModeloDataContext())
+            {
+                return dc.R_Utilidades(id_GrupoDeMiembros, desde, hasta).ToList();
+            }
+        }
     }
 }

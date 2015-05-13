@@ -16,6 +16,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes
             btnCostos.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infCostos.aspx") + "');return false;";
             btnInventario.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infInventario.aspx") + "');return false;";
             btnVentas.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infVentas.aspx") + "');return false;";
+            btnUtilidad.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infUtilidades.aspx") + "');return false;";
         }
     }
 }

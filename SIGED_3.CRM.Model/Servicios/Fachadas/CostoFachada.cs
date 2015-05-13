@@ -114,5 +114,10 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
             CostoLN _objCosto = new CostoLN();
             _objCosto.MultiplicarCostos(Id_Costo);
         }
+        public List<R_UtilidadesResult> Informe_Utilidades(long? id_GrupoDeMiembros, DateTime? desde, DateTime? hasta)
+        {
+            CostoLN _objCosto = new CostoLN();
+            return _objCosto.Informe_Utilidades(id_GrupoDeMiembros, desde, hasta);
+        }
     }
 }

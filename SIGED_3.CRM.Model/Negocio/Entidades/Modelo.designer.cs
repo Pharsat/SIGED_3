@@ -1006,6 +1006,13 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado, id_GrupoDeMiembros, nombre100, id_Bodega, codigo);
 			return ((ISingleResult<LP_InventarioResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.R_Utilidades")]
+		public ISingleResult<R_UtilidadesResult> R_Utilidades([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_GrupoDeMiembros", DbType="BigInt")] System.Nullable<long> id_GrupoDeMiembros, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Desde", DbType="DateTime")] System.Nullable<System.DateTime> desde, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Hasta", DbType="DateTime")] System.Nullable<System.DateTime> hasta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_GrupoDeMiembros, desde, hasta);
+			return ((ISingleResult<R_UtilidadesResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bodega")]
@@ -10892,7 +10899,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -23867,7 +23874,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -26301,7 +26308,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -26513,7 +26520,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -26673,7 +26680,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -27139,6 +27146,158 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 				if ((this._Estado != value))
 				{
 					this._Estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class R_UtilidadesResult
+	{
+		
+		private long _Id;
+		
+		private string _Color;
+		
+		private string _Nombre;
+		
+		private string _Talla;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private System.Nullable<decimal> _ValorUnitario;
+		
+		private decimal _CostoUnitario;
+		
+		private System.Nullable<decimal> _Utilidad;
+		
+		public R_UtilidadesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="BigInt NOT NULL")]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Color", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Color
+		{
+			get
+			{
+				return this._Color;
+			}
+			set
+			{
+				if ((this._Color != value))
+				{
+					this._Color = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(151)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Talla", DbType="VarChar(50)")]
+		public string Talla
+		{
+			get
+			{
+				return this._Talla;
+			}
+			set
+			{
+				if ((this._Talla != value))
+				{
+					this._Talla = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorUnitario", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> ValorUnitario
+		{
+			get
+			{
+				return this._ValorUnitario;
+			}
+			set
+			{
+				if ((this._ValorUnitario != value))
+				{
+					this._ValorUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoUnitario", DbType="Decimal(18,2) NOT NULL")]
+		public decimal CostoUnitario
+		{
+			get
+			{
+				return this._CostoUnitario;
+			}
+			set
+			{
+				if ((this._CostoUnitario != value))
+				{
+					this._CostoUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Utilidad", DbType="Decimal(38,4)")]
+		public System.Nullable<decimal> Utilidad
+		{
+			get
+			{
+				return this._Utilidad;
+			}
+			set
+			{
+				if ((this._Utilidad != value))
+				{
+					this._Utilidad = value;
 				}
 			}
 		}

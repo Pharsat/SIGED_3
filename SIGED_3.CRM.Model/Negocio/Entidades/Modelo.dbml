@@ -1550,4 +1550,19 @@
       <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.R_Utilidades" Method="R_Utilidades">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="R_UtilidadesResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(151)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CostoUnitario" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Utilidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

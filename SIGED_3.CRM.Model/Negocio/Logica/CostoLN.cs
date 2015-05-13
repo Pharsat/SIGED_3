@@ -241,5 +241,10 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 }
             }
         }
+        public List<R_UtilidadesResult> Informe_Utilidades(long? id_GrupoDeMiembros, DateTime? desde, DateTime? hasta)
+        {
+            CostoOAD _objCosto = new CostoOAD();
+            return _objCosto.Informe_Utilidades(id_GrupoDeMiembros, desde, hasta);
+        }
     }
 }

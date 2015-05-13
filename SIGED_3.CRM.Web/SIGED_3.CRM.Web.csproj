@@ -98,6 +98,7 @@
     <Content Include="Modulos\GrupoDeMiembros\Lista.aspx" />
     <Content Include="Http404ErrorPage.aspx" />
     <Content Include="Modulos\Informes\impFichaTecnica.aspx" />
+    <Content Include="Modulos\Informes\infUtilidades.aspx" />
     <Content Include="Modulos\Informes\infCompras.aspx" />
     <Content Include="Modulos\Informes\infCostos.aspx" />
     <Content Include="Modulos\Informes\infInventario.aspx" />
@@ -372,6 +373,13 @@
     </Compile>
     <Compile Include="Modulos\Informes\impFichaTecnica.aspx.designer.cs">
       <DependentUpon>impFichaTecnica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infUtilidades.aspx.cs">
+      <DependentUpon>infUtilidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infUtilidades.aspx.designer.cs">
+      <DependentUpon>infUtilidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Informes\infCompras.aspx.cs">
       <DependentUpon>infCompras.aspx</DependentUpon>
@@ -705,6 +713,7 @@
     <EmbeddedResource Include="Modulos\Informes\infPlanDeCompras.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Informes\infUtilidades.rdlc" />
     <EmbeddedResource Include="Modulos\Informes\infVentas.rdlc" />
   </ItemGroup>
   <ItemGroup>
