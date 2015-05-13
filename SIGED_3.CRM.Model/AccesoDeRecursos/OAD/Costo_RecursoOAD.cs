@@ -49,6 +49,15 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 return dc.LS_Costo_Recursos(id_Costo).ToList();
             }
         }
+
+        public List<Costo_Recurso> Seleccionar_By_Id_Complete(long? id_Costo)
+        {
+            using (ModeloDataContext dc = new ModeloDataContext())
+            {
+                return dc.Costo_Recurso.Where(p => p.Id_Costo == id_Costo).ToList();
+            }
+        }
+
         /// <summary>
         /// Guarda un objeto de tipo Bodega en la base de datos.
         /// </summary>

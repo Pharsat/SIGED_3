@@ -5,6 +5,7 @@ using System.Text;
 using SIGED_3.CRM.Model.Negocio.Entidades;
 using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
 using System.Transactions;
+using SIGED_3.CRM.Model.Util.Session;
 namespace SIGED_3.CRM.Model.Negocio.Logica
 {
     internal class CostoLN
@@ -165,6 +166,80 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         {
             CostoOAD _objCosto = new CostoOAD();
             return _objCosto.InformeCostos_Valorizacion(id_GrupoDeMiembros, id_Recurso);
+        }
+
+        public void MultiplicarCostos(long? Id_Costo)
+        {
+            if (Id_Costo.HasValue)
+            {
+                try
+                {
+                    using (TransactionScope objTransaccion = new TransactionScope())
+                    {
+                        var objCosto = this.Seleccionar_Id(Id_Costo.Value);
+                        var objCostoProcesos = new Costo_ProcesoDeFabricacionLN().Seleccionar_By_Id_Complete(Id_Costo);
+                        var objCostoMateriales = new Costo_RecursoLN().Seleccionar_By_Id_Complete(Id_Costo);
+                        var objCostoPorcentajes = new Costo_ValorizacionLN().Seleccionar_By_Id_Complete(Id_Costo);
+                        var objRecursoDeCosto = new RecursoLN().Seleccionar_Id(objCosto.Id_Recurso.Value);
+                        var RecursosAMultiplicar = new RecursoLN().Seleccionar_RecursosQueNoEstanEnCostos().Where(p => p.Id_FichaTecnica == objRecursoDeCosto.Id_FichaTecnica && p.Id != objCosto.Id_Recurso);
+
+                        foreach (Recurso objRecurso in RecursosAMultiplicar)
+                        {
+                            var newCosto = new Costo();
+                            newCosto.Id_GrupoDeMiembros = objCosto.Id_GrupoDeMiembros;
+                            newCosto.Id_Recurso = objRecurso.Id;
+                            newCosto.FechaDeCreacion = objCosto.FechaDeCreacion;
+                            newCosto.CostoDeRecursos = objCosto.CostoDeRecursos;
+                            newCosto.CostoDeProcesos = objCosto.CostoDeProcesos;
+                            newCosto.CostoDeProduccion = objCosto.CostoDeProduccion;
+                            newCosto.CostoConValirizacion = objCosto.CostoConValirizacion;
+                            newCosto.PrecioVentaFinal = objCosto.PrecioVentaFinal;
+                            newCosto.PrecioPublico = objCosto.PrecioPublico;
+                            newCosto.PrecioDistrbuidor = objCosto.PrecioDistrbuidor;
+
+                            long id_costo = this.Guardar_2(newCosto);
+
+                            foreach (Costo_Recurso objCostoRecurso in objCostoMateriales)
+                            {
+                                var newCostoRecurso = new Costo_Recurso();
+                                newCostoRecurso.Id_Costo = id_costo;
+                                newCostoRecurso.Id_Recurso = objCostoRecurso.Id_Recurso;
+                                newCostoRecurso.Id_UnidadDeMedida = objCostoRecurso.Id_UnidadDeMedida;
+                                newCostoRecurso.Consumo = objCostoRecurso.Consumo;
+                                newCostoRecurso.ValoUnitario = objCostoRecurso.ValoUnitario;
+                                new Costo_RecursoLN().Guardar(newCostoRecurso);
+                            }
+
+                            foreach (Costo_Valorizacion objCostoPorcentaje in objCostoPorcentajes)
+                            {
+                                var newCostoConPorcentaje = new Costo_Valorizacion();
+                                newCostoConPorcentaje.Id_Costo = id_costo;
+                                newCostoConPorcentaje.Descripcion = objCostoPorcentaje.Descripcion;
+                                newCostoConPorcentaje.Porcentaje = objCostoPorcentaje.Porcentaje;
+                                newCostoConPorcentaje.Posicion = objCostoPorcentaje.Posicion;
+                                newCostoConPorcentaje.ValorHastaElMomento = objCostoPorcentaje.ValorHastaElMomento;
+                                new Costo_ValorizacionLN().Guardar(newCostoConPorcentaje);
+                            }
+
+                            foreach (Costo_ProcesoDeFabricacion objCostoRecurso in objCostoProcesos)
+                            {
+                                var newCostoProceso = new Costo_ProcesoDeFabricacion();
+                                newCostoProceso.Id_Costo = id_costo;
+                                newCostoProceso.Id_Proceso = objCostoRecurso.Id_Proceso;
+                                newCostoProceso.Id_UnidadDeMedida = objCostoRecurso.Id_UnidadDeMedida;
+                                newCostoProceso.Cantidad = objCostoRecurso.Cantidad;
+                                newCostoProceso.Valor = objCostoRecurso.Valor;
+                                new Costo_ProcesoDeFabricacionLN().Guardar(newCostoProceso);
+                            }
+                        }
+                        objTransaccion.Complete();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
         }
     }
 }

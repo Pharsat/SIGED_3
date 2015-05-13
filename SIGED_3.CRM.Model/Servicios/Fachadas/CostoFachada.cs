@@ -108,5 +108,11 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
             CostoLN _objCosto = new CostoLN();
             return _objCosto.InformeCostos_Valorizacion(id_GrupoDeMiembros, id_Recurso);
         }
+
+        public void MultiplicarCostos(long? Id_Costo)
+        {
+            CostoLN _objCosto = new CostoLN();
+            _objCosto.MultiplicarCostos(Id_Costo);
+        }
     }
 }

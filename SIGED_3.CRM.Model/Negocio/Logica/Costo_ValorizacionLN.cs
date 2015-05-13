@@ -38,6 +38,13 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             Costo_ValorizacionOAD objCosto_Valorizacion = new Costo_ValorizacionOAD();
             return objCosto_Valorizacion.Seleccionar_By_Id(id_Costo);
         }
+
+        public List<Costo_Valorizacion> Seleccionar_By_Id_Complete(long? id_Costo)
+        {
+            Costo_ValorizacionOAD objCosto_Recurso = new Costo_ValorizacionOAD();
+            return objCosto_Recurso.Seleccionar_By_Id_Complete(id_Costo);
+        }
+
         /// <summary>
         /// Guarda un objeto de tipo Bodega en la base de datos.
         /// </summary>

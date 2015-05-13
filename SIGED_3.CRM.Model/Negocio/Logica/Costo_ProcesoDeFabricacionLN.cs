@@ -39,6 +39,13 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             Costo_ProcesoDeFabricacionOAD objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
             return objCosto_ProcesoDeFabricacion.Seleccionar_By_Id(id_Costo);
         }
+
+        public List<Costo_ProcesoDeFabricacion> Seleccionar_By_Id_Complete(long? id_Costo)
+        {
+            Costo_ProcesoDeFabricacionOAD objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+            return objCosto_ProcesoDeFabricacion.Seleccionar_By_Id_Complete(id_Costo);
+        }
+
         /// <summary>
         /// Guarda un objeto de tipo Bodega en la base de datos.
         /// </summary>

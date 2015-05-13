@@ -132,5 +132,11 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             RecursoOAD _objRecurso = new RecursoOAD();
             return _objRecurso.Seleccionar_Maquinaria(SessionManager.Id_GrupoDeMiembros);
         }
+
+        public List<Recurso> Seleccionar_RecursosQueNoEstanEnCostos()
+        {
+            RecursoOAD _objRecurso = new RecursoOAD();
+            return _objRecurso.Seleccionar_RecursosQueNoEstanEnCostos(SessionManager.Id_GrupoDeMiembros);
+        }
     }
 }

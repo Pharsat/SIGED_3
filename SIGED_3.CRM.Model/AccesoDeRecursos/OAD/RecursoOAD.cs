@@ -173,6 +173,16 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 return lstRecursosEnCostos;
             }
         }
+
+        public List<Recurso> Seleccionar_RecursosQueNoEstanEnCostos(long? Id_GrupoDeMiembros)
+        {
+            using (ModeloDataContext dc = new ModeloDataContext())
+            {
+                List<long> IdsDeRecursosYCostos = dc.Costo.Where(c => c.Id_GrupoDeMiembros == Id_GrupoDeMiembros).Select(r => r.Id).ToList();
+                List<Recurso> lstRecursosNoEnCostos = dc.Recurso.Where(r => !IdsDeRecursosYCostos.Contains(r.Id) && r.Id_GrupoDeMiembros == Id_GrupoDeMiembros).ToList();
+                return lstRecursosNoEnCostos;
+            }
+        }
         public List<LC_Recursos_MaquinariaResult> Seleccionar_Maquinaria(long? Id_GrupoDeMiembros)
         {
             using (ModeloDataContext dc = new ModeloDataContext())

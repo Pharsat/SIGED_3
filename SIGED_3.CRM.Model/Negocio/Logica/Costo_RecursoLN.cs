@@ -29,6 +29,13 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             Costo_RecursoOAD objCosto_Recurso = new Costo_RecursoOAD();
             return objCosto_Recurso.Seleccionar_Id(Id);
         }
+
+        public List<Costo_Recurso> Seleccionar_By_Id_Complete(long? id_Costo)
+        {
+            Costo_RecursoOAD objCosto_Recurso = new Costo_RecursoOAD();
+            return objCosto_Recurso.Seleccionar_By_Id_Complete(id_Costo);
+        }
+
         /// <summary>
         /// Trae la lista de recursos en la lista de costos
         /// </summary>

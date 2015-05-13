@@ -94,6 +94,11 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="false" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:ImageButton ID="imgMultiplicar" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Multiplicar.png" CommandArgument='<%# Bind("Id") %>' OnClick="imgMultiplicar_Click" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                         <asp:BoundField DataField="Codigo" HeaderText="Código" SortExpression="Codigo" />
                                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                                         <asp:BoundField DataField="TipoPrenda" HeaderText="Tipo de Prenda" SortExpression="TipoPrenda" />

@@ -49,5 +49,12 @@ namespace SIGED_3.CRM.Web.Modulos.Costo
                 ((ImageButton)e.Row.FindControl("imgEditar")).OnClientClick = "javascript:openWin('" + ((LP_CostosResult)e.Row.DataItem).Id.ToString() + "','" + ResolveUrl("~/Modulos/Costo/Detalle.aspx") + "');return false;";
             }
         }
+
+        protected void imgMultiplicar_Click(object sender, ImageClickEventArgs e)
+        {
+            long Id_Costo = long.Parse(((ImageButton)sender).CommandArgument);
+            new CostoFachada().MultiplicarCostos(Id_Costo);
+            gvPrincipal.DataBind();
+        }
     }
 }
