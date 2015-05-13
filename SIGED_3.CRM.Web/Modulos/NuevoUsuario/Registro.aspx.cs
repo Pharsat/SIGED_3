@@ -18,8 +18,8 @@ namespace SIGED_3.CRM.Web.Modulos.NuevoUsuario
             {
                 MultiView1.SetActiveView(View1);
                 dtFechaNacimiento.MinDate = new DateTime(1940, 1, 1);
-                dtFechaNacimiento.MaxDate = DateTime.Now.AddYears(-18);
-                dtFechaNacimiento.SelectedDate = DateTime.Now.AddYears(-18).AddMinutes(-1);
+                dtFechaNacimiento.MaxDate = DateTime.Now.ToUniversalTime().AddYears(-18);
+                dtFechaNacimiento.SelectedDate = DateTime.Now.ToUniversalTime().AddYears(-18).AddMinutes(-1);
                 if (Request["Num1"] != null)
                 {
                     Miembro objMiembro = new MiembroFachada().Seleccionar_Id(long.Parse(Request["Num1"].ToString()));

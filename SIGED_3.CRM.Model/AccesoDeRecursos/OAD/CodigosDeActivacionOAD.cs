@@ -137,7 +137,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
         {
             using (ModeloDataContext dc = new ModeloDataContext())
             {
-                string Codigo = DateTime.Now.ToString("ddMMyyyy");
+                string Codigo = DateTime.Now.ToUniversalTime().ToString("ddMMyyyy");
                 string Max;
                 if (dc.CodigosDeActivacion.Count() > 0)
                 {
@@ -153,7 +153,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 }
                 CodigosDeActivacion objCodigo = new CodigosDeActivacion();
                 objCodigo.CodigoDeActivacion = Codigo + Max;
-                objCodigo.FechaCreacion = DateTime.Now;
+                objCodigo.FechaCreacion = DateTime.Now.ToUniversalTime();
                 objCodigo.NroUsosActuales = 0;
                 objCodigo.NroUsosMax = NumUsos;
                 objCodigo.Id_CuentaActivadora = Id_Cuenta;
@@ -173,7 +173,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
         {
             using (ModeloDataContext dc = new ModeloDataContext())
             {
-                string Codigo = DateTime.Now.ToString("ddMMyyyy");
+                string Codigo = DateTime.Now.ToUniversalTime().ToString("ddMMyyyy");
                 string Max;
                 if (dc.CodigosDeActivacion.Count() > 0)
                 {
@@ -189,7 +189,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 }
                 CodigosDeActivacion objCodigo = new CodigosDeActivacion();
                 objCodigo.CodigoDeActivacion = Codigo + Max;
-                objCodigo.FechaCreacion = DateTime.Now;
+                objCodigo.FechaCreacion = DateTime.Now.ToUniversalTime();
                 objCodigo.NroUsosActuales = 0;
                 objCodigo.NroUsosMax = 1;
                 objCodigo.Id_CuentaActivadora = null;

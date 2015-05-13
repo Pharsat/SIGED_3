@@ -119,7 +119,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 if (dc.Cuentas.Any(p => p.Usuario == Usuario && p.Contrasena == EncriptarContrasena(Contrasena) && p.EstadoDeActivacion == true))
                 {
                     Cuentas objCuenta = dc.Cuentas.Single(p => p.Usuario == Usuario && p.Contrasena == EncriptarContrasena(Contrasena) && p.EstadoDeActivacion == true);
-                    if (objCuenta.dtFechaApertura <= DateTime.Now && DateTime.Now <= objCuenta.dtFechaCierre)
+                    if (objCuenta.dtFechaApertura <= DateTime.Now.ToUniversalTime() && DateTime.Now.ToUniversalTime() <= objCuenta.dtFechaCierre)
                     {
                         return objCuenta;
                     }
@@ -136,7 +136,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                         objCuenta.Contrasena = objCuenta.ContrasenaProvisional;
                         objCuenta.ContrasenaProvisional = null;
                         dc.SubmitChanges();
-                        if (objCuenta.dtFechaApertura <= DateTime.Now && DateTime.Now <= objCuenta.dtFechaCierre)
+                        if (objCuenta.dtFechaApertura <= DateTime.Now.ToUniversalTime() && DateTime.Now.ToUniversalTime() <= objCuenta.dtFechaCierre)
                         {
                             return objCuenta;
                         }

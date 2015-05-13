@@ -101,7 +101,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     objCorreoElectronico.p_strAsunto = "Estado de la solicitud de su cuenta en SIGED.";
                     objCorreoElectronico.Agregar_Receptor(objMiembro.Email, objMiembro.NombreCompleto);
                     string Mensaje = "Bienvenido a SIGED.\r\n\r\nSe le notifica que se ha enviado una solicitud por parte de un administrador de " + objGrupo.Nombre + " a nuestro sistema SIGED para habilitarle una cuenta.\r\n\r\nTan pronto se apruebe la solicitud le enviaremos un correo electrónico con los pasos a seguir para ingresar al sistema SIGED.\r\n";
-                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now, Mensaje);
+                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now.ToUniversalTime(), Mensaje);
                     objCorreoElectronico.EnviarMail();
                     objCorreoElectronico = null;
 
@@ -135,7 +135,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
 
                     objCodigo.Id_CuentaActivadora = Id_Cuenta;
                     objCodigo.Aprobado = true;
-                    objCodigo.FechaActivacion_Cuenta = DateTime.Now;
+                    objCodigo.FechaActivacion_Cuenta = DateTime.Now.ToUniversalTime();
 
                     Miembro objMiembro = new MiembroLN().Seleccionar_Id(objCodigo.Id_Miembro_Destino.Value);
 
@@ -143,7 +143,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     objCorreoElectronico.p_strAsunto = "Se ha admitido su cuenta en SIGED.";
                     objCorreoElectronico.Agregar_Receptor(objMiembro.Email, objMiembro.NombreCompleto);
                     string Mensaje = "Buenos días, se le informa que se le ha habilitado el acceso a el sistema SIGED, por favor clicar en el siguiente vinculo para completar su registro: <a href=\"" + global::SIGED_3.CRM.Model.Properties.Settings.Default.URLCompania + "Modulos/NuevoUsuario/Registro.aspx?Num1=" + objCodigo.Id_Miembro_Destino.Value.ToString() + "\" target=\"_blank\">Activar cuenta.</a>\r\n";
-                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now, Mensaje);
+                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now.ToUniversalTime(), Mensaje);
                     objCorreoElectronico.EnviarMail();
                     objCorreoElectronico = null;
 

@@ -18,7 +18,7 @@ namespace SIGED_3.CRM.Model.Util.Error
             logFile = HttpContext.Current.Server.MapPath(logFile);
             // Open the log file for append and write the log
             StreamWriter sw = new StreamWriter(logFile, true);
-            sw.WriteLine("********** {0} **********", DateTime.Now);
+            sw.WriteLine("********** {0} **********", DateTime.Now.ToUniversalTime());
             if (exc.InnerException != null)
             {
                 sw.Write("Inner Exception Type: ");

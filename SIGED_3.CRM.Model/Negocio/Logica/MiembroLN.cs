@@ -88,7 +88,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     {
                         objImagen = new ImagenesOAD().Seleccionar_Id(objMiembro.Id_Imagen.Value)[0];
                     }
-                    objImagen.Fecha_Salvado = DateTime.Now;
+                    objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
                     objImagen.Id_Miembro_Salvado = Id_Miembro_Salva;
                     objImagen.Image = Imagen;
                     objImagen.NombreOriginal = NombreImagen;

@@ -46,7 +46,7 @@ namespace SIGED_3.CRM.Migration
                         objImagen.Image = objFichaVieja.Display;
                         objImagen.Tipo = objFichaVieja.Tipo;
                         objImagen.NombreOriginal = "Migración";
-                        objImagen.Fecha_Salvado = DateTime.Now;
+                        objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
 
                         objNew.Imagenes.InsertOnSubmit(objImagen);
                         objNew.SubmitChanges();
@@ -66,7 +66,7 @@ namespace SIGED_3.CRM.Migration
                         objImagen.Image = objFichaMarquillaVieja.Display;
                         objImagen.Tipo = objFichaMarquillaVieja.imgTipo;
                         objImagen.NombreOriginal = "Migración";
-                        objImagen.Fecha_Salvado = DateTime.Now;
+                        objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
 
                         objNew.Imagenes.InsertOnSubmit(objImagen);
                         objNew.SubmitChanges();
@@ -87,7 +87,7 @@ namespace SIGED_3.CRM.Migration
                         objImagen.Image = objFichaProcesosDetalladosVieja.Display;
                         objImagen.Tipo = objFichaProcesosDetalladosVieja.imgTipo;
                         objImagen.NombreOriginal = "Migración";
-                        objImagen.Fecha_Salvado = DateTime.Now;
+                        objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
 
                         objNew.Imagenes.InsertOnSubmit(objImagen);
                         objNew.SubmitChanges();
@@ -107,7 +107,7 @@ namespace SIGED_3.CRM.Migration
                         objImagen.Image = objGrupoDeMiembrosVieja.Display;
                         objImagen.Tipo = objGrupoDeMiembrosVieja.Tipo;
                         objImagen.NombreOriginal = "Migración";
-                        objImagen.Fecha_Salvado = DateTime.Now;
+                        objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
 
                         objNew.Imagenes.InsertOnSubmit(objImagen);
                         objNew.SubmitChanges();
@@ -127,7 +127,7 @@ namespace SIGED_3.CRM.Migration
                         objImagen.Image = objMiembrosVieja.Display;
                         objImagen.Tipo = objMiembrosVieja.Tipo;
                         objImagen.NombreOriginal = "Migración";
-                        objImagen.Fecha_Salvado = DateTime.Now;
+                        objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
 
                         objNew.Imagenes.InsertOnSubmit(objImagen);
                         objNew.SubmitChanges();
@@ -150,7 +150,7 @@ namespace SIGED_3.CRM.Migration
                         Cuentas objCuenta = new Cuentas();
                         objCuenta.Usuario = objMiembro.Usuario;
                         objCuenta.Contrasena = EncriptarContrasena(objMiembro.Contrasena);
-                        objCuenta.dtFechaApertura = DateTime.Now;
+                        objCuenta.dtFechaApertura = DateTime.Now.ToUniversalTime();
                         objCuenta.EstadoDeActivacion = true;
                         objCuenta.Id_Miembro = objMiembro.Id;
                         objCuenta.Id_GrupoDeMiembros = objMiembro.Id_GrupoDeMiembros;
@@ -232,7 +232,7 @@ namespace SIGED_3.CRM.Migration
                     }
                     objNew.SubmitChanges();
 
-                    objNew.Cuentas.ToList().ForEach(p => p.dtFechaCierre = DateTime.Now.AddYears(1));
+                    objNew.Cuentas.ToList().ForEach(p => p.dtFechaCierre = DateTime.Now.ToUniversalTime().AddYears(1));
                     objNew.SubmitChanges();
 
                     List<tbl_Costo> lstCostos = objOld.tbl_Costo.ToList();

@@ -94,7 +94,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     EntradaOSalidaOAD _objEntradaOSalida = new EntradaOSalidaOAD();
                     EntradaOSalida objEntradaOSalida = new EntradaOSalida();
                     objEntradaOSalida.Cantiidad = Cantidad;
-                    objEntradaOSalida.Fecha = DateTime.Now;
+                    objEntradaOSalida.Fecha = DateTime.Now.ToUniversalTime();
                     if (Cantidad < 0)
                     {
                         objEntradaOSalida.Id_Bodega_Desde = _objInventario.Id_Bodega;
@@ -258,7 +258,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                             EntradaOSalidaOAD _objEntradaOSalida = new EntradaOSalidaOAD();
                             EntradaOSalida objEntradaOSalida = new EntradaOSalida();
                             objEntradaOSalida.Cantiidad = Cantidad;
-                            objEntradaOSalida.Fecha = DateTime.Now;
+                            objEntradaOSalida.Fecha = DateTime.Now.ToUniversalTime();
                             objEntradaOSalida.Id_Bodega_Desde = objInventarioOrigen.Id_Bodega;
                             objEntradaOSalida.Id_Bodega_Hasta = objInventarioDestino.Id_Bodega;
                             objEntradaOSalida.Movimiento = TipoMovimiento_Struct.MoVimientoEntreBodegas;

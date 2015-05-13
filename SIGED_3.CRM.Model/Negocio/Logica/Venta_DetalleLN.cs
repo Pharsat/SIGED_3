@@ -53,7 +53,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     EntradaOSalidaOAD _objEntradaOSalida = new EntradaOSalidaOAD();
                     EntradaOSalida objEntradaOSalida = new EntradaOSalida();
                     objEntradaOSalida.Cantiidad = objVenta_Detalle.Cantidad;
-                    objEntradaOSalida.Fecha = DateTime.Now;
+                    objEntradaOSalida.Fecha = DateTime.Now.ToUniversalTime();
                     objEntradaOSalida.Id_Bodega_Desde = null;
                     objEntradaOSalida.Id_Bodega_Hasta = objVenta_Detalle.Id_Bodega;
                     objEntradaOSalida.Id_GrupoDeMiembros = SessionManager.Id_GrupoDeMiembros;

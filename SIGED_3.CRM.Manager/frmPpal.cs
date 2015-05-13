@@ -66,7 +66,7 @@ namespace SIGED_3.CRM.Manager
             objCorreoElectronico.p_strAsunto = "Código de registro en SIGED.";
             objCorreoElectronico.Agregar_Receptor(txtCorreoEnvio.Text.Trim(), txtNombreNurvoCliente.Text.Trim());
             string Mensaje = "Bienvenido a SIGED.\r\n\r\nEs una alegria para nosotros comunicarte tu código de registro a nuestra aplicación: " + txtCodigoDeActivacion.Text.Trim() + " .\r\n\r\nPara realizar el registro continue en el siguiente enlace: <a href=\"" + global::SIGED_3.CRM.Manager.Properties.Settings.Default.URLCompania + "Modulos/NuevoUsuario/Registro.aspx\" target=\"_blank\">Activar cuenta.</a>\r\n";
-            objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now, Mensaje);
+            objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now.ToUniversalTime(), Mensaje);
             objCorreoElectronico.EnviarMail();
             objCorreoElectronico = null;
             MessageBox.Show("Se ha enviado la información con exito.");

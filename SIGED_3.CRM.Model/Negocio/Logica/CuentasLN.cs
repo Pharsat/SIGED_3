@@ -134,8 +134,8 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     objMiembro.Id = new MiembroLN().Guardar_2(objMiembro);
                     Cuentas objCuenta = new Cuentas();
                     objCuenta.Contrasena = Contrasena;
-                    objCuenta.dtFechaApertura = DateTime.Now;
-                    objCuenta.dtFechaCierre = DateTime.Now.AddDays(7);
+                    objCuenta.dtFechaApertura = DateTime.Now.ToUniversalTime();
+                    objCuenta.dtFechaCierre = DateTime.Now.ToUniversalTime().AddDays(7);
                     objCuenta.Id_GrupoDeMiembros = objGrupo.Id;
                     objCuenta.Id_Miembro = objMiembro.Id;
                     objCuenta.Usuario = Usuario;
@@ -149,7 +149,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     objCorreoElectronico.p_strAsunto = "Activación de cuenta en SIGED.";
                     objCorreoElectronico.Agregar_Receptor(objMiembro.Email, objMiembro.NombreCompleto);
                     string Mensaje = "Bienvenido a SIGED.\r\n\r\nPara activar su Cuenta debe hacer clic en el siguiente enlace: <a href=\"" + global::SIGED_3.CRM.Model.Properties.Settings.Default.URLCompania + "Modulos/Login.aspx" + "?Num1=" + objCuenta.Id.ToString() + "&Num2=" + objCuenta.CodigoDeActivacion + "\"target=\"_blank\">Activar cuenta</a>.\r\n";
-                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now, Mensaje);
+                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now.ToUniversalTime(), Mensaje);
                     objCorreoElectronico.EnviarMail();
                     objCorreoElectronico = null;
                     if (new CodigosDeActivacionLN().Verificar(_CodigosDeActivacion, true))
@@ -182,8 +182,8 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
 
                     Cuentas objCuenta = new Cuentas();
                     objCuenta.Contrasena = Contrasena;
-                    objCuenta.dtFechaApertura = DateTime.Now;
-                    objCuenta.dtFechaCierre = DateTime.Now.AddDays(7);
+                    objCuenta.dtFechaApertura = DateTime.Now.ToUniversalTime();
+                    objCuenta.dtFechaCierre = DateTime.Now.ToUniversalTime().AddDays(7);
                     objCuenta.Id_GrupoDeMiembros = objGrupo.Id;
                     objCuenta.Id_Miembro = objMiembro.Id;
                     objCuenta.Usuario = Usuario;
@@ -197,7 +197,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     objCorreoElectronico.p_strAsunto = "Activación de cuenta en SIGED.";
                     objCorreoElectronico.Agregar_Receptor(objMiembro.Email, objMiembro.NombreCompleto);
                     string Mensaje = "Bienvenido a SIGED.\r\n\r\nPara activar su Cuenta debe hacer clic en el siguiente enlace: <a href=\"" + global::SIGED_3.CRM.Model.Properties.Settings.Default.URLCompania + "Modulos/Login.aspx" + "?Num1=" + objCuenta.Id.ToString() + "&Num2=" + objCuenta.CodigoDeActivacion + "\"target=\"_blank\">Activar cuenta</a>.\r\n";
-                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now, Mensaje);
+                    objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now.ToUniversalTime(), Mensaje);
                     objCorreoElectronico.EnviarMail();
                     objCorreoElectronico = null;
                     if (new CodigosDeActivacionLN().Verificar(_CodigosDeActivacion, true))
@@ -247,7 +247,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                             objCorreoElectronico.p_strAsunto = "Reposición de contraseña en SIGED.";
                             objCorreoElectronico.Agregar_Receptor(objMiembro.Email, objMiembro.NombreCompleto);
                             string Mensaje = "Reposición de contraseña en SIGED.\r\n\r\nNos ha pedido reestablecer su contraseña, para el proximo ingreso puede usar: <b>" + ContrasenProvicional + "</b> como nueva contraseña.\r\n\r\nSi usted desconoce el motivo de este mensaje por favor ignore el mismo.\r\n";
-                            objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now, Mensaje);
+                            objCorreoElectronico.ContruccionDelCuerpoClasico(DateTime.Now.ToUniversalTime(), Mensaje);
                             objCorreoElectronico.EnviarMail();
                             objCorreoElectronico = null;
                             objTransaccion.Complete();

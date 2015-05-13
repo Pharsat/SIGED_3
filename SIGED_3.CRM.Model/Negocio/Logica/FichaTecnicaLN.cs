@@ -76,7 +76,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                         {
                             objImagen = new ImagenesOAD().Seleccionar_Id(objFichaTecnica.Id_Imagen.Value)[0];
                         }
-                        objImagen.Fecha_Salvado = DateTime.Now;
+                        objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
                         objImagen.Id_Miembro_Salvado = objFichaTecnica.Id_Miembro_Salva.Value;
                         objImagen.Image = objFichaTecnica.ImagenPrenda;
                         objImagen.NombreOriginal = objFichaTecnica.NombreImagen;
@@ -132,7 +132,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                         {
                             objImagen = new Imagenes();
                         }
-                        objImagen.Fecha_Salvado = DateTime.Now;
+                        objImagen.Fecha_Salvado = DateTime.Now.ToUniversalTime();
                         objImagen.Id_Miembro_Salvado = objFichaTecnica.Id_Miembro_Salva.Value;
                         objImagen.Image = objFichaTecnica.ImagenPrenda;
                         objImagen.NombreOriginal = objFichaTecnica.NombreImagen;
