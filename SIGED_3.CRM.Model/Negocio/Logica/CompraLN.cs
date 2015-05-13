@@ -90,8 +90,25 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=objBodega>Objeto del tipo Bodega</param>
         public void Actualizar(Compra objCompra)
         {
-            CompraOAD _objCompra = new CompraOAD();
-            _objCompra.Actualizar(objCompra);
+            try
+            {
+                using (TransactionScope objTransacion = new TransactionScope())
+                {
+                    CompraOAD _objCompra = new CompraOAD();
+
+                    List<Compra_Detalle> objDetalles = new Compra_DetalleOAD().Seleccionar_All(objCompra.Id).ToList();
+                    objCompra.SubTotal = objDetalles.Sum(p => p.Total);
+                    objCompra.Total = (objCompra.SubTotal + ((objCompra.SubTotal * objCompra.IVA) / 100) - ((objCompra.SubTotal * objCompra.Retencion) / 100));
+                    objCompra.TotalEnLetras = new Genericos().ValorATexto(objCompra.Total.Value);
+
+                    _objCompra.Actualizar(objCompra);
+                    objTransacion.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         public List<R_ComprasResult> Informe_Compras(long? id_GrupoDeMiembros, DateTime? desde, DateTime? hasta, long? id_Proveedor, long? id_Recurso)
         {
