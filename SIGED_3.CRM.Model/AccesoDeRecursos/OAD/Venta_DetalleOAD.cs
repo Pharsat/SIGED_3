@@ -18,6 +18,14 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 return dc.Venta_Detalle.ToList();
             }
         }
+
+        public List<Venta_Detalle> Seleccionar_By_Venta(long Id_Venta)
+        {
+            using (ModeloDataContext dc = new ModeloDataContext())
+            {
+                return dc.Venta_Detalle.Where(p => p.Id_Venta == Id_Venta).ToList();
+            }
+        }
         /// <summary>
         /// Selecciona todos los registros de la tabla Bodega
         /// </summary>

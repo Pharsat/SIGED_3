@@ -95,9 +95,13 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 using (TransactionScope objTransacion = new TransactionScope())
                 {
                     VentaOAD _objVenta = new VentaOAD();
+                    List<Venta_Detalle> objDetalles = new Venta_DetalleOAD().Seleccionar_By_Venta(objVenta.Id).ToList();
+                    objVenta.SubTotal = objDetalles.Sum(p => p.Total);
                     objVenta.Total = (objVenta.SubTotal + ((objVenta.SubTotal * objVenta.IVA) / 100) - ((objVenta.SubTotal * objVenta.Retencion) / 100));
                     objVenta.TotalEnLetras = new Genericos().ValorATexto(objVenta.Total.Value);
                     _objVenta.Actualizar(objVenta);
+
+                    objTransacion.Complete();
                 }
             }
             catch (Exception ex)

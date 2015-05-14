@@ -66,7 +66,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     Venta_DetalleOAD _objVenta_Detalle = new Venta_DetalleOAD();
                     objVenta_Detalle.Total = objVenta_Detalle.Cantidad * objVenta_Detalle.ValorUnitario;
                     _objVenta_Detalle.Guardar(objVenta_Detalle);
-                    List<Venta_Detalle> objDetalles = new Venta_DetalleOAD().Seleccionar_All().ToList();
+                    List<Venta_Detalle> objDetalles = new Venta_DetalleOAD().Seleccionar_By_Venta(objVenta.Id).ToList();
                     objVenta.SubTotal = objDetalles.Sum(p => p.Total);
                     objVenta.Total = (objVenta.SubTotal + ((objVenta.SubTotal * objVenta.IVA) / 100) - ((objVenta.SubTotal * objVenta.Retencion) / 100));
                     objVenta.TotalEnLetras = new Genericos().ValorATexto(objVenta.Total.Value);

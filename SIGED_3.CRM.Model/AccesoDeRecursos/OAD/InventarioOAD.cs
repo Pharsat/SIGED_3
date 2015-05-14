@@ -116,7 +116,12 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                     dc.Inventario.InsertOnSubmit(objInventario);
                     dc.SubmitChanges();
                 }
-                return dc.Inventario.Where(p => p.Id_Bodega == Id_Bodega && p.Id_Recurso == Id_Recurso && p.Id_GrupoDeMiemros == Id_GrupoDeMiembros).Single();
+                var lista = dc.Inventario.Where(p => p.Id_Bodega == Id_Bodega && p.Id_Recurso == Id_Recurso && p.Id_GrupoDeMiemros == Id_GrupoDeMiembros).OrderBy(p=>p.Id).ToList();
+                var numGrande = lista.Max(p=> p.Id);
+                var Resultado = dc.Inventario.Single(p => p.Id == numGrande);
+                dc.Inventario.DeleteAllOnSubmit(lista.Where(p => p.Id != numGrande));
+                dc.SubmitChanges();
+                return Resultado;
             }
         }
         public List<R_InventarioResult> Reporte_Inventario(long? id_GrupoDeMiembros, long? id_Bodega)
