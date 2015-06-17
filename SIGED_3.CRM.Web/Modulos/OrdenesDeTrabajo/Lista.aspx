@@ -123,12 +123,12 @@
                                                 <asp:HiddenField ID="hdfId" runat="server" Value='<%# Bind("Id") %>' />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="false" />
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:ImageButton ID="imgEditar" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Editar.png" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
+                                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="false" />
                                         <asp:BoundField DataField="Consecutivo" HeaderText="Consecutivo" SortExpression="Consecutivo" />
                                         <asp:BoundField DataField="Solicitante" HeaderText="Solicitante" SortExpression="Solicitante" />
                                         <asp:BoundField DataField="ConsecutivoPedido" HeaderText="Consec. de Pedido" SortExpression="ConsecutivoPedido" />
