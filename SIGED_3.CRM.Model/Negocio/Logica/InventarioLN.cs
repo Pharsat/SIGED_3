@@ -86,41 +86,41 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
                     Inventario _objInventario = this.Seleccionar_Id(Id_Inventario);
-                    //if ((_objInventario.Existencia + Cantidad) >= _objInventario.Stock_Minimo && (_objInventario.Existencia + Cantidad) <= _objInventario.Stock_Maximo && _objInventario.Estado == true)
-                    //{
-                    _objInventario.Existencia = _objInventario.Existencia + Cantidad;
-                    this.Actualizar(_objInventario);
-
-                    EntradaOSalidaOAD _objEntradaOSalida = new EntradaOSalidaOAD();
-                    EntradaOSalida objEntradaOSalida = new EntradaOSalida();
-                    objEntradaOSalida.Cantiidad = Cantidad;
-                    objEntradaOSalida.Fecha = DateTime.Now.ToUniversalTime();
-                    if (Cantidad < 0)
+                    if ((_objInventario.Existencia + Cantidad) >= _objInventario.Stock_Minimo && (_objInventario.Existencia + Cantidad) <= _objInventario.Stock_Maximo && _objInventario.Estado == true)
                     {
-                        objEntradaOSalida.Id_Bodega_Desde = _objInventario.Id_Bodega;
-                        objEntradaOSalida.Id_Bodega_Hasta = null;
-                        objEntradaOSalida.Movimiento = TipoMovimiento_Struct.Salida;
+                        _objInventario.Existencia = _objInventario.Existencia + Cantidad;
+                        this.Actualizar(_objInventario);
+
+                        EntradaOSalidaOAD _objEntradaOSalida = new EntradaOSalidaOAD();
+                        EntradaOSalida objEntradaOSalida = new EntradaOSalida();
+                        objEntradaOSalida.Cantiidad = Cantidad;
+                        objEntradaOSalida.Fecha = DateTime.Now.ToUniversalTime();
+                        if (Cantidad < 0)
+                        {
+                            objEntradaOSalida.Id_Bodega_Desde = _objInventario.Id_Bodega;
+                            objEntradaOSalida.Id_Bodega_Hasta = null;
+                            objEntradaOSalida.Movimiento = TipoMovimiento_Struct.Salida;
+                        }
+                        else
+                        {
+                            objEntradaOSalida.Id_Bodega_Desde = null;
+                            objEntradaOSalida.Id_Bodega_Hasta = _objInventario.Id_Bodega;
+                            objEntradaOSalida.Movimiento = TipoMovimiento_Struct.Entrada;
+                        }
+                        objEntradaOSalida.Id_GrupoDeMiembros = SessionManager.Id_GrupoDeMiembros;
+                        objEntradaOSalida.Id_Recurso = _objInventario.Id_Recurso;
+                        objEntradaOSalida.Observaciones = MensajesAplicacion_Struct.ObservacionesMovimientoInventariManual;
+                        objEntradaOSalida.Valor = 0m;
+                        _objEntradaOSalida.Guardar(objEntradaOSalida);
+
+                        objTransaccion.Complete();
+                        return true;
                     }
                     else
                     {
-                        objEntradaOSalida.Id_Bodega_Desde = null;
-                        objEntradaOSalida.Id_Bodega_Hasta = _objInventario.Id_Bodega;
-                        objEntradaOSalida.Movimiento = TipoMovimiento_Struct.Entrada;
+                        objTransaccion.Dispose();
+                        return false;
                     }
-                    objEntradaOSalida.Id_GrupoDeMiembros = SessionManager.Id_GrupoDeMiembros;
-                    objEntradaOSalida.Id_Recurso = _objInventario.Id_Recurso;
-                    objEntradaOSalida.Observaciones = MensajesAplicacion_Struct.ObservacionesMovimientoInventariManual;
-                    objEntradaOSalida.Valor = 0m;
-                    _objEntradaOSalida.Guardar(objEntradaOSalida);
-
-                    objTransaccion.Complete();
-                    return true;
-                    //}
-                    //else
-                    //{
-                    //    objTransaccion.Dispose();
-                    //    return false;
-                    //}
                 }
             }
             catch (Exception ex)
@@ -135,18 +135,18 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
                     Inventario _objInventario = this.Seleccionar_Id(Id_Inventario);
-                    //if (_objInventario.Existencia <= Stock && _objInventario.Stock_Minimo <= Stock && _objInventario.Estado == true)
-                    //{
-                    _objInventario.Stock_Maximo = Stock;
-                    this.Actualizar(_objInventario);
-                    objTransaccion.Complete();
-                    return true;
-                    //}
-                    //else
-                    //{
-                    //    objTransaccion.Dispose();
-                    //    return false;
-                    //}
+                    if (_objInventario.Existencia <= Stock && _objInventario.Stock_Minimo <= Stock && _objInventario.Estado == true)
+                    {
+                        _objInventario.Stock_Maximo = Stock;
+                        this.Actualizar(_objInventario);
+                        objTransaccion.Complete();
+                        return true;
+                    }
+                    else
+                    {
+                        objTransaccion.Dispose();
+                        return false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -161,18 +161,18 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
                     Inventario _objInventario = this.Seleccionar_Id(Id_Inventario);
-                    //if (_objInventario.Existencia >= Stock && _objInventario.Stock_Maximo >= Stock && _objInventario.Estado == true)
-                    //{
-                    _objInventario.Stock_Minimo = Stock;
-                    this.Actualizar(_objInventario);
-                    objTransaccion.Complete();
-                    return true;
-                    //}
-                    //else
-                    //{
-                    //    objTransaccion.Dispose();
-                    //    return false;
-                    //}
+                    if (_objInventario.Existencia >= Stock && _objInventario.Stock_Maximo >= Stock && _objInventario.Estado == true)
+                    {
+                        _objInventario.Stock_Minimo = Stock;
+                        this.Actualizar(_objInventario);
+                        objTransaccion.Complete();
+                        return true;
+                    }
+                    else
+                    {
+                        objTransaccion.Dispose();
+                        return false;
+                    }
                 }
             }
             catch (Exception ex)

@@ -126,8 +126,8 @@
                                         <asp:BoundField DataField="Recurso" HeaderText="Recurso" SortExpression="Recurso" />
                                         <asp:BoundField DataField="Bodega" HeaderText="Bodega" SortExpression="Bodega" />
                                         <asp:BoundField DataField="Existencia" HeaderText="Existencia" SortExpression="Existencia" DataFormatString="{0:N0}" />
-                                        <asp:BoundField DataField="Stock_Maximo" HeaderText="Stock Maximo" SortExpression="Stock_Maximo" DataFormatString="{0:N0}" />
                                         <asp:BoundField DataField="Stock_Minimo" HeaderText="Stock Minimo" SortExpression="Stock_Minimo" DataFormatString="{0:N0}" />
+                                        <asp:BoundField DataField="Stock_Maximo" HeaderText="Stock Maximo" SortExpression="Stock_Maximo" DataFormatString="{0:N0}" />
                                         <asp:CheckBoxField DataField="Estado" HeaderText="Estado" SortExpression="Estado" Visible="false" />
                                         <asp:TemplateField HeaderText="Estado">
                                             <ItemTemplate>
