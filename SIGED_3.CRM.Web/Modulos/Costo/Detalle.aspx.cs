@@ -38,6 +38,11 @@ namespace SIGED_3.CRM.Web.Modulos.Costo
                 if (this.Id != 0)
                 {
                     frmPpal.ChangeMode(FormViewMode.Edit);
+                    ((ImageButton)frmPpal.FindControl("btnNuevoProceso")).OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/ProcesoDeFabricacion/Detalle.aspx") + "');return false;";
+                    new Genericos().ConfigurarPermisosLista(((ImageButton)frmPpal.FindControl("btnNuevoProceso")), null, null, null, (int)Modulo_Enum.Procesos);
+                    ((ImageButton)frmPpal.FindControl("btnNuevoRecurso")).OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/ProcesoDeFabricacion/Detalle.aspx") + "');return false;";
+                    new Genericos().ConfigurarPermisosLista(((ImageButton)frmPpal.FindControl("btnNuevoRecurso")), null, null, null, (int)Modulo_Enum.Recursos);
+                    
                 }
                 else
                 {
@@ -61,7 +66,8 @@ namespace SIGED_3.CRM.Web.Modulos.Costo
         }
         protected void frmPpal_DataBound(object sender, EventArgs e)
         {
-            new Genericos().ConfigurarPermisosDetalle(frmPpal, "InsertButton", "UpdateButton", (int)Modulo_Enum.Costos, 1);
+            new Genericos().ConfigurarPermisosDetalle(frmPpal, "InsertButton", "UpdateButton", (int)Modulo_Enum.Costos, 1);        
+            
         }
         protected void frmPpal_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
