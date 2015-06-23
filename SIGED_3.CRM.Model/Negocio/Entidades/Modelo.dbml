@@ -1154,20 +1154,6 @@
       <Column Name="CantidadPedida" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.LS_Venta_Detalle" Method="LS_Venta_Detalle">
-    <Parameter Name="Id_Venta" Parameter="id_Venta" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="LS_Venta_DetalleResult">
-      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
-      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.R_Compras" Method="R_Compras">
     <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="DateTime" />
@@ -1563,6 +1549,21 @@
       <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="CostoUnitario" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="Utilidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Venta_Detalle" Method="LS_Venta_Detalle">
+    <Parameter Name="Id_Venta" Parameter="id_Venta" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Venta_DetalleResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

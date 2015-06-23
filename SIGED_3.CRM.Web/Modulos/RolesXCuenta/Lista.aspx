@@ -61,7 +61,7 @@
                                                 <asp:HiddenField ID="hdfId" runat="server" Value='<%# Bind("Id_Cuenta") %>' />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="false" />
+                                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="false"/>
                                         <asp:BoundField DataField="Rol" HeaderText="Rol" SortExpression="Rol" />
                                         <asp:BoundField DataField="Usuario" HeaderText="Usuario" SortExpression="Usuario" />
                                         <asp:BoundField DataField="NombreCompleto" HeaderText="Nombre Completo" SortExpression="NombreCompleto" />

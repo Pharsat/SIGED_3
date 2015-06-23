@@ -496,7 +496,7 @@
                                                         <td>
                                                             <asp:ImageButton ID="btnEliminar_Costos_Recursos" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Eliminar.png"
                                                                 OnClick="btnEliminar_Costo_Recurso_Click" OnClientClick="return EliminarRegistro();" Style="padding-left: 20px;" />
-                                                            <asp:ImageButton ID="btnNuevoRecurso" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Agregar.png" Style="padding-left: 20px;" />
+                                                            <asp:ImageButton ID="btnNuevoRecurso" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Agregar.png" Style="padding-left: 20px;" ToolTip="Ir a nuevo recurso" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -689,7 +689,7 @@
                                                     <tr>
                                                         <td>
                                                             <asp:ImageButton ID="btnEliminar_Costos_Proceso" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Eliminar.png" OnClick="btnEliminar_Costo_Proceso_Click" OnClientClick="return EliminarRegistro();" Style="padding-left: 20px;" />
-                                                            <asp:ImageButton ID="btnNuevoProceso" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Agregar.png" Style="padding-left: 20px;" />
+                                                            <asp:ImageButton ID="btnNuevoProceso" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Agregar.png" Style="padding-left: 20px;" ToolTip="Ir a nuevo proceso" />
                                                         </td>
                                                     </tr>
                                                     <tr>
