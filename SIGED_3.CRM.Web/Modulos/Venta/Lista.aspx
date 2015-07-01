@@ -89,6 +89,11 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="false" />
+                                         <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:ImageButton ID="imgImprimir" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Imprimir.png" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                         <asp:BoundField DataField="Consecutivo" HeaderText="Consecutivo" SortExpression="Consecutivo" />
                                         <asp:BoundField DataField="FechaDeRealizacion" HeaderText="Fecha" SortExpression="FechaDeRealizacion" />
                                         <asp:BoundField DataField="Facturador" HeaderText="Facturador" SortExpression="Facturador" />

@@ -1567,4 +1567,52 @@
       <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.I_Compra" Method="I_Compra">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_CompraResult">
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Consec" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Subtotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalLetra" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Facturador" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_Compra_Detalle" Method="I_Compra_Detalle">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_Compra_DetalleResult">
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NombrePrenda" Type="System.String" DbType="VarChar(307)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_Venta" Method="I_Venta">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_VentaResult">
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Consec" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Subtotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalLetra" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Facturador" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="Retencion" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.I_Venta_Detalle" Method="I_Venta_Detalle">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="I_Venta_DetalleResult">
+      <Column Name="Descripccion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NombrePrenda" Type="System.String" DbType="VarChar(307)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

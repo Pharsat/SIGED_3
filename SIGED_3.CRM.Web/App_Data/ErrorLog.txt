@@ -672,3 +672,44 @@ Stack Trace:
    en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
+********** 01/07/2015 5:04:54 a. m. **********
+Inner Exception Type: System.InvalidCastException
+Inner Exception: No se puede convertir un objeto de tipo 'SIGED_3.CRM.Model.Negocio.Entidades.LP_VentasResult' al tipo 'SIGED_3.CRM.Model.Negocio.Entidades.LP_ComprasResult'.
+Inner Source: SIGED_3.CRM.Web
+Inner Stack Trace: 
+   en SIGED_3.CRM.Web.Modulos.Venta.Lista.gvPrincipal_RowCreated(Object sender, GridViewRowEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Venta\Lista.aspx.cs:línea 58
+   en System.Web.UI.WebControls.GridView.OnRowCreated(GridViewRowEventArgs e)
+   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   en System.Web.UI.WebControls.GridView.DataBind()
+   en System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
+   en System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls()
+   en System.Web.UI.Control.EnsureChildControls()
+   en System.Web.UI.Control.PreRenderRecursiveInternal()
+   en System.Web.UI.Control.PreRenderRecursiveInternal()
+   en System.Web.UI.Control.PreRenderRecursiveInternal()
+   en System.Web.UI.Control.PreRenderRecursiveInternal()
+   en System.Web.UI.Control.PreRenderRecursiveInternal()
+   en System.Web.UI.Control.PreRenderRecursiveInternal()
+   en System.Web.UI.Control.PreRenderRecursiveInternal()
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.modulos_venta_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_jn3eyncc.0.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+

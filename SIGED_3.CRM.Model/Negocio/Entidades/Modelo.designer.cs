@@ -1013,6 +1013,34 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Compra);
 			return ((ISingleResult<LS_Compra_DetalleResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.I_Compra")]
+		public ISingleResult<I_CompraResult> I_Compra([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="BigInt")] System.Nullable<long> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<I_CompraResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.I_Compra_Detalle")]
+		public ISingleResult<I_Compra_DetalleResult> I_Compra_Detalle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="BigInt")] System.Nullable<long> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<I_Compra_DetalleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.I_Venta")]
+		public ISingleResult<I_VentaResult> I_Venta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="BigInt")] System.Nullable<long> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<I_VentaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.I_Venta_Detalle")]
+		public ISingleResult<I_Venta_DetalleResult> I_Venta_Detalle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="BigInt")] System.Nullable<long> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<I_Venta_DetalleResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Bodega")]
@@ -10899,7 +10927,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -23534,7 +23562,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -25968,7 +25996,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -26180,7 +26208,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -26340,7 +26368,7 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -27334,6 +27362,542 @@ namespace SIGED_3.CRM.Model.Negocio.Entidades
 				if ((this._Talla != value))
 				{
 					this._Talla = value;
+				}
+			}
+		}
+	}
+	
+	public partial class I_CompraResult
+	{
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		private System.Nullable<long> _Consec;
+		
+		private string _Observaciones;
+		
+		private System.Nullable<decimal> _Subtotal;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private string _TotalLetra;
+		
+		private string _Facturador;
+		
+		private System.Nullable<decimal> _IVA;
+		
+		private System.Nullable<decimal> _Retencion;
+		
+		public I_CompraResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consec", DbType="BigInt")]
+		public System.Nullable<long> Consec
+		{
+			get
+			{
+				return this._Consec;
+			}
+			set
+			{
+				if ((this._Consec != value))
+				{
+					this._Consec = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciones", DbType="VarChar(500)")]
+		public string Observaciones
+		{
+			get
+			{
+				return this._Observaciones;
+			}
+			set
+			{
+				if ((this._Observaciones != value))
+				{
+					this._Observaciones = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subtotal", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Subtotal
+		{
+			get
+			{
+				return this._Subtotal;
+			}
+			set
+			{
+				if ((this._Subtotal != value))
+				{
+					this._Subtotal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalLetra", DbType="VarChar(200)")]
+		public string TotalLetra
+		{
+			get
+			{
+				return this._TotalLetra;
+			}
+			set
+			{
+				if ((this._TotalLetra != value))
+				{
+					this._TotalLetra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Facturador", DbType="VarChar(201)")]
+		public string Facturador
+		{
+			get
+			{
+				return this._Facturador;
+			}
+			set
+			{
+				if ((this._Facturador != value))
+				{
+					this._Facturador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IVA", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> IVA
+		{
+			get
+			{
+				return this._IVA;
+			}
+			set
+			{
+				if ((this._IVA != value))
+				{
+					this._IVA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Retencion", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Retencion
+		{
+			get
+			{
+				return this._Retencion;
+			}
+			set
+			{
+				if ((this._Retencion != value))
+				{
+					this._Retencion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class I_Compra_DetalleResult
+	{
+		
+		private string _Descripcion;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private System.Nullable<decimal> _ValorUnitario;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private string _NombrePrenda;
+		
+		public I_Compra_DetalleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorUnitario", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> ValorUnitario
+		{
+			get
+			{
+				return this._ValorUnitario;
+			}
+			set
+			{
+				if ((this._ValorUnitario != value))
+				{
+					this._ValorUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombrePrenda", DbType="VarChar(307)")]
+		public string NombrePrenda
+		{
+			get
+			{
+				return this._NombrePrenda;
+			}
+			set
+			{
+				if ((this._NombrePrenda != value))
+				{
+					this._NombrePrenda = value;
+				}
+			}
+		}
+	}
+	
+	public partial class I_VentaResult
+	{
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		private System.Nullable<long> _Consec;
+		
+		private string _Observaciones;
+		
+		private System.Nullable<decimal> _Subtotal;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private string _TotalLetra;
+		
+		private string _Facturador;
+		
+		private System.Nullable<decimal> _IVA;
+		
+		private System.Nullable<decimal> _Retencion;
+		
+		public I_VentaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Consec", DbType="BigInt")]
+		public System.Nullable<long> Consec
+		{
+			get
+			{
+				return this._Consec;
+			}
+			set
+			{
+				if ((this._Consec != value))
+				{
+					this._Consec = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciones", DbType="VarChar(500)")]
+		public string Observaciones
+		{
+			get
+			{
+				return this._Observaciones;
+			}
+			set
+			{
+				if ((this._Observaciones != value))
+				{
+					this._Observaciones = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subtotal", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Subtotal
+		{
+			get
+			{
+				return this._Subtotal;
+			}
+			set
+			{
+				if ((this._Subtotal != value))
+				{
+					this._Subtotal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalLetra", DbType="VarChar(200)")]
+		public string TotalLetra
+		{
+			get
+			{
+				return this._TotalLetra;
+			}
+			set
+			{
+				if ((this._TotalLetra != value))
+				{
+					this._TotalLetra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Facturador", DbType="VarChar(201)")]
+		public string Facturador
+		{
+			get
+			{
+				return this._Facturador;
+			}
+			set
+			{
+				if ((this._Facturador != value))
+				{
+					this._Facturador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IVA", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> IVA
+		{
+			get
+			{
+				return this._IVA;
+			}
+			set
+			{
+				if ((this._IVA != value))
+				{
+					this._IVA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Retencion", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Retencion
+		{
+			get
+			{
+				return this._Retencion;
+			}
+			set
+			{
+				if ((this._Retencion != value))
+				{
+					this._Retencion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class I_Venta_DetalleResult
+	{
+		
+		private string _Descripccion;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private System.Nullable<decimal> _ValorUnitario;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private string _NombrePrenda;
+		
+		public I_Venta_DetalleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripccion", DbType="VarChar(500)")]
+		public string Descripccion
+		{
+			get
+			{
+				return this._Descripccion;
+			}
+			set
+			{
+				if ((this._Descripccion != value))
+				{
+					this._Descripccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorUnitario", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> ValorUnitario
+		{
+			get
+			{
+				return this._ValorUnitario;
+			}
+			set
+			{
+				if ((this._ValorUnitario != value))
+				{
+					this._ValorUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombrePrenda", DbType="VarChar(307)")]
+		public string NombrePrenda
+		{
+			get
+			{
+				return this._NombrePrenda;
+			}
+			set
+			{
+				if ((this._NombrePrenda != value))
+				{
+					this._NombrePrenda = value;
 				}
 			}
 		}

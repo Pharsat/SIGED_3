@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using SIGED_3.CRM.Model.Negocio.Entidades;
 using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
 using System.Transactions;
+using SIGED_3.CRM.Model.AccesoDeRecursos.SQL;
 using SIGED_3.CRM.Model.Util.Genericos;
 using SIGED_3.CRM.Model.Util.Enum;
+using SIGED_3.CRM.Model.Util.Struct;
+
 namespace SIGED_3.CRM.Model.Negocio.Logica
 {
     internal class VentaLN
@@ -120,6 +124,17 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public DataTable Impresion_Venta(long? Id_Venta)
+        {
+            VentaOAD _objVenta = new VentaOAD();
+            return _objVenta.Impresion_Venta(Id_Venta);
+        }
+        public DataTable Impresion_Venta_Detalle(long? Id_Venta)
+        {
+            VentaOAD _objVenta = new VentaOAD();
+            return _objVenta.Impresion_Venta_Detalle(Id_Venta);
         }
     }
 }

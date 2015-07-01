@@ -44,7 +44,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -97,7 +97,9 @@
     <Content Include="GenericErrorPage.aspx" />
     <Content Include="Modulos\GrupoDeMiembros\Lista.aspx" />
     <Content Include="Http404ErrorPage.aspx" />
+    <Content Include="Modulos\Informes\impCompra.aspx" />
     <Content Include="Modulos\Informes\impFichaTecnica.aspx" />
+    <Content Include="Modulos\Informes\impVenta.aspx" />
     <Content Include="Modulos\Informes\infUtilidades.aspx" />
     <Content Include="Modulos\Informes\infCompras.aspx" />
     <Content Include="Modulos\Informes\infCostos.aspx" />
@@ -367,12 +369,26 @@
     <Compile Include="Http404ErrorPage.aspx.designer.cs">
       <DependentUpon>Http404ErrorPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Informes\impCompra.aspx.cs">
+      <DependentUpon>impCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\impCompra.aspx.designer.cs">
+      <DependentUpon>impCompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Informes\impFichaTecnica.aspx.cs">
       <DependentUpon>impFichaTecnica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Modulos\Informes\impFichaTecnica.aspx.designer.cs">
       <DependentUpon>impFichaTecnica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\impVenta.aspx.cs">
+      <DependentUpon>impVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\impVenta.aspx.designer.cs">
+      <DependentUpon>impVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Informes\infUtilidades.aspx.cs">
       <DependentUpon>infUtilidades.aspx</DependentUpon>
@@ -676,6 +692,7 @@
     <Content Include="App_Code\SID_2DataSet.xss">
       <DependentUpon>SID_2DataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\siged2 - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\siged2 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\siged2 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
@@ -696,7 +713,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modulos\Informes\impCompra.rdlc" />
     <EmbeddedResource Include="Modulos\Informes\impFichaTecnica.rdlc" />
+    <EmbeddedResource Include="Modulos\Informes\impVenta.rdlc" />
     <EmbeddedResource Include="Modulos\Informes\infCompras.rdlc" />
     <EmbeddedResource Include="Modulos\Informes\infCostos.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
+using SIGED_3.CRM.Model.AccesoDeRecursos.SQL;
 using SIGED_3.CRM.Model.Negocio.Entidades;
+using SIGED_3.CRM.Model.Util.Struct;
+
 namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
 {
     internal class VentaOAD
@@ -109,6 +113,15 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
             {
                 return dc.R_Ventas(id_GrupoDeMiembros, desde, hasta).ToList();
             }
+        }
+
+        public DataTable Impresion_Venta(long? Id_Venta)
+        {
+            return new QuerysSQL().Consultar(new List<ParametrosBD> { new ParametrosBD("Id", Id_Venta) }, ProcedimientosAlmacenados.I_Venta);
+        }
+        public DataTable Impresion_Venta_Detalle(long? Id_Venta)
+        {
+            return new QuerysSQL().Consultar(new List<ParametrosBD> { new ParametrosBD("Id", Id_Venta) }, ProcedimientosAlmacenados.I_Venta_Detalle);
         }
     }
 }

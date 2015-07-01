@@ -55,14 +55,7 @@ namespace SIGED_3.CRM.Web.Modulos.Venta
         {
             if (e.Row.RowType == DataControlRowType.DataRow && e.Row.DataItem != null)
             {
-                //if ((bool)((LP_VentasResult)e.Row.DataItem).Estado)
-                //{
-                //    ((Image)e.Row.FindControl("imgEstado")).ImageUrl = "~/Recursos/Diseno/Iconos/Habilitado.png";
-                //}
-                //else
-                //{
-                //    ((Image)e.Row.FindControl("imgEstado")).ImageUrl = "~/Recursos/Diseno/Iconos/Deshabilitado.png";
-                //}
+                ((ImageButton)e.Row.FindControl("imgImprimir")).OnClientClick = "javascript:openWin('" + ((LP_VentasResult)e.Row.DataItem).Id.ToString() + "','" + ResolveUrl("~/Modulos/Informes/impVenta.aspx") + "');return false;";
                 ((ImageButton)e.Row.FindControl("imgEditar")).OnClientClick = "javascript:openWin('" + ((LP_VentasResult)e.Row.DataItem).Id.ToString() + "','" + ResolveUrl("~/Modulos/Venta/Detalle.aspx") + "');return false;";
             }
         }

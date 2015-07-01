@@ -55,15 +55,8 @@ namespace SIGED_3.CRM.Web.Modulos.Compra
         {
             if (e.Row.RowType == DataControlRowType.DataRow && e.Row.DataItem != null)
             {
-                //if ((bool)((LP_ComprasResult)e.Row.DataItem).Estado)
-                //{
-                //    ((Image)e.Row.FindControl("imgEstado")).ImageUrl = "~/Recursos/Diseno/Iconos/Habilitado.png";
-                //}
-                //else
-                //{
-                //    ((Image)e.Row.FindControl("imgEstado")).ImageUrl = "~/Recursos/Diseno/Iconos/Deshabilitado.png";
-                //}
                 ((ImageButton)e.Row.FindControl("imgEditar")).OnClientClick = "javascript:openWin('" + ((LP_ComprasResult)e.Row.DataItem).Id.ToString() + "','" + ResolveUrl("~/Modulos/Compra/Detalle.aspx") + "');return false;";
+                ((ImageButton)e.Row.FindControl("imgImprimir")).OnClientClick = "javascript:openWin('" + ((LP_ComprasResult)e.Row.DataItem).Id.ToString() + "','" + ResolveUrl("~/Modulos/Informes/impCompra.aspx") + "');return false;";
             }
         }
     }

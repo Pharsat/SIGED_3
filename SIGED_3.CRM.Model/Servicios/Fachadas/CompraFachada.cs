@@ -5,6 +5,8 @@ using System.Text;
 using SIGED_3.CRM.Model.Negocio.Entidades;
 using SIGED_3.CRM.Model.Negocio.Logica;
 using System.ComponentModel;
+using System.Data;
+
 namespace SIGED_3.CRM.Model.Servicios.Fachadas
 {
     [DataObject(true)]
@@ -77,6 +79,17 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         {
             CompraLN _objCompra = new CompraLN();
             return _objCompra.Informe_Compras(id_GrupoDeMiembros, desde, hasta, id_Proveedor, id_Recurso);
+        }
+
+        public DataTable Impresion_Compra(long? Id_Compra)
+        {
+            CompraLN _objCompra = new CompraLN();
+            return _objCompra.Impresion_Compra(Id_Compra);
+        }
+        public DataTable Impresion_Compra_Detalle(long? Id_Compra)
+        {
+            CompraLN _objCompra = new CompraLN();
+            return _objCompra.Impresion_Compra_Detalle(Id_Compra);
         }
     }
 }

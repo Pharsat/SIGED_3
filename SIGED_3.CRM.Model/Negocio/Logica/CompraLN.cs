@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using SIGED_3.CRM.Model.Negocio.Entidades;
 using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
 using System.Transactions;
+using SIGED_3.CRM.Model.AccesoDeRecursos.SQL;
 using SIGED_3.CRM.Model.Util.Genericos;
 using SIGED_3.CRM.Model.Util.Enum;
+using SIGED_3.CRM.Model.Util.Struct;
+
 namespace SIGED_3.CRM.Model.Negocio.Logica
 {
     internal class CompraLN
@@ -114,6 +118,17 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         {
             CompraOAD _objCompra = new CompraOAD();
             return _objCompra.Informe_Compras(id_GrupoDeMiembros, desde, hasta, id_Proveedor, id_Recurso);
+        }
+
+        public DataTable Impresion_Compra(long? Id_Compra)
+        {
+            CompraOAD _objCompra = new CompraOAD();
+            return _objCompra.Impresion_Compra(Id_Compra);
+        }
+        public DataTable Impresion_Compra_Detalle(long? Id_Compra)
+        {
+            CompraOAD _objCompra = new CompraOAD();
+            return _objCompra.Impresion_Compra_Detalle(Id_Compra);
         }
     }
 }

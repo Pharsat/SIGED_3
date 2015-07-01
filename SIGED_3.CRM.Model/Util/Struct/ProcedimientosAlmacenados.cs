@@ -15,5 +15,10 @@ namespace SIGED_3.CRM.Model.Util.Struct
         public static string I_FichaTecnica_PasosDeConfeccion = "I_FichaTecnica_PasosDeConfeccion";
         public static string I_FichaTecnica_ProcesosDetallados = "I_FichaTecnica_ProcesosDetallados";
         public static string I_FichaTecnica_Tallas = "I_FichaTecnica_Tallas";
+
+        public static string I_Compra_Detalle = "I_Compra_Detalle";
+        public static string I_Compra = "I_Compra";
+        public static string I_Venta = "I_Venta";
+        public static string I_Venta_Detalle = "I_Venta_Detalle";
     }
 }

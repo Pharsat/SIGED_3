@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
+using SIGED_3.CRM.Model.AccesoDeRecursos.SQL;
 using SIGED_3.CRM.Model.Negocio.Entidades;
+using SIGED_3.CRM.Model.Util.Struct;
+
 namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
 {
     internal class CompraOAD
@@ -108,6 +112,15 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
             {
                 return dc.R_Compras(id_GrupoDeMiembros, desde, hasta, id_Proveedor, id_Recurso).ToList();
             }
+        }
+
+        public DataTable Impresion_Compra(long? Id_Compra)
+        {
+            return new QuerysSQL().Consultar(new List<ParametrosBD> { new ParametrosBD("Id", Id_Compra) }, ProcedimientosAlmacenados.I_Compra);
+        }
+        public DataTable Impresion_Compra_Detalle(long? Id_Compra)
+        {
+            return new QuerysSQL().Consultar(new List<ParametrosBD> { new ParametrosBD("Id", Id_Compra) }, ProcedimientosAlmacenados.I_Compra_Detalle);
         }
     }
 }

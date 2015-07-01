@@ -5,6 +5,9 @@ using System.Text;
 using SIGED_3.CRM.Model.Negocio.Entidades;
 using SIGED_3.CRM.Model.Negocio.Logica;
 using System.ComponentModel;
+using System.Data;
+using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
+
 namespace SIGED_3.CRM.Model.Servicios.Fachadas
 {
     [DataObject(true)]
@@ -77,6 +80,17 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         {
             VentaLN _objVenta = new VentaLN();
             return _objVenta.Informe_Ventas(id_GrupoDeMiembros, desde, hasta);
+        }
+
+        public DataTable Impresion_Venta(long? Id_Venta)
+        {
+            VentaLN _objVenta = new VentaLN();
+            return _objVenta.Impresion_Venta(Id_Venta);
+        }
+        public DataTable Impresion_Venta_Detalle(long? Id_Venta)
+        {
+            VentaLN _objVenta = new VentaLN();
+            return _objVenta.Impresion_Venta_Detalle(Id_Venta);
         }
     }
 }
