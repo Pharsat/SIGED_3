@@ -1087,20 +1087,6 @@
       <Column Name="Total" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.LS_Compra_Detalle" Method="LS_Compra_Detalle">
-    <Parameter Name="Id_Compra" Parameter="id_Compra" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="LS_Compra_DetalleResult">
-      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
-      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.LS_Costo_Procesos" Method="LS_Costo_Procesos">
     <Parameter Name="Id_Costo" Parameter="id_Costo" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="LS_Costo_ProcesosResult">
@@ -1559,6 +1545,21 @@
       <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LS_Compra_Detalle" Method="LS_Compra_Detalle">
+    <Parameter Name="Id_Compra" Parameter="id_Compra" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="LS_Compra_DetalleResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(37,4)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(157)" CanBeNull="true" />
       <Column Name="NombreColor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NombreUnidadDeMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NombreTipoDeRecurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />

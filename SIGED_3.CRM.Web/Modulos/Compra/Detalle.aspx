@@ -439,6 +439,7 @@
                                                                     <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="False" />
                                                                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                                                                     <asp:BoundField DataField="NombreColor" HeaderText="Color" SortExpression="NombreColor" />
+                                                                    <asp:BoundField DataField="Talla" HeaderText="Talla" SortExpression="Talla" />
                                                                     <asp:BoundField DataField="NombreUnidadDeMedida" HeaderText="Und. Med." SortExpression="NombreUnidadDeMedida" />
                                                                     <asp:BoundField DataField="NombreTipoDeRecurso" HeaderText="Tipo" SortExpression="NombreTipoDeRecurso" />
                                                                     <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" DataFormatString="{0:N}" />
