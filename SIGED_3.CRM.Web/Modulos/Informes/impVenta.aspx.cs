@@ -21,7 +21,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes
                 rptViewer.LocalReport.ReportPath = "Modulos\\Informes\\impVenta.rdlc";
                 ReportDataSource ObjReport_1 = new ReportDataSource("dtsGrupo", new GrupoDeMiembrosFachada().RelatorioGrupo_Tabla(SessionManager.Id_GrupoDeMiembros));
                 ReportDataSource ObjReport_2 = new ReportDataSource("dtsVenta", new VentaFachada().Impresion_Venta(Id_Venta));
-                ReportDataSource ObjReport_3 = new ReportDataSource("dtsVentaDetalle", new VentaFachada().Impresion_Venta(Id_Venta));
+                ReportDataSource ObjReport_3 = new ReportDataSource("dtsVentaDetalle", new VentaFachada().Impresion_Venta_Detalle(Id_Venta));
                 rptViewer.LocalReport.DataSources.Clear();
                 rptViewer.LocalReport.DataSources.Add(ObjReport_1);
                 rptViewer.LocalReport.DataSources.Add(ObjReport_2);
