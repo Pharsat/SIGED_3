@@ -20,5 +20,8 @@ namespace SIGED_3.CRM.Model.Util.Struct
         public static string I_Compra = "I_Compra";
         public static string I_Venta = "I_Venta";
         public static string I_Venta_Detalle = "I_Venta_Detalle";
+
+        public static string R_Lista_Precios = "R_Lista_Precios";
+        public static string R_Lista_Precios_2 = "R_Lista_Precios_2";
     }
 }

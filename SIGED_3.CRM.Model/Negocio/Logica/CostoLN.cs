@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using SIGED_3.CRM.Model.Negocio.Entidades;
 using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
 using System.Transactions;
+using SIGED_3.CRM.Model.AccesoDeRecursos.SQL;
 using SIGED_3.CRM.Model.Util.Session;
+using SIGED_3.CRM.Model.Util.Struct;
+
 namespace SIGED_3.CRM.Model.Negocio.Logica
 {
     internal class CostoLN
@@ -245,6 +249,18 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         {
             CostoOAD _objCosto = new CostoOAD();
             return _objCosto.Informe_Utilidades(id_GrupoDeMiembros, desde, hasta);
+        }
+
+        public DataTable Impresion_Lista_Precios(long? Id_GrupoDeMiembros)
+        {
+            CostoOAD _objCosto = new CostoOAD();
+            return _objCosto.Impresion_Lista_Precios(Id_GrupoDeMiembros);
+        }
+
+        public DataTable Impresion_Lista_Precios_2(long? Id_GrupoDeMiembros, short? Selector)
+        {
+            CostoOAD _objCosto = new CostoOAD();
+            return _objCosto.Impresion_Lista_Precios_2(Id_GrupoDeMiembros, Selector);
         }
     }
 }

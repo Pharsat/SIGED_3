@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
+using SIGED_3.CRM.Model.AccesoDeRecursos.SQL;
 using SIGED_3.CRM.Model.Negocio.Entidades;
+using SIGED_3.CRM.Model.Util.Struct;
+
 namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
 {
     internal class CostoOAD
@@ -166,6 +170,18 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
             {
                 return dc.R_Utilidades(id_GrupoDeMiembros, desde, hasta).ToList();
             }
+        }
+
+        public DataTable Impresion_Lista_Precios(long? Id_GrupoDeMiembros)
+        {
+            return new QuerysSQL().Consultar(new List<ParametrosBD> { 
+                new ParametrosBD("Id_GrupoDeMiembros", Id_GrupoDeMiembros) }, ProcedimientosAlmacenados.R_Lista_Precios);
+        }
+        public DataTable Impresion_Lista_Precios_2(long? Id_GrupoDeMiembros, short? Selector)
+        {
+            return new QuerysSQL().Consultar(new List<ParametrosBD> { 
+                new ParametrosBD("Id_GrupoDeMiembros", Id_GrupoDeMiembros), 
+                new ParametrosBD("Selector", Selector) }, ProcedimientosAlmacenados.R_Lista_Precios_2);
         }
     }
 }

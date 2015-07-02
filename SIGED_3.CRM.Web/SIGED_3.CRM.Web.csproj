@@ -100,6 +100,8 @@
     <Content Include="Modulos\Informes\impCompra.aspx" />
     <Content Include="Modulos\Informes\impFichaTecnica.aspx" />
     <Content Include="Modulos\Informes\impVenta.aspx" />
+    <Content Include="Modulos\Informes\infLista_Precios.aspx" />
+    <Content Include="Modulos\Informes\infLista_Precios_2.aspx" />
     <Content Include="Modulos\Informes\infUtilidades.aspx" />
     <Content Include="Modulos\Informes\infCompras.aspx" />
     <Content Include="Modulos\Informes\infCostos.aspx" />
@@ -389,6 +391,20 @@
     </Compile>
     <Compile Include="Modulos\Informes\impVenta.aspx.designer.cs">
       <DependentUpon>impVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infLista_Precios.aspx.cs">
+      <DependentUpon>infLista_Precios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infLista_Precios.aspx.designer.cs">
+      <DependentUpon>infLista_Precios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Informes\infLista_Precios_2.aspx.cs">
+      <DependentUpon>infLista_Precios_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Informes\infLista_Precios_2.aspx.designer.cs">
+      <DependentUpon>infLista_Precios_2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Informes\infUtilidades.aspx.cs">
       <DependentUpon>infUtilidades.aspx</DependentUpon>
@@ -723,6 +739,7 @@
     <EmbeddedResource Include="Modulos\Informes\infInventario.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Informes\infLista_Precios_2.rdlc" />
     <EmbeddedResource Include="Modulos\Informes\infOrdenesDeTrabajo.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -734,6 +751,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Informes\infUtilidades.rdlc" />
     <EmbeddedResource Include="Modulos\Informes\infVentas.rdlc" />
+    <EmbeddedResource Include="Modulos\Informes\infLista_Precios.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

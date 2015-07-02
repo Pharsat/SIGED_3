@@ -5,6 +5,9 @@ using System.Text;
 using SIGED_3.CRM.Model.Negocio.Entidades;
 using SIGED_3.CRM.Model.Negocio.Logica;
 using System.ComponentModel;
+using System.Data;
+using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
+
 namespace SIGED_3.CRM.Model.Servicios.Fachadas
 {
     [DataObject(true)]
@@ -118,6 +121,16 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         {
             CostoLN _objCosto = new CostoLN();
             return _objCosto.Informe_Utilidades(id_GrupoDeMiembros, desde, hasta);
+        }
+        public DataTable Impresion_Lista_Precios(long? Id_GrupoDeMiembros)
+        {
+            CostoLN _objCosto = new CostoLN();
+            return _objCosto.Impresion_Lista_Precios(Id_GrupoDeMiembros);
+        }
+        public DataTable Impresion_Lista_Precios_2(long? Id_GrupoDeMiembros, short? Selector)
+        {
+            CostoLN _objCosto = new CostoLN();
+            return _objCosto.Impresion_Lista_Precios_2(Id_GrupoDeMiembros, Selector);
         }
     }
 }

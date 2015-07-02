@@ -362,7 +362,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Fecha: " &amp; CDate(First(Fields!Fecha.Value, "dtsVenta")).ToString()</Value>
+                <Value>="Fecha: " &amp; First(Fields!Fecha.Value, "dtsVenta")</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -698,7 +698,7 @@
         <Top>2.54062cm</Top>
         <Left>0.127cm</Left>
         <Height>1.2cm</Height>
-        <Width>9.61878cm</Width>
+        <Width>9.61879cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
