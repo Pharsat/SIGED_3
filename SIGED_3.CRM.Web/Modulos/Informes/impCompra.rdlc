@@ -283,7 +283,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Fecha: " &amp; CDec(First(Fields!Fecha.Value, "dtsCompra")).ToString()</Value>
+                <Value>="Fecha: " &amp; First(Fields!Fecha.Value, "dtsCompra").ToString()</Value>
                 <Style />
               </TextRun>
             </TextRuns>
