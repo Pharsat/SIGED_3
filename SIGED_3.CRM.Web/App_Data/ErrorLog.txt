@@ -713,3 +713,100 @@ Stack Trace:
    en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
+********** 05/07/2015 5:34:56 p. m. **********
+Inner Exception Type: System.InvalidOperationException
+Inner Exception: La secuencia no contiene elementos
+Inner Source: System.Data.Linq
+Inner Stack Trace: 
+   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
+   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.RolesOAD.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\RolesOAD.cs:línea 23
+   en SIGED_3.CRM.Model.Negocio.Logica.RolesLN.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\RolesLN.cs:línea 31
+   en SIGED_3.CRM.Model.Servicios.Fachadas.RolesFachada.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\RolesFachada.cs:línea 32
+   en SIGED_3.CRM.Web.MasterPage.Ppal_NoSearch.Page_Load(Object sender, EventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master.cs:línea 34
+   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnLoad(EventArgs e)
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.modulos_inicio_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_lbgdcas5.1.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 05/07/2015 5:37:42 p. m. **********
+Inner Exception Type: System.InvalidOperationException
+Inner Exception: La secuencia no contiene elementos
+Inner Source: System.Data.Linq
+Inner Stack Trace: 
+   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
+   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.RolesOAD.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\RolesOAD.cs:línea 21
+   en SIGED_3.CRM.Web.MasterPage.Ppal_NoSearch.Page_Load(Object sender, EventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master.cs:línea 30
+   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnLoad(EventArgs e)
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.modulos_inicio_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_lbgdcas5.1.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 05/07/2015 5:51:38 p. m. **********
+Inner Exception Type: System.InvalidOperationException
+Inner Exception: La secuencia no contiene elementos
+Inner Source: System.Data.Linq
+Inner Stack Trace: 
+   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
+   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.RolesOAD.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\RolesOAD.cs:línea 23
+   en SIGED_3.CRM.Model.Negocio.Logica.RolesLN.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\RolesLN.cs:línea 31
+   en SIGED_3.CRM.Model.Servicios.Fachadas.RolesFachada.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\RolesFachada.cs:línea 32
+   en SIGED_3.CRM.Web.MasterPage.Ppal_NoSearch.Page_Load(Object sender, EventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master.cs:línea 34
+   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnLoad(EventArgs e)
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.modulos_inicio_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_lbgdcas5.1.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+

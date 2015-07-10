@@ -188,5 +188,22 @@ namespace SIGED_3.CRM.Web.Modulos.Inventario
                 }
             }
         }
+
+        protected void btnCambiarEstado_Click(object sender, ImageClickEventArgs e)
+        {
+            foreach (GridViewRow Row in gvPrincipal.Rows)
+            {
+                if (((CheckBox)Row.FindControl("chkSeleccionarFila")).Checked)
+                {
+                    var inventarioManager = new InventarioFachada();
+
+                    var inventario = inventarioManager.Seleccionar_Id(long.Parse(((HiddenField)Row.FindControl("hdfId")).Value));
+                    inventario.Estado = !inventario.Estado;
+
+                    inventarioManager.Actualizar(inventario);
+                }
+            }
+            gvPrincipal.DataBind();
+        }
     }
 }

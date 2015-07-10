@@ -130,6 +130,15 @@ namespace SIGED_3.CRM.Web.Modulos.Inventario {
         protected global::System.Web.UI.WebControls.ImageButton btnEliminar;
         
         /// <summary>
+        /// btnCambiarEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnCambiarEstado;
+        
+        /// <summary>
         /// btnAumentarExistencia control.
         /// </summary>
         /// <remarks>

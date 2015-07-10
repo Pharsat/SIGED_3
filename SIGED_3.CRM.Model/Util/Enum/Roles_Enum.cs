@@ -7,8 +7,8 @@ namespace SIGED_3.CRM.Model.Util.Enum
 {
     public enum Roles_Enum : int
     {
-        AdministradorDelSistema = 16,
-        GerenteComercial = 17,
-        ClientePremium = 18
+        AdministradorDelSistema = 23,
+        GerenteComercial = 24,
+        ClientePremium = 25
     }
 }

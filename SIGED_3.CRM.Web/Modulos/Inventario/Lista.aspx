@@ -82,6 +82,8 @@
                         OnClick="btnBuscar_Click" Style="padding-left: 20px;" />
                     <asp:ImageButton ID="btnEliminar" runat="server" Style="padding-left: 20px;" ImageUrl="~/Recursos/Diseno/Iconos/Eliminar.png"
                         OnClick="btnEliminar_Click" OnClientClick="return EliminarRegistro();" />
+                    <asp:ImageButton ID="btnCambiarEstado" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Recargar.png"
+                        OnClick="btnCambiarEstado_Click" Style="padding-left: 20px;" />
                     <asp:ImageButton ID="btnAumentarExistencia" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Aumentar.png"
                         OnClick="btnAumentarExistencia_Click" Style="padding-left: 20px;" Width="24px" />
                     <asp:ImageButton ID="btnDisminuirExistencia" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Reducir.png"
