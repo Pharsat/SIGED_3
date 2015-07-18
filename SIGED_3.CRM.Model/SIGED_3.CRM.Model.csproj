@@ -99,6 +99,7 @@
     <Compile Include="AccesoDeRecursos\OAD\Venta_DetalleOAD.cs" />
     <Compile Include="AccesoDeRecursos\SQL\QuerysSQL.cs" />
     <Compile Include="Negocio\Entidades\Bodega.cs" />
+    <Compile Include="Negocio\Entidades\BodegaPorRecursosFaltantes.cs" />
     <Compile Include="Negocio\Entidades\Cliente.cs" />
     <Compile Include="Negocio\Entidades\Cliente_Contacto.cs" />
     <Compile Include="Negocio\Entidades\Color.cs" />

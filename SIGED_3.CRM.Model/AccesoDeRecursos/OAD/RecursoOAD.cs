@@ -19,6 +19,13 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 return dc.Recurso.ToList();
             }
         }
+        public List<Recurso> Seleccionar_All_ByGrupo(long? Id_GrupoDeMiembros)
+        {
+            using (ModeloDataContext dc = new ModeloDataContext())
+            {
+                return dc.Recurso.Where(p => p.Id_GrupoDeMiembros == Id_GrupoDeMiembros).ToList();
+            }
+        }
         /// <summary>
         /// Selecciona todos los registros de la tabla Bodega
         /// </summary>

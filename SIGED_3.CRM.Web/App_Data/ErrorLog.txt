@@ -810,3 +810,87 @@ Stack Trace:
    en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
+********** 18/07/2015 1:38:22 a. m. **********
+Inner Exception Type: System.Exception
+Inner Exception: Error en el nivel del transporte al recibir los resultados del servidor. (provider: TCP Provider, error: 0 - El sistema local anuló la conexión de red.)
+Inner Source: SIGED_3.CRM.Model
+Inner Stack Trace: 
+   en SIGED_3.CRM.Model.Negocio.Logica.InventarioLN.CompletarInventario(Nullable`1 Id_GrupoDeMiembros) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\InventarioLN.cs:línea 244
+   en SIGED_3.CRM.Model.Servicios.Fachadas.InventarioFachada.CompletarInventario() en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\InventarioFachada.cs:línea 93
+   en SIGED_3.CRM.Web.Modulos.Inventario.Lista.btnGenerarProductos(Object sender, ImageClickEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Inventario\Lista.aspx.cs:línea 160
+   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
+   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.modulos_inventario_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_4gndrqny.0.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 18/07/2015 2:07:33 a. m. **********
+Inner Exception Type: System.Exception
+Inner Exception: La operación no es válida para el estado de la transacción.
+Inner Source: SIGED_3.CRM.Model
+Inner Stack Trace: 
+   en SIGED_3.CRM.Model.Negocio.Logica.InventarioLN.CompletarInventario(Nullable`1 Id_GrupoDeMiembros) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\InventarioLN.cs:línea 244
+   en SIGED_3.CRM.Model.Servicios.Fachadas.InventarioFachada.CompletarInventario() en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\InventarioFachada.cs:línea 93
+   en SIGED_3.CRM.Web.Modulos.Inventario.Lista.btnGenerarProductos(Object sender, ImageClickEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Inventario\Lista.aspx.cs:línea 160
+   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
+   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.modulos_inventario_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_4gndrqny.0.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 18/07/2015 3:20:41 a. m. **********
+Inner Exception Type: System.Exception
+Inner Exception: La operación no es válida para el estado de la transacción.
+Inner Source: SIGED_3.CRM.Model
+Inner Stack Trace: 
+   en SIGED_3.CRM.Model.Negocio.Logica.InventarioLN.CompletarInventario(Nullable`1 Id_GrupoDeMiembros) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\InventarioLN.cs:línea 222
+   en SIGED_3.CRM.Model.Servicios.Fachadas.InventarioFachada.CompletarInventario() en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\InventarioFachada.cs:línea 93
+   en SIGED_3.CRM.Web.Modulos.Inventario.Lista.btnGenerarProductos(Object sender, ImageClickEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Inventario\Lista.aspx.cs:línea 160
+   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
+   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.modulos_inventario_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_5lepo4xt.0.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+

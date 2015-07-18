@@ -32,6 +32,32 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 }
             }
         }
+        public List<BodegaPorRecursosFaltantes> Seleccionar_ALasQueLeFaltanRecursos(long? Id_GrupoDeMiembros)
+        {
+            List<BodegaPorRecursosFaltantes> bodegasFaltantes = new List<BodegaPorRecursosFaltantes>();
+            using (ModeloDataContext dc = new ModeloDataContext())
+            {
+                int countRecursos = dc.Recurso.Where(p => p.Id_GrupoDeMiembros == Id_GrupoDeMiembros).Count();
+                List<Bodega> lstBodegas = dc.Bodega.Where(p => p.Id_GrupoDeMiembros == Id_GrupoDeMiembros).ToList();
+                foreach (var bodega in lstBodegas)
+                {
+                    if (countRecursos != dc.Inventario.Where(p => p.Id_Bodega == bodega.Id).Select(p => p.Id_Recurso).Distinct().Count())
+                    {
+                        bodegasFaltantes.Add(new BodegaPorRecursosFaltantes()
+                        {
+                            Bodega = bodega,
+                            Faltantes = dc.Recurso.Where(p =>
+                                !(dc.Inventario.Where(q =>
+                                    q.Id_GrupoDeMiemros == Id_GrupoDeMiembros &&
+                                    q.Id_Bodega == bodega.Id).Select(q =>
+                                        q.Id_Recurso).Distinct().Contains(p.Id)) &&
+                                        p.Id_GrupoDeMiembros == Id_GrupoDeMiembros).ToList()
+                        });
+                    }
+                }
+            }
+            return bodegasFaltantes;
+        }
         /// <summary>
         /// Selecciona todos los registros de la tabla Bodega
         /// </summary>

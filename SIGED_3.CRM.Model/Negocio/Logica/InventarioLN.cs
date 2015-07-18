@@ -188,33 +188,21 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         {
             try
             {
-                TransactionOptions transactionOptions = new TransactionOptions();
-                transactionOptions.IsolationLevel = IsolationLevel.ReadCommitted;
-                transactionOptions.Timeout = TimeSpan.MaxValue;
-                using (TransactionScope objTransaccion = new TransactionScope(TransactionScopeOption.Required, transactionOptions))
+                var BodegasALasQueLeFaltanRecursos = new BodegaOAD().Seleccionar_ALasQueLeFaltanRecursos(Id_GrupoDeMiembros);
+                foreach (BodegaPorRecursosFaltantes objBodega in BodegasALasQueLeFaltanRecursos)
                 {
-                    List<Recurso> lstRecursosNoEnInventario = new RecursoOAD().Seleccionar_RecursosQueNoEstanEnInventario(Id_GrupoDeMiembros);
-                    List<Bodega> lstBodegas = new BodegaOAD().Seleccionar_All_Activos(Id_GrupoDeMiembros, null);
-
-                    foreach (Bodega objBodega in lstBodegas)
+                    foreach (Recurso objRecurso in objBodega.Faltantes)
                     {
-                        foreach (Recurso objRecurso in lstRecursosNoEnInventario)
-                        {
-                            Inventario _objInventario = new Inventario();
-                            _objInventario.Id_Recurso = objRecurso.Id;
-                            _objInventario.Id_Bodega = objBodega.Id;
-                            _objInventario.Id_GrupoDeMiemros = Id_GrupoDeMiembros;
-                            _objInventario.Estado = true;
-                            _objInventario.Existencia = 0;
-                            _objInventario.Stock_Maximo = 0;
-                            _objInventario.Stock_Minimo = 0;
-                            if (!this.ExisteInventario(_objInventario.Id_GrupoDeMiemros, _objInventario.Id_Bodega, objRecurso.Id))
-                            {
-                                this.Guardar(_objInventario);
-                            }
-                        }
+                        Inventario _objInventario = new Inventario();
+                        _objInventario.Id_Recurso = objRecurso.Id;
+                        _objInventario.Id_Bodega = objBodega.Bodega.Id;
+                        _objInventario.Id_GrupoDeMiemros = Id_GrupoDeMiembros;
+                        _objInventario.Estado = true;
+                        _objInventario.Existencia = 0;
+                        _objInventario.Stock_Maximo = 0;
+                        _objInventario.Stock_Minimo = 0;
+                        this.Guardar(_objInventario);
                     }
-                    objTransaccion.Complete();
                 }
             }
             catch (Exception ex)
