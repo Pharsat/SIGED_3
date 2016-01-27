@@ -46,23 +46,23 @@
                             <asp:Label ID="Label4" runat="server" Text="Recurso"></asp:Label>
                         </td>
                         <td>
-                            <telerik:RadComboBox ID="cboRecursos" runat="server" DataSourceID="ObjectDataSource2" DataTextField="NombreRecurso" DataValueField="Id" Filter="Contains" HighlightTemplatedItems="True" OnItemDataBound="cboColores_ItemDataBound" SelectedValue='<%# Bind("Id_Recurso") %>' ValidationGroup="Insert_2" Width="600px" AutoPostBack="True" OnDataBound="cboRecursos_DataBound">
+                            <telerik:RadComboBox ID="cboRecursos" runat="server" CausesValidation="False" DataSourceID="ObjectDataSource2" DataTextField="NombreRecurso" DataValueField="Id" Filter="Contains" HighlightTemplatedItems="True" OnItemDataBound="cboColores_ItemDataBound" Width="600px" MaxHeight="200px">
                                 <HeaderTemplate>
                                     <table>
                                         <tr>
                                             <td style="width: 100px;">
-                                                <asp:Label ID="Label80" runat="server" Text="Nombre"></asp:Label>
+                                                <asp:Label ID="Label83" runat="server" Text="Unidad de medida"></asp:Label>
                                             </td>
                                             <td style="width: 80px;">
                                                 <asp:Label ID="Label81" runat="server" Text="Tipo"></asp:Label>
                                             </td>
                                             <td style="width: 100px;">
-                                                <asp:Label ID="Label83" runat="server" Text="Unidad de medida"></asp:Label>
+                                                <asp:Label ID="Label80" runat="server" Text="Nombre"></asp:Label>
                                             </td>
+                                            <td style="width: 100px;">&nbsp;</td>
                                             <td style="width: 100px;">
                                                 <asp:Label ID="Label82" runat="server" Text="Color"></asp:Label>
                                             </td>
-                                            <td style="width: 100px;">&nbsp;</td>
                                             <td style="width: 100px;">
                                                 <asp:Label ID="Label84" runat="server" Text="Talla"></asp:Label>
                                             </td>
@@ -73,18 +73,18 @@
                                     <table>
                                         <tr>
                                             <td style="width: 100px;">
-                                                <asp:Label ID="Label93" runat="server" Text="Nombre"></asp:Label>
+                                                <asp:Label ID="Label86" runat="server" Text="Color"></asp:Label>
                                             </td>
                                             <td style="width: 80px;">
                                                 <asp:Label ID="Label85" runat="server" Text="Tipo"></asp:Label>
                                             </td>
                                             <td style="width: 100px;">
-                                                <asp:Label ID="Label86" runat="server" Text="Color"></asp:Label>
+                                                <asp:Label ID="Label93" runat="server" Text="Nombre"></asp:Label>
                                             </td>
+                                            <td style="width: 100px;">&nbsp;</td>
                                             <td style="width: 100px;">
                                                 <asp:Label ID="Label87" runat="server" Text="Unidad de medida"></asp:Label>
                                             </td>
-                                            <td style="width: 100px;">&nbsp;</td>
                                             <td style="width: 100px;">
                                                 <asp:Label ID="Label88" runat="server" Text="Talla"></asp:Label>
                                             </td>
@@ -95,20 +95,20 @@
                                     <table>
                                         <tr>
                                             <td style="width: 100px;">
-                                                <asp:Label ID="Label94" runat="server" ForeColor="Black" Text='<%# Eval("NombreRecurso") %>'></asp:Label>
+                                                <asp:Label ID="Label90" runat="server" ForeColor="Black" Text='<%# Eval("UnidadDeMedida") %>'></asp:Label>
                                             </td>
                                             <td style="width: 80px;">
                                                 <asp:Label ID="Label89" runat="server" ForeColor="Black" Text='<%# Eval("TipoRecurso") %>'></asp:Label>
                                             </td>
                                             <td style="width: 100px;">
-                                                <asp:Label ID="Label90" runat="server" ForeColor="Black" Text='<%# Eval("UnidadDeMedida") %>'></asp:Label>
-                                            </td>
-                                            <td style="width: 100px;">
-                                                <asp:Label ID="Label91" runat="server" ForeColor="Black" Text='<%# Eval("NombreColor") %>'></asp:Label>
+                                                <asp:Label ID="Label94" runat="server" ForeColor="Black" Text='<%# Eval("NombreRecurso") %>'></asp:Label>
                                             </td>
                                             <td style="width: 100px;">
                                                 <div id="gcColor" runat="server">
                                                 </div>
+                                            </td>
+                                            <td style="width: 100px;">
+                                                <asp:Label ID="Label91" runat="server" ForeColor="Black" Text='<%# Eval("NombreColor") %>'></asp:Label>
                                             </td>
                                             <td style="width: 100px;">
                                                 <asp:Label ID="Label92" runat="server" ForeColor="Black" Text='<%# Eval("Talla") %>'></asp:Label>

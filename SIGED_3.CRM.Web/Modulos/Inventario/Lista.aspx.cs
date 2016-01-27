@@ -82,7 +82,7 @@ namespace SIGED_3.CRM.Web.Modulos.Inventario
                 gvPrincipal.DataBind();
                 if (!Resultado)
                 {
-                    ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
+                    //ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace SIGED_3.CRM.Web.Modulos.Inventario
                 gvPrincipal.DataBind();
                 if (!Resultado)
                 {
-                    ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
+                    //////ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
                 }
             }
         }
@@ -128,7 +128,7 @@ namespace SIGED_3.CRM.Web.Modulos.Inventario
                 gvPrincipal.DataBind();
                 if (!Resultado)
                 {
-                    ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
+                    //ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace SIGED_3.CRM.Web.Modulos.Inventario
                 gvPrincipal.DataBind();
                 if (!Resultado)
                 {
-                    ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
+                    //ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
                 }
             }
         }
@@ -184,7 +184,7 @@ namespace SIGED_3.CRM.Web.Modulos.Inventario
                 gvPrincipal.DataBind();
                 if (!Resultado)
                 {
-                    ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
+                    //ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('No se han podido realizar uno o mas movimientos en inventario debido a restricciones de Stock.')", true);
                 }
             }
         }

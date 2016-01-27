@@ -50,7 +50,7 @@ namespace SIGED_3.CRM.Web.Modulos.ProcesoDeFabricacion
             }
             if (Existen)
             {
-                ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('Uno o mas elementos a eliminar no pudieron ser elimindos ya que estan siendo usados por el sistema.')", true);
+                //ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "MensajeTres('Uno o mas elementos a eliminar no pudieron ser elimindos ya que estan siendo usados por el sistema.')", true);
             }
             gvPrincipal.DataBind();
         }

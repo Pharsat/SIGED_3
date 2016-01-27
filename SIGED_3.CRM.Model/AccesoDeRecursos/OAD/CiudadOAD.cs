@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGED_3.CRM.Model.Negocio.Entidades;
-namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
+﻿namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
 {
-    internal class CiudadOAD
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Negocio.Entidades;
+
+    internal class CiudadOad
     {
         /// <summary>
         /// Selecciona todos los registros de la tabla Bodega
@@ -13,7 +13,7 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
         /// <returns>Lista de registros tipo Bodega</returns>
         public List<Ciudad> Seleccionar_All()
         {
-            using (ModeloDataContext dc = new ModeloDataContext())
+            using (var dc = new ModeloDataContext())
             {
                 return dc.Ciudad.ToList();
             }
@@ -21,68 +21,65 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
         /// <summary>
         /// Captura toda la lista de ciudades pertenecientesa a una provincia.
         /// </summary>
-        /// <param name="Id_Provincia">Identificativo de la provincia</param>
+        /// <param name="idProvincia">Identificativo de la provincia</param>
         /// <returns>Lista de ciudades.</returns>
-        public List<Ciudad> Seleccionar_PorProvincia(int Id_Provincia)
+        public List<Ciudad> Seleccionar_PorProvincia(int idProvincia)
         {
-            using (ModeloDataContext dc = new ModeloDataContext())
+            using (var dc = new ModeloDataContext())
             {
                 var query = from p in dc.Ciudad
-                            where p.Id_Provincia == Id_Provincia
+                            where p.Id_Provincia == idProvincia
                             select p;
                 return query.ToList();
             }
         }
+
         /// <summary>
         /// Selecciona todos los registros de la tabla Bodega
         /// </summary>
-        /// <param name=Id>Identificador de la Bodega</param>
+        /// <param name="id">Identificador de la Bodega</param>
         /// <returns>Objeto singular del tipo Bodega</returns>
-        public Ciudad Seleccionar_Id(long Id)
+        public Ciudad Seleccionar_Id(long id)
         {
-            using (ModeloDataContext dc = new ModeloDataContext())
+            using (var dc = new ModeloDataContext())
             {
-                return dc.Ciudad.Single(p => p.Id == Id);
+                return dc.Ciudad.Single(p => p.Id == id);
             }
         }
+
         /// <summary>
         /// Guarda un objeto de tipo Bodega en la base de datos.
         /// </summary>
-        /// <param name=objBodega>Objeto Bodega a guardar</param>
+        /// <param name="objCiudad"></param>
         public void Guardar(Ciudad objCiudad)
         {
-            using (ModeloDataContext dc = new ModeloDataContext())
+            using (var dc = new ModeloDataContext())
             {
                 dc.Ciudad.InsertOnSubmit(objCiudad);
                 dc.SubmitChanges();
             }
         }
-        /// <summary>
-        /// Elimina un objeto del tipo Bodega, se recibe su Id unicamente
-        /// </summary>
-        /// <param name=Id>Identificativo del(a) Bodega</param>
-        public void Eliminar(Ciudad objCiudad)
+
+        public void Eliminar(Ciudad ciudad)
         {
-            using (ModeloDataContext dc = new ModeloDataContext())
+            using (var dc = new ModeloDataContext())
             {
-                Ciudad _objCiudad = dc.Ciudad.Single(p => p.Id == objCiudad.Id);
-                dc.Ciudad.DeleteOnSubmit(_objCiudad);
+                var objCiudad = dc.Ciudad.Single(p => p.Id == ciudad.Id);
+                if (objCiudad == null) throw new ArgumentNullException("ciudad");
+                dc.Ciudad.DeleteOnSubmit(objCiudad);
                 dc.SubmitChanges();
             }
         }
-        /// <summary>
-        /// Actualiza una Bodega, se basa en el identificador para actualizar el objeto.
-        /// </summary>
-        /// <param name=objBodega>Objeto del tipo Bodega</param>
-        public void Actualizar(Ciudad objCiudad)
+
+        public void Actualizar(Ciudad ciudad)
         {
             using (ModeloDataContext dc = new ModeloDataContext())
             {
-                Ciudad _objCiudad = dc.Ciudad.Single(p => p.Id == objCiudad.Id);
-                _objCiudad.Id = objCiudad.Id;
-                _objCiudad.Id_Provincia = objCiudad.Id_Provincia;
-                _objCiudad.Nombre = objCiudad.Nombre;
-                _objCiudad.Estado = objCiudad.Estado;
+                var objCiudad = dc.Ciudad.Single(p => p.Id == ciudad.Id);
+                objCiudad.Id = ciudad.Id;
+                objCiudad.Id_Provincia = ciudad.Id_Provincia;
+                objCiudad.Nombre = ciudad.Nombre;
+                objCiudad.Estado = ciudad.Estado;
                 dc.SubmitChanges();
             }
         }

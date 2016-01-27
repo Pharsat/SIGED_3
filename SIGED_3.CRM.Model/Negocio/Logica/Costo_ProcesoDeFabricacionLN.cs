@@ -16,7 +16,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Lista de registros tipo Bodega</returns>
         public List<Costo_ProcesoDeFabricacion> Seleccionar_All()
         {
-            Costo_ProcesoDeFabricacionOAD objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+            CostoProcesoDeFabricacionOad objCosto_ProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
             return objCosto_ProcesoDeFabricacion.Seleccionar_All();
         }
         /// <summary>
@@ -26,7 +26,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Objeto singular del tipo Bodega</returns>
         public Costo_ProcesoDeFabricacion Seleccionar_Id(long Id)
         {
-            Costo_ProcesoDeFabricacionOAD objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+            CostoProcesoDeFabricacionOad objCosto_ProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
             return objCosto_ProcesoDeFabricacion.Seleccionar_Id(Id);
         }
         /// <summary>
@@ -36,13 +36,13 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Lista de procesos</returns>
         public List<LS_Costo_ProcesosResult> Seleccionar_By_Id(long? id_Costo)
         {
-            Costo_ProcesoDeFabricacionOAD objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+            CostoProcesoDeFabricacionOad objCosto_ProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
             return objCosto_ProcesoDeFabricacion.Seleccionar_By_Id(id_Costo);
         }
 
         public List<Costo_ProcesoDeFabricacion> Seleccionar_By_Id_Complete(long? id_Costo)
         {
-            Costo_ProcesoDeFabricacionOAD objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+            CostoProcesoDeFabricacionOad objCosto_ProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
             return objCosto_ProcesoDeFabricacion.Seleccionar_By_Id_Complete(id_Costo);
         }
 
@@ -56,13 +56,13 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             {
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
-                    Costo_ProcesoDeFabricacionOAD _objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+                    CostoProcesoDeFabricacionOad _objCosto_ProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
                     UnidadDeMedida objUnidadDeMedidaAConvertir = new UnidadDeMedidaLN().Seleccionar_Id(objCosto_ProcesoDeFabricacion.Id_UnidadDeMedida.Value);
                     UnidadDeMedida objUnidadDeMedidaOrigen = new UnidadDeMedidaLN().Seleccionar_Id(new ProcesoDeFabricacionLN().Seleccionar_Id(objCosto_ProcesoDeFabricacion.Id_Proceso.Value).Id_UnidadDeMedida.Value);
                     objCosto_ProcesoDeFabricacion.Cantidad = new Genericos().ConvercionDeUnidadesValor(objUnidadDeMedidaAConvertir, objCosto_ProcesoDeFabricacion.Cantidad.Value, objUnidadDeMedidaOrigen);
                     objCosto_ProcesoDeFabricacion.Valor = new Genericos().ConvercionDeUnidadesValor(objUnidadDeMedidaAConvertir, objCosto_ProcesoDeFabricacion.Valor.Value, objUnidadDeMedidaOrigen);
                     _objCosto_ProcesoDeFabricacion.Guardar(objCosto_ProcesoDeFabricacion);
-                    new CostoLN().Renovar_Valores(objCosto_ProcesoDeFabricacion.Id_Costo.Value);
+                    new CostoLn().Renovar_Valores(objCosto_ProcesoDeFabricacion.Id_Costo.Value);
                     objTransaccion.Complete();
                 }
             }
@@ -82,9 +82,9 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
                     objCosto_ProcesoDeFabricacion = this.Seleccionar_Id(objCosto_ProcesoDeFabricacion.Id);
-                    Costo_ProcesoDeFabricacionOAD _objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+                    CostoProcesoDeFabricacionOad _objCosto_ProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
                     _objCosto_ProcesoDeFabricacion.Eliminar(objCosto_ProcesoDeFabricacion);
-                    new CostoLN().Renovar_Valores(objCosto_ProcesoDeFabricacion.Id_Costo.Value);
+                    new CostoLn().Renovar_Valores(objCosto_ProcesoDeFabricacion.Id_Costo.Value);
                     objTransaccion.Complete();
                 }
             }
@@ -103,11 +103,24 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             {
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
-                    Costo_ProcesoDeFabricacionOAD _objCosto_ProcesoDeFabricacion = new Costo_ProcesoDeFabricacionOAD();
+                    CostoProcesoDeFabricacionOad _objCosto_ProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
                     _objCosto_ProcesoDeFabricacion.Actualizar(objCosto_ProcesoDeFabricacion);
-                    new CostoLN().Renovar_Valores(objCosto_ProcesoDeFabricacion.Id_Costo.Value);
+                    new CostoLn().Renovar_Valores(objCosto_ProcesoDeFabricacion.Id_Costo.Value);
                     objTransaccion.Complete();
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void GuardarCopia(Costo_ProcesoDeFabricacion newCostoProceso)
+        {
+            try
+            {
+                CostoProcesoDeFabricacionOad objCostoProcesoDeFabricacion = new CostoProcesoDeFabricacionOad();
+                objCostoProcesoDeFabricacion.Guardar(newCostoProceso);
             }
             catch (Exception ex)
             {

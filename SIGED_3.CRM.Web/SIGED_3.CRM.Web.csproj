@@ -47,9 +47,9 @@
       <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -690,9 +690,6 @@
     <Content Include="MasterPage\Reports.Master" />
     <Content Include="MasterPage\Ppal_NoSearch.Master" />
     <Content Include="MasterPage\Details_NoUpdatePanel.Master" />
-    <None Include="Properties\PublishProfiles\SeekDotNet.pubxml" />
-    <None Include="Properties\PublishProfiles\siged - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\siged - Web Deploy.pubxml" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -708,9 +705,9 @@
     <Content Include="App_Code\SID_2DataSet.xss">
       <DependentUpon>SID_2DataSet.xsd</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\siged2 - FTP %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\siged2 - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\siged2 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\siged - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\siged - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\siged2 - Web Deploy %282%29.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

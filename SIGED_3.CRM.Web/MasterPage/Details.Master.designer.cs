@@ -6,8 +6,12 @@
 //     the code is regenerated. 
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 namespace SIGED_3.CRM.Web.MasterPage {
+    
+    
     public partial class Details {
+        
         /// <summary>
         /// head control.
         /// </summary>
@@ -16,6 +20,7 @@ namespace SIGED_3.CRM.Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -24,6 +29,7 @@ namespace SIGED_3.CRM.Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
         /// <summary>
         /// RadScriptManager1 control.
         /// </summary>
@@ -32,6 +38,7 @@ namespace SIGED_3.CRM.Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
+        
         /// <summary>
         /// imgLogo control.
         /// </summary>
@@ -40,6 +47,7 @@ namespace SIGED_3.CRM.Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgLogo;
+        
         /// <summary>
         /// rbiImagenGrupo control.
         /// </summary>
@@ -48,14 +56,7 @@ namespace SIGED_3.CRM.Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadBinaryImage rbiImagenGrupo;
-        /// <summary>
-        /// upDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upDetalle;
+        
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
@@ -64,13 +65,5 @@ namespace SIGED_3.CRM.Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-        /// <summary>
-        /// upProgresoDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress upProgresoDetalle;
     }
 }

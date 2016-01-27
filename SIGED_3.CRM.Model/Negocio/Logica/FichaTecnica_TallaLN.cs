@@ -50,8 +50,10 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 {
                     FichaTecnica_TallaOAD _objFichaTecnica_Talla = new FichaTecnica_TallaOAD();
                     _objFichaTecnica_Talla.Guardar(objFichaTecnica_Talla);
+
                     FichaTecnicaLN objFicha = new FichaTecnicaLN();
-                    objFicha.CrearRecursos(objFichaTecnica_Talla.Id_FichaTecnica.Value);
+                    FichaTecnica objFic = objFicha.Seleccionar_Id(objFichaTecnica_Talla.Id_FichaTecnica.Value);
+                    objFicha.CrearRecursos(objFichaTecnica_Talla.Id_FichaTecnica.Value, "Ref: " + objFic.Codigo + " || " + objFic.TipoPrenda);
                     objTransaccion.Complete();
                 }
             }

@@ -70,12 +70,12 @@ namespace SIGED_3.CRM.Web.Modulos.Consecutivo
             ObjectDataSource1.SelectParameters["Id"].DefaultValue = this.Id.ToString();
             frmPpal.DataBind();
 
-            ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "closeWin('actualizado')", true);
+            //ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "closeWin('actualizado')", true);
         }
         protected void ObjectDataSource1_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
         {
             this.Id = (long)e.ReturnValue;
-            ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "MensajeDos('guardado')", true);
+            //ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "MensajeDos('guardado')", true);
         }
         protected void frmPpal_DataBound(object sender, EventArgs e)
         {

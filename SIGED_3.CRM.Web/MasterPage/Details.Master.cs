@@ -12,13 +12,13 @@ namespace SIGED_3.CRM.Web.MasterPage
 {
     public partial class Details : System.Web.UI.MasterPage
     {
-        public UpdatePanel Expose_upDetalle
-        {
-            get
-            {
-                return this.upDetalle;
-            }
-        }
+        //public UpdatePanel Expose_upDetalle
+        //{
+        //    get
+        //    {
+        //        return this.upDetalle;
+        //    }
+        //}
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Header.DataBind();

@@ -93,6 +93,14 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
                 return dc.Recurso.Any(p => p.Id_Color == id_Color && p.Talla == Talla && p.Id_FichaTecnica == Id_FichaTecnica);
             }
         }
+
+        public Recurso Tomar_Existencia_Recurso(long? id_Color, string Talla, long? Id_FichaTecnica)
+        {
+            using (ModeloDataContext dc = new ModeloDataContext())
+            {
+                return dc.Recurso.Single(p => p.Id_Color == id_Color && p.Talla == Talla && p.Id_FichaTecnica == Id_FichaTecnica);
+            }
+        }
         /// <summary>
         /// Guarda un objeto de tipo Bodega en la base de datos.
         /// </summary>
@@ -181,12 +189,12 @@ namespace SIGED_3.CRM.Model.AccesoDeRecursos.OAD
             }
         }
 
-        public List<Recurso> Seleccionar_RecursosQueNoEstanEnCostos(long? Id_GrupoDeMiembros)
+        public List<Recurso> Seleccionar_RecursosQueNoEstanEnCostos(long? idGrupoDeMiembros, long? idFichaTecnica)
         {
             using (ModeloDataContext dc = new ModeloDataContext())
             {
-                List<long> IdsDeRecursosYCostos = dc.Costo.Where(c => c.Id_GrupoDeMiembros == Id_GrupoDeMiembros).Select(r => r.Id).ToList();
-                List<Recurso> lstRecursosNoEnCostos = dc.Recurso.Where(r => !IdsDeRecursosYCostos.Contains(r.Id) && r.Id_GrupoDeMiembros == Id_GrupoDeMiembros).ToList();
+                List<long> idsDeRecursosYCostos = dc.Costo.Where(c => c.Id_GrupoDeMiembros == idGrupoDeMiembros && c.Id_Recurso.HasValue).Select(r => r.Id_Recurso.Value).ToList();
+                List<Recurso> lstRecursosNoEnCostos = dc.Recurso.Where(r => !idsDeRecursosYCostos.Contains(r.Id) && r.Id_GrupoDeMiembros == idGrupoDeMiembros && r.Id_FichaTecnica == idFichaTecnica).ToList();
                 return lstRecursosNoEnCostos;
             }
         }

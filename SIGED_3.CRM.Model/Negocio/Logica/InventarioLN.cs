@@ -188,7 +188,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         {
             try
             {
-                var BodegasALasQueLeFaltanRecursos = new BodegaOAD().Seleccionar_ALasQueLeFaltanRecursos(Id_GrupoDeMiembros);
+                var BodegasALasQueLeFaltanRecursos = new BodegaOad().Seleccionar_ALasQueLeFaltanRecursos(Id_GrupoDeMiembros);
                 foreach (BodegaPorRecursosFaltantes objBodega in BodegasALasQueLeFaltanRecursos)
                 {
                     foreach (Recurso objRecurso in objBodega.Faltantes)
@@ -239,7 +239,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                             this.Actualizar(objInventarioDestino);
                             this.Actualizar(objInventarioOrigen);
 
-                            BodegaOAD objBodegaOAD = new BodegaOAD();
+                            BodegaOad objBodegaOAD = new BodegaOad();
                             Bodega objBodegaOrigen = objBodegaOAD.Seleccionar_Id(objInventarioOrigen.Id_Bodega.Value);
                             Bodega objBodegaDestino = objBodegaOAD.Seleccionar_Id(objInventarioDestino.Id_Bodega.Value);
 

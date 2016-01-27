@@ -46,7 +46,7 @@
                                                         <td style="text-align: right;">
                                                             <asp:Label ID="Label16" runat="server" Text="Proveedor"></asp:Label></td>
                                                         <td style="text-align: left;">
-                                                            <telerik:RadComboBox ID="cboProveedors" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre" DataValueField="Id" SelectedValue='<%# Bind("Id_Proveedor") %>' Width="300px"></telerik:RadComboBox>
+                                                            <telerik:RadComboBox ID="cboProveedors" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre" DataValueField="Id" SelectedValue='<%# Bind("Id_Proveedor") %>' Width="300px" Filter="Contains"></telerik:RadComboBox>
                                                             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Seleccionar_All_Activos" TypeName="SIGED_3.CRM.Model.Servicios.Fachadas.ProveedorFachada">
                                                                 <SelectParameters>
                                                                     <asp:SessionParameter Name="Id_GrupoDeMiembros" SessionField="IdGM" Type="Int64" />
@@ -140,7 +140,7 @@
                                                                             <td style="text-align: right;">
                                                                                 <asp:Label ID="Label6" runat="server" Text="Recurso"></asp:Label></td>
                                                                             <td>
-                                                                                <telerik:RadComboBox ID="cboRecursos" runat="server" CausesValidation="False" DataSourceID="ObjectDataSource1" DataTextField="NombreRecurso" DataValueField="Id" Filter="Contains" HighlightTemplatedItems="True" OnItemDataBound="cboColores_ItemDataBound" SelectedValue='<%# Bind("Id_Recurso") %>' ValidationGroup="Update" Width="600px">
+                                                                                <telerik:RadComboBox ID="cboRecursos" runat="server" CausesValidation="False" DataSourceID="ObjectDataSource1" DataTextField="NombreRecurso" DataValueField="Id" Filter="Contains" HighlightTemplatedItems="True" OnItemDataBound="cboColores_ItemDataBound" SelectedValue='<%# Bind("Id_Recurso") %>' ValidationGroup="Update" Width="600px" MaxHeight="200px">
                                                                                     <HeaderTemplate>
                                                                                         <table>
                                                                                             <tr>
@@ -275,7 +275,7 @@
                                                                             <td style="text-align: right;">
                                                                                 <asp:Label ID="Label6" runat="server" Text="Recurso"></asp:Label></td>
                                                                             <td>
-                                                                                <telerik:RadComboBox ID="cboRecursos" runat="server" DataSourceID="ObjectDataSource1" DataTextField="NombreRecurso" DataValueField="Id" Filter="Contains" HighlightTemplatedItems="True" OnItemDataBound="cboColores_ItemDataBound" SelectedValue='<%# Bind("Id_Recurso") %>' ValidationGroup="Insert" Width="600px">
+                                                                                <telerik:RadComboBox ID="cboRecursos" runat="server" DataSourceID="ObjectDataSource1" DataTextField="NombreRecurso" DataValueField="Id" Filter="Contains" HighlightTemplatedItems="True" OnItemDataBound="cboColores_ItemDataBound" SelectedValue='<%# Bind("Id_Recurso") %>' ValidationGroup="Insert" Width="600px" MaxHeight="200px">
                                                                                     <HeaderTemplate>
                                                                                         <table>
                                                                                             <tr>
@@ -467,7 +467,7 @@
                                                 </td>
                                                 <td style="text-align: left;">
                                                     <telerik:RadComboBox ID="cboProveedors" runat="server" DataSourceID="ObjectDataSource1"
-                                                        DataTextField="Nombre" DataValueField="Id" SelectedValue='<%# Bind("Id_Proveedor") %>' Width="300px">
+                                                        DataTextField="Nombre" DataValueField="Id" SelectedValue='<%# Bind("Id_Proveedor") %>' Width="300px" Filter="Contains">
                                                     </telerik:RadComboBox>
                                                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Seleccionar_All_Activos" TypeName="SIGED_3.CRM.Model.Servicios.Fachadas.ProveedorFachada">
                                                         <SelectParameters>

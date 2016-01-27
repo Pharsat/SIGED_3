@@ -112,15 +112,6 @@ namespace SIGED_3.CRM.Web.MasterPage {
         protected global::System.Web.UI.WebControls.ImageButton btnAbrirMenu;
         
         /// <summary>
-        /// upUsuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upUsuario;
-        
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -355,15 +346,6 @@ namespace SIGED_3.CRM.Web.MasterPage {
         protected global::Telerik.Web.UI.RadBinaryImage rbiImagenGrupo;
         
         /// <summary>
-        /// upPrincipal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upPrincipal;
-        
-        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
@@ -371,14 +353,5 @@ namespace SIGED_3.CRM.Web.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-        
-        /// <summary>
-        /// upProgresoPrincipal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress upProgresoPrincipal;
     }
 }

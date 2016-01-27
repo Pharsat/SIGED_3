@@ -6,8 +6,12 @@
 //     the code is regenerated. 
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 namespace SIGED_3.CRM.Web.Modulos.Informes {
+    
+    
     public partial class infConpras {
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -16,6 +20,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+        
         /// <summary>
         /// dtDesde control.
         /// </summary>
@@ -24,6 +29,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadDatePicker dtDesde;
+        
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -32,6 +38,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
+        
         /// <summary>
         /// dtHasta control.
         /// </summary>
@@ -40,6 +47,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadDatePicker dtHasta;
+        
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -48,6 +56,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
+        
         /// <summary>
         /// cboProveedor control.
         /// </summary>
@@ -56,6 +65,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadComboBox cboProveedor;
+        
         /// <summary>
         /// ObjectDataSource1 control.
         /// </summary>
@@ -64,6 +74,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -72,6 +83,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
+        
         /// <summary>
         /// cboRecursos control.
         /// </summary>
@@ -80,6 +92,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadComboBox cboRecursos;
+        
         /// <summary>
         /// ObjectDataSource2 control.
         /// </summary>
@@ -88,6 +101,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
+        
         /// <summary>
         /// btnGenerar control.
         /// </summary>
@@ -96,6 +110,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btnGenerar;
+        
         /// <summary>
         /// rptViewer control.
         /// </summary>

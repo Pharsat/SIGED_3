@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SID_2" Class="ModeloDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64" SettingsObjectName="SIGED_3.CRM.Model.Properties.Settings" SettingsPropertyName="Externa" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=tcp:xo6zq4as64.database.windows.net,1433;Initial Catalog=SID_2;Persist Security Info=True;User ID=DB3894_ADMIN@xo6zq4as64" SettingsObjectName="SIGED_3.CRM.Model.Properties.Settings" SettingsPropertyName="SID_2ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Bodega" Member="Bodega">
     <Type Name="Bodega">
       <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -927,19 +927,6 @@
       <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.LP_Costos" Method="LP_Costos">
-    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="TipoPrenda" Parameter="tipoPrenda" Type="System.String" DbType="VarChar(100)" />
-    <ElementType Name="LP_CostosResult">
-      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TipoPrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CostoDeProduccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="CostoConValirizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.LP_FichasTecnicas" Method="LP_FichasTecnicas">
     <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
@@ -1613,6 +1600,20 @@
       <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="NombrePrenda" Type="System.String" DbType="VarChar(307)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LP_Costos" Method="LP_Costos">
+    <Parameter Name="Id_GrupoDeMiembros" Parameter="id_GrupoDeMiembros" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TipoPrenda" Parameter="tipoPrenda" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="LP_CostosResult">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoPrenda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CostoDeProduccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CostoConValirizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Talla" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

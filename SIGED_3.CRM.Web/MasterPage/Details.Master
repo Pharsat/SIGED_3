@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Details.master.cs" Inherits="SIGED_3.CRM.Web.MasterPage.Details" %>
+
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +13,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body >
+<body>
     <form id="form1" runat="server">
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         </telerik:RadScriptManager>
@@ -29,25 +30,13 @@
             </div>
             <div class="Contenido">
                 <div class="Formulario_2">
-                    <asp:UpdatePanel ID="upDetalle" runat="server">
-                        <ContentTemplate>
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
                 </div>
             </div>
             <div id="PieDePagina">
             </div>
         </div>
-        <asp:UpdateProgress ID="upProgresoDetalle" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="upDetalle">
-            <ProgressTemplate>
-                <div class="overlay" />
-                <div class="overlayContent">
-                    Cargando...
-                </div>
-            </ProgressTemplate>
-        </asp:UpdateProgress>
     </form>
 </body>
 </html>

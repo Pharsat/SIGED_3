@@ -20,11 +20,18 @@
             </td>
         </tr>
         <tr>
+            <td>Compras</td>
+            <td>Informe de compras.</td>
+            <td align="center">
+                <asp:ImageButton ID="btnCompras" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ir A.png" Height="24px" />
+            </td>
+        </tr>
+        <tr>
             <td>Plan de Compras </td>
             <td>El plan de compras resume en el ámbito de Pedidos y Recursos, lo que se necesita para uno o varios pedidos que se encuentran actualmente activos.<br />
                 Esto nos sirve para determinar que necesitamos para fabricar determinado número de Productos y así poder tomar decisiones asertivas en producción. </td>
             <td align="center">
-                <asp:ImageButton ID="btnPlanCompras" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ir A.png" />
+                <asp:ImageButton ID="btnPlanCompras" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ir A.png" Height="24px" />
             </td>
         </tr>
         <tr>

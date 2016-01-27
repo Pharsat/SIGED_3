@@ -51,7 +51,7 @@ namespace SIGED_3.CRM.Web.Modulos.Color
             }
             if (NoEliminados)
             {
-                ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "Mensaje('Eliminación parcial, algunos registros no fueron eliminados debido a que estan siendo usados en la aplicación.')", true);
+                //ScriptManager.RegisterStartupScript((this.Master as Ppal).Expose_upLista, (this.Master as Ppal).Expose_upLista.GetType(), "CallMyFunction", "Mensaje('Eliminación parcial, algunos registros no fueron eliminados debido a que estan siendo usados en la aplicación.')", true);
             }
             gvPrincipal.DataBind();
         }

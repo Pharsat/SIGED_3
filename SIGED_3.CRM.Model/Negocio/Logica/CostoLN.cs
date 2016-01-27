@@ -2,146 +2,111 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using SIGED_3.CRM.Model.Negocio.Entidades;
-using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
 using System.Transactions;
-using SIGED_3.CRM.Model.AccesoDeRecursos.SQL;
-using SIGED_3.CRM.Model.Util.Session;
-using SIGED_3.CRM.Model.Util.Struct;
+using SIGED_3.CRM.Model.AccesoDeRecursos.OAD;
+using SIGED_3.CRM.Model.Negocio.Entidades;
 
 namespace SIGED_3.CRM.Model.Negocio.Logica
 {
-    internal class CostoLN
+    internal class CostoLn
     {
-        /// <summary>
-        /// Selecciona todos los registros de la tabla Bodega
-        /// </summary>
-        /// <returns>Lista de registros tipo Bodega</returns>
+
         public List<Costo> Seleccionar_All()
         {
-            CostoOAD objCosto = new CostoOAD();
+            var objCosto = new CostoOad();
             return objCosto.Seleccionar_All();
         }
-        /// <summary>
-        /// Selecciona todos los registros de la tabla Bodega
-        /// </summary>
-        /// <param name=Id>Identificador de la Bodega</param>
-        /// <returns>Objeto singular del tipo Bodega</returns>
-        public Costo Seleccionar_Id(long Id)
+
+        public Costo Seleccionar_Id(long id)
         {
-            CostoOAD objCosto = new CostoOAD();
-            return objCosto.Seleccionar_Id(Id);
+            var objCosto = new CostoOad();
+            return objCosto.Seleccionar_Id(id);
         }
-        /// <summary>
-        /// obtiene el costo asociado al recurso mencionado.
-        /// </summary>
-        /// <param name="Id_Recurso">recurso que deberia estar ligado a un costo</param>
-        /// <returns>objeto costo</returns>
-        public Costo Seleccionar_Id_Recurso(long Id_Recurso)
+
+        public Costo Seleccionar_Id_Recurso(long idRecurso)
         {
-            CostoOAD objCosto = new CostoOAD();
-            return objCosto.Seleccionar_Id_Recurso(Id_Recurso);
+            var objCosto = new CostoOad();
+            return objCosto.Seleccionar_Id_Recurso(idRecurso);
         }
-        /// <summary>
-        /// Lista principal de controles
-        /// </summary>
-        /// <param name="estado">Estado del costo</param>
-        /// <param name="id_GrupoDeMiembros">Id grupo de miembros</param>
-        /// <param name="codigo">codigo de la prenda segun ficha tecnica</param>
-        /// <param name="tipoPrenda">tipo de la prenda segun ficha tecnica</param>
-        /// <returns>Lista principal de costos</returns>
-        public List<LP_CostosResult> Seleccionar_LP(int? id_GrupoDeMiembros, string codigo, string tipoPrenda)
+
+        public List<LP_CostosResult> Seleccionar_LP(int? idGrupoDeMiembros, string codigo, string tipoPrenda)
         {
-            CostoOAD objCosto = new CostoOAD();
-            return objCosto.Seleccionar_LP(id_GrupoDeMiembros, codigo, tipoPrenda);
+            var objCosto = new CostoOad();
+            return objCosto.Seleccionar_LP(idGrupoDeMiembros, codigo, tipoPrenda);
         }
-        /// <summary>
-        /// Guarda un objeto de tipo Bodega en la base de datos.
-        /// </summary>
-        /// <param name=objBodega>Objeto Bodega a guardar</param>
-        public void Guardar(Costo objCosto)
+
+        public void Guardar(Costo objCostoAGuardar)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            _objCosto.Guardar(objCosto);
+            var objCosto = new CostoOad();
+            objCosto.Guardar(objCostoAGuardar);
         }
-        /// <summary>
-        /// Guarda el objeto Costo y obtiene su Id
-        /// </summary>
-        /// <param name="objCosto">Licnete a guardar</param>
-        public long Guardar_2(Costo objCosto)
+
+        public long Guardar_2(Costo objCostoGuardar)
         {
             try
             {
-                long Id;
+                long id;
                 using (TransactionScope objTransacion = new TransactionScope())
                 {
-                    CostoOAD _objCosto = new CostoOAD();
-                    Id = _objCosto.Guardar_2(objCosto);
-                    string[] CostosPredefinidos = new string[] { "Costos Administrativos", "Utilidad", "Comisión", "Descuento" };
-                    for (int i = 0; i < CostosPredefinidos.Count(); i++)
+                    var objCosto = new CostoOad();
+                    id = objCosto.Guardar_2(objCostoGuardar);
+                    string[] costosPredefinidos = new string[] { "Costos Administrativos", "Utilidad", "Comisión", "Descuento" };
+                    for (int i = 0; i < costosPredefinidos.Count(); i++)
                     {
-                        Costo_Valorizacion objValorizacion = new Costo_Valorizacion();
-                        objValorizacion.Id_Costo = Id;
-                        objValorizacion.Descripcion = CostosPredefinidos[i];
-                        objValorizacion.Porcentaje = 0;
-                        objValorizacion.Posicion = i + 1;
-                        objValorizacion.ValorHastaElMomento = 0;
+                        Costo_Valorizacion objValorizacion = new Costo_Valorizacion
+                        {
+                            Id_Costo = id,
+                            Descripcion = costosPredefinidos[i],
+                            Porcentaje = 0,
+                            Posicion = i + 1,
+                            ValorHastaElMomento = 0
+                        };
                         new Costo_ValorizacionLN().Guardar_IgnorarActualizacion(objValorizacion);
                     }
                     objTransacion.Complete();
                 }
-                return Id;
+                return id;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-        /// <summary>
-        /// Elimina un objeto del tipo Bodega, se recibe su Id unicamente
-        /// </summary>
-        /// <param name=Id>Identificativo del(a) Bodega</param>
-        public void Eliminar(Costo objCosto)
+
+        public void Eliminar(Costo objCostoEliminar)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            _objCosto.Eliminar(objCosto);
+            CostoOad objCosto = new CostoOad();
+            objCosto.Eliminar(objCostoEliminar);
         }
-        /// <summary>
-        /// Actualiza una Bodega, se basa en el identificador para actualizar el objeto.
-        /// </summary>
-        /// <param name=objBodega>Objeto del tipo Bodega</param>
-        public void Actualizar(Costo objCosto)
+
+        public void Actualizar(Costo objCostoActualizar)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            _objCosto.Actualizar(objCosto);
+            CostoOad objCosto = new CostoOad();
+            objCosto.Actualizar(objCostoActualizar);
         }
-        /// <summary>
-        /// Actualiza los valores de costos de un costo en particular
-        /// </summary>
-        /// <param name="objCosto"></param>
-        public void Renovar_Valores(long Id)
+
+        public void Renovar_Valores(long id)
         {
             try
             {
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
-                    if (new CostoOAD().Existencia_Costo(Id))
+                    if (new CostoOad().Existencia_Costo(id))
                     {
-                        Costo objCosto = new CostoOAD().Seleccionar_Id(Id);
-                        objCosto.CostoDeProcesos = new Costo_ProcesoDeFabricacionOAD().Seleccionar_By_Id(objCosto.Id).Sum(p => (p.Cantidad * p.Valor));
-                        objCosto.CostoDeRecursos = new Costo_RecursoOAD().Seleccionar_By_Id(objCosto.Id).Sum(p => (p.Consumo * p.ValoUnitario));
+                        Costo objCosto = new CostoOad().Seleccionar_Id(id);
+                        objCosto.CostoDeProcesos = new CostoProcesoDeFabricacionOad().Seleccionar_By_Id(objCosto.Id).Sum(p => (p.Cantidad * p.Valor));
+                        objCosto.CostoDeRecursos = new CostoRecursoOad().Seleccionar_By_Id(objCosto.Id).Sum(p => (p.Consumo * p.ValoUnitario));
                         objCosto.CostoDeProduccion = objCosto.CostoDeProcesos + objCosto.CostoDeRecursos;
-                        decimal? Total_ConValorizacion = objCosto.CostoDeProduccion;
-                        List<Costo_Valorizacion> lstCostosValorizacion = new Costo_ValorizacionOAD().Seleccionar_By_Id(objCosto.Id).OrderBy(p => p.Posicion).ToList();
-                        foreach (Costo_Valorizacion objCosto_valorizacion in lstCostosValorizacion)
+                        decimal? totalConValorizacion = objCosto.CostoDeProduccion;
+                        List<Costo_Valorizacion> lstCostosValorizacion = new CostoValorizacionOad().Seleccionar_By_Id(objCosto.Id).OrderBy(p => p.Posicion).ToList();
+                        foreach (Costo_Valorizacion objCostoValorizacion in lstCostosValorizacion)
                         {
-                            Total_ConValorizacion += ((Total_ConValorizacion * objCosto_valorizacion.Porcentaje) / 100m);
-                            objCosto_valorizacion.ValorHastaElMomento = Total_ConValorizacion;
-                            new Costo_ValorizacionOAD().Actualizar(objCosto_valorizacion);
+                            totalConValorizacion += ((totalConValorizacion * objCostoValorizacion.Porcentaje) / 100m);
+                            objCostoValorizacion.ValorHastaElMomento = totalConValorizacion;
+                            new CostoValorizacionOad().Actualizar(objCostoValorizacion);
                         }
-                        objCosto.CostoConValirizacion = Total_ConValorizacion;
-                        new CostoOAD().Actualizar(objCosto);
+                        objCosto.CostoConValirizacion = totalConValorizacion;
+                        new CostoOad().Actualizar(objCosto);
                         objTransaccion.Complete();
                     }
                 }
@@ -151,92 +116,101 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 throw new Exception(ex.Message);
             }
         }
-        public List<R_Costos_CabeceraResult> InformeCostos_Cabecera(long? id_GrupoDeMiembros, long? id_Recurso)
+        public List<R_Costos_CabeceraResult> InformeCostos_Cabecera(long? idGrupoDeMiembros, long? idRecurso)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            return _objCosto.InformeCostos_Cabecera(id_GrupoDeMiembros, id_Recurso);
+            var objCosto = new CostoOad();
+            return objCosto.InformeCostos_Cabecera(idGrupoDeMiembros, idRecurso);
         }
-        public List<R_Costos_ProcesosResult> InformeCostos_Procesos(long? id_GrupoDeMiembros, long? id_Recurso)
+        public List<R_Costos_ProcesosResult> InformeCostos_Procesos(long? idGrupoDeMiembros, long? idRecurso)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            return _objCosto.InformeCostos_Procesos(id_GrupoDeMiembros, id_Recurso);
+            var objCosto = new CostoOad();
+            return objCosto.InformeCostos_Procesos(idGrupoDeMiembros, idRecurso);
         }
-        public List<R_Costos_RecursosResult> InformeCostos_Recursos(long? id_GrupoDeMiembros, long? id_Recurso)
+        public List<R_Costos_RecursosResult> InformeCostos_Recursos(long? idGrupoDeMiembros, long? idRecurso)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            return _objCosto.InformeCostos_Recursos(id_GrupoDeMiembros, id_Recurso);
+            var objCosto = new CostoOad();
+            return objCosto.InformeCostos_Recursos(idGrupoDeMiembros, idRecurso);
         }
-        public List<R_Costos_ValorizacionResult> InformeCostos_Valorizacion(long? id_GrupoDeMiembros, long? id_Recurso)
+        public List<R_Costos_ValorizacionResult> InformeCostos_Valorizacion(long? idGrupoDeMiembros, long? idRecurso)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            return _objCosto.InformeCostos_Valorizacion(id_GrupoDeMiembros, id_Recurso);
+            var objCosto = new CostoOad();
+            return objCosto.InformeCostos_Valorizacion(idGrupoDeMiembros, idRecurso);
         }
 
-        public void MultiplicarCostos(long? Id_Costo)
+        public void MultiplicarCostos(long? idCostoAMultiplicar)
         {
-            if (Id_Costo.HasValue)
+            if (idCostoAMultiplicar.HasValue)
             {
                 try
                 {
-                    using (TransactionScope objTransaccion = new TransactionScope())
+                    var objCosto = Seleccionar_Id(idCostoAMultiplicar.Value);
+                    var objCostoProcesos = new Costo_ProcesoDeFabricacionLN().Seleccionar_By_Id_Complete(idCostoAMultiplicar);
+                    var objCostoMateriales = new Costo_RecursoLN().Seleccionar_By_Id_Complete(idCostoAMultiplicar);
+                    var objCostoPorcentajes = new Costo_ValorizacionLN().Seleccionar_By_Id_Complete(idCostoAMultiplicar);
+                    if (objCosto.Id_Recurso != null)
                     {
-                        var objCosto = this.Seleccionar_Id(Id_Costo.Value);
-                        var objCostoProcesos = new Costo_ProcesoDeFabricacionLN().Seleccionar_By_Id_Complete(Id_Costo);
-                        var objCostoMateriales = new Costo_RecursoLN().Seleccionar_By_Id_Complete(Id_Costo);
-                        var objCostoPorcentajes = new Costo_ValorizacionLN().Seleccionar_By_Id_Complete(Id_Costo);
                         var objRecursoDeCosto = new RecursoLN().Seleccionar_Id(objCosto.Id_Recurso.Value);
-                        var RecursosAMultiplicar = new RecursoLN().Seleccionar_RecursosQueNoEstanEnCostos().Where(p => p.Id_FichaTecnica == objRecursoDeCosto.Id_FichaTecnica && p.Id != objCosto.Id_Recurso);
+                        var recursosAMultiplicar = new RecursoLN().Seleccionar_RecursosQueNoEstanEnCostos(objRecursoDeCosto.Id_FichaTecnica).Where(p => p.Id_FichaTecnica == objRecursoDeCosto.Id_FichaTecnica && p.Id != objCosto.Id_Recurso);
 
-                        foreach (Recurso objRecurso in RecursosAMultiplicar)
+                        foreach (Recurso objRecurso in recursosAMultiplicar)
                         {
-                            var newCosto = new Costo();
-                            newCosto.Id_GrupoDeMiembros = objCosto.Id_GrupoDeMiembros;
-                            newCosto.Id_Recurso = objRecurso.Id;
-                            newCosto.FechaDeCreacion = objCosto.FechaDeCreacion;
-                            newCosto.CostoDeRecursos = objCosto.CostoDeRecursos;
-                            newCosto.CostoDeProcesos = objCosto.CostoDeProcesos;
-                            newCosto.CostoDeProduccion = objCosto.CostoDeProduccion;
-                            newCosto.CostoConValirizacion = objCosto.CostoConValirizacion;
-                            newCosto.PrecioVentaFinal = objCosto.PrecioVentaFinal;
-                            newCosto.PrecioPublico = objCosto.PrecioPublico;
-                            newCosto.PrecioDistrbuidor = objCosto.PrecioDistrbuidor;
-
-                            long id_costo = this.Guardar_2(newCosto);
-
-                            foreach (Costo_Recurso objCostoRecurso in objCostoMateriales)
+                            var newCosto = new Costo
                             {
-                                var newCostoRecurso = new Costo_Recurso();
-                                newCostoRecurso.Id_Costo = id_costo;
-                                newCostoRecurso.Id_Recurso = objCostoRecurso.Id_Recurso;
-                                newCostoRecurso.Id_UnidadDeMedida = objCostoRecurso.Id_UnidadDeMedida;
-                                newCostoRecurso.Consumo = objCostoRecurso.Consumo;
-                                newCostoRecurso.ValoUnitario = objCostoRecurso.ValoUnitario;
-                                new Costo_RecursoLN().Guardar(newCostoRecurso);
+                                Id_GrupoDeMiembros = objCosto.Id_GrupoDeMiembros,
+                                Id_Recurso = objRecurso.Id,
+                                FechaDeCreacion = objCosto.FechaDeCreacion,
+                                CostoDeRecursos = objCosto.CostoDeRecursos,
+                                CostoDeProcesos = objCosto.CostoDeProcesos,
+                                CostoDeProduccion = objCosto.CostoDeProduccion,
+                                CostoConValirizacion = objCosto.CostoConValirizacion,
+                                PrecioVentaFinal = objCosto.PrecioVentaFinal,
+                                PrecioPublico = objCosto.PrecioPublico,
+                                PrecioDistrbuidor = objCosto.PrecioDistrbuidor
+                            };
+
+                            var idCosto = Guardar_2(newCosto);
+
+                            foreach (var objCostoRecurso in objCostoMateriales)
+                            {
+                                var newCostoRecurso = new Costo_Recurso
+                                {
+                                    Id_Costo = idCosto,
+                                    Id_Recurso = objCostoRecurso.Id_Recurso,
+                                    Id_UnidadDeMedida = objCostoRecurso.Id_UnidadDeMedida,
+                                    Consumo = objCostoRecurso.Consumo,
+                                    ValoUnitario = objCostoRecurso.ValoUnitario
+                                };
+                                new Costo_RecursoLN().GuardarCopia(newCostoRecurso);
                             }
 
                             foreach (Costo_Valorizacion objCostoPorcentaje in objCostoPorcentajes)
                             {
-                                var newCostoConPorcentaje = new Costo_Valorizacion();
-                                newCostoConPorcentaje.Id_Costo = id_costo;
-                                newCostoConPorcentaje.Descripcion = objCostoPorcentaje.Descripcion;
-                                newCostoConPorcentaje.Porcentaje = objCostoPorcentaje.Porcentaje;
-                                newCostoConPorcentaje.Posicion = objCostoPorcentaje.Posicion;
-                                newCostoConPorcentaje.ValorHastaElMomento = objCostoPorcentaje.ValorHastaElMomento;
-                                new Costo_ValorizacionLN().Guardar(newCostoConPorcentaje);
+                                var newCostoConPorcentaje = new Costo_Valorizacion
+                                {
+                                    Id_Costo = idCosto,
+                                    Descripcion = objCostoPorcentaje.Descripcion,
+                                    Porcentaje = objCostoPorcentaje.Porcentaje,
+                                    Posicion = objCostoPorcentaje.Posicion,
+                                    ValorHastaElMomento = objCostoPorcentaje.ValorHastaElMomento
+                                };
+                                new Costo_ValorizacionLN().GuardarCopia(newCostoConPorcentaje);
                             }
 
                             foreach (Costo_ProcesoDeFabricacion objCostoRecurso in objCostoProcesos)
                             {
-                                var newCostoProceso = new Costo_ProcesoDeFabricacion();
-                                newCostoProceso.Id_Costo = id_costo;
-                                newCostoProceso.Id_Proceso = objCostoRecurso.Id_Proceso;
-                                newCostoProceso.Id_UnidadDeMedida = objCostoRecurso.Id_UnidadDeMedida;
-                                newCostoProceso.Cantidad = objCostoRecurso.Cantidad;
-                                newCostoProceso.Valor = objCostoRecurso.Valor;
-                                new Costo_ProcesoDeFabricacionLN().Guardar(newCostoProceso);
+                                var newCostoProceso = new Costo_ProcesoDeFabricacion
+                                {
+                                    Id_Costo = idCosto,
+                                    Id_Proceso = objCostoRecurso.Id_Proceso,
+                                    Id_UnidadDeMedida = objCostoRecurso.Id_UnidadDeMedida,
+                                    Cantidad = objCostoRecurso.Cantidad,
+                                    Valor = objCostoRecurso.Valor
+                                };
+                                new Costo_ProcesoDeFabricacionLN().GuardarCopia(newCostoProceso);
                             }
+
+                            new CostoLn().Renovar_Valores(newCosto.Id);
                         }
-                        objTransaccion.Complete();
                     }
                 }
                 catch (Exception ex)
@@ -245,22 +219,23 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 }
             }
         }
-        public List<R_UtilidadesResult> Informe_Utilidades(long? id_GrupoDeMiembros, DateTime? desde, DateTime? hasta)
+
+        public List<R_UtilidadesResult> Informe_Utilidades(long? idGrupoDeMiembros, DateTime? desde, DateTime? hasta)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            return _objCosto.Informe_Utilidades(id_GrupoDeMiembros, desde, hasta);
+            var objCosto = new CostoOad();
+            return objCosto.Informe_Utilidades(idGrupoDeMiembros, desde, hasta);
         }
 
-        public DataTable Impresion_Lista_Precios(long? Id_GrupoDeMiembros)
+        public DataTable Impresion_Lista_Precios(long? idGrupoDeMiembros)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            return _objCosto.Impresion_Lista_Precios(Id_GrupoDeMiembros);
+            var objCosto = new CostoOad();
+            return objCosto.Impresion_Lista_Precios(idGrupoDeMiembros);
         }
 
-        public DataTable Impresion_Lista_Precios_2(long? Id_GrupoDeMiembros, short? Selector)
+        public DataTable Impresion_Lista_Precios_2(long? idGrupoDeMiembros, short? selector)
         {
-            CostoOAD _objCosto = new CostoOAD();
-            return _objCosto.Impresion_Lista_Precios_2(Id_GrupoDeMiembros, Selector);
+            var objCosto = new CostoOad();
+            return objCosto.Impresion_Lista_Precios_2(idGrupoDeMiembros, selector);
         }
     }
 }

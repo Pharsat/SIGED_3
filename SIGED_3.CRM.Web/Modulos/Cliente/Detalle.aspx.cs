@@ -89,7 +89,7 @@ namespace SIGED_3.CRM.Web.Modulos.Cliente
             ObjectDataSource1.SelectParameters["Id"].DefaultValue = this.Id.ToString();
             frmPpal.DataBind();
 
-            ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "closeWin('actualizado')", true);
+            //ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "closeWin('actualizado')", true);
         }
         protected void frmCliente_Contacto_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
@@ -144,7 +144,7 @@ namespace SIGED_3.CRM.Web.Modulos.Cliente
         protected void ObjectDataSource1_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
         {
             this.Id = (long)e.ReturnValue;
-            ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "MensajeDos('guardado')", true);
+            //ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "MensajeDos('guardado')", true);
         }
 
         protected void frmCliente_Contacto_DataBound(object sender, EventArgs e)

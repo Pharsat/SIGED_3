@@ -133,10 +133,10 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             return _objRecurso.Seleccionar_Maquinaria(SessionManager.Id_GrupoDeMiembros);
         }
 
-        public List<Recurso> Seleccionar_RecursosQueNoEstanEnCostos()
+        public List<Recurso> Seleccionar_RecursosQueNoEstanEnCostos(long? idFichaTecnica)
         {
-            RecursoOAD _objRecurso = new RecursoOAD();
-            return _objRecurso.Seleccionar_RecursosQueNoEstanEnCostos(SessionManager.Id_GrupoDeMiembros);
+            RecursoOAD objRecurso = new RecursoOAD();
+            return objRecurso.Seleccionar_RecursosQueNoEstanEnCostos(SessionManager.Id_GrupoDeMiembros, idFichaTecnica);
         }
     }
 }

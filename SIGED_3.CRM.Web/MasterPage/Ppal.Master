@@ -75,130 +75,126 @@
             <asp:ImageButton ID="btnAbrirMenu" runat="server" ImageUrl="~/Recursos/Diseno/Imagenes/Ver.png" OnClientClick="javascript:AbreMenu();return false;" />
         </div>
         <div class="InfoUsuario">
-            <asp:UpdatePanel ID="upUsuario" runat="server">
-                <ContentTemplate>
-                    <table class="CentrarElemento">
-                        <tr>
-                            <td>
-                                <table class="CentrarElemento">
-                                    <tr>
-                                        <td style="vertical-align: middle;">
-                                            <table>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label ID="Label1" runat="server" Text="Miembro:"></asp:Label>
-                                                        <asp:Label ID="lblNombreMiembro" runat="server" ForeColor="Black"></asp:Label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label ID="lblPerfil" runat="server"></asp:Label>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <asp:ImageButton ID="btnCambioContrasena" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/CambiarContrasena.png"
-                                                OnClick="btnCambioContrasena_Click" Style="padding-left: 20px;" />
-                                            <asp:ImageButton ID="btnCambioImagen" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Usuario.png"
-                                                OnClick="btnCambioImagen_Click" Style="padding-left: 20px;" />
-                                            <asp:HyperLink ID="goToHome" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Home.png" Style="padding-left: 20px;" NavigateUrl="~/Modulos/Inicio.aspx"></asp:HyperLink></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Panel ID="pnlCambioContrasena" runat="server" Visible="False">
-                                    <table class="CentrarElemento">
+            <table class="CentrarElemento">
+                <tr>
+                    <td>
+                        <table class="CentrarElemento">
+                            <tr>
+                                <td style="vertical-align: middle;">
+                                    <table>
                                         <tr>
-                                            <td style="text-align: right;">
-                                                <asp:Label ID="Label2" runat="server" Text="Contraseña anterior"></asp:Label>
-                                            </td>
-                                            <td style="text-align: left;">
-                                                <telerik:RadTextBox ID="txtPass" runat="server" MaxLength="20" TextMode="Password"
-                                                    ValidationGroup="CambContrasena">
-                                                </telerik:RadTextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server"
-                                                    ControlToValidate="txtPass" Display="Dynamic"
-                                                    ValidationGroup="CambContrasena"></asp:RequiredFieldValidator>
+                                            <td>
+                                                <asp:Label ID="Label1" runat="server" Text="Miembro:"></asp:Label>
+                                                <asp:Label ID="lblNombreMiembro" runat="server" ForeColor="Black"></asp:Label>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="text-align: right;">
-                                                <asp:Label ID="Label3" runat="server" Text="Nueva contraseña"></asp:Label>
-                                            </td>
-                                            <td style="text-align: left;">
-                                                <telerik:RadTextBox ID="txtPassNueva" runat="server" MaxLength="20" TextMode="Password"
-                                                    ValidationGroup="CambContrasena">
-                                                </telerik:RadTextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server"
-                                                    ControlToValidate="txtPassNueva" Display="Dynamic"
-                                                    ValidationGroup="CambContrasena"></asp:RequiredFieldValidator>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: right;">
-                                                <asp:Label ID="Label4" runat="server" Text="Confirmar contraseña"></asp:Label>
-                                            </td>
-                                            <td style="text-align: left;">
-                                                <telerik:RadTextBox ID="txtPassNuevaComparar" runat="server" MaxLength="20" TextMode="Password"
-                                                    ValidationGroup="CambContrasena">
-                                                </telerik:RadTextBox>
-                                                <asp:CompareValidator ID="CompareValidator1" runat="server"
-                                                    ControlToCompare="txtPassNueva" ControlToValidate="txtPassNuevaComparar"
-                                                    Display="Dynamic" ErrorMessage="* Contraseñas no coinciden."
-                                                    ValidationGroup="CambContrasena"></asp:CompareValidator>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" style="text-align: center;">
-                                                <asp:ImageButton ID="btnEjecutarCambio" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ok.png"
-                                                    ValidationGroup="CambContrasena" OnClick="btnEjecutarCambio_Click" />
+                                            <td>
+                                                <asp:Label ID="lblPerfil" runat="server"></asp:Label>
                                             </td>
                                         </tr>
                                     </table>
-                                </asp:Panel>
-                                <asp:Panel ID="pnlActualizacionImagenPerfil" runat="server" Visible="False">
-                                    <table class="CentrarElemento">
-                                        <tr>
-                                            <td style="text-align: right;">
-                                                <asp:Label ID="Label5" runat="server" Text="Imagen actual"></asp:Label>
-                                            </td>
-                                            <td style="text-align: left;">
-                                                <telerik:RadBinaryImage ID="rbiPerfil" runat="server" Height="100px" ResizeMode="Fit"
-                                                    Width="100px" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: right;">
-                                                <asp:Label ID="Label6" runat="server" Text="Subir imagen"></asp:Label>
-                                            </td>
-                                            <td style="text-align: left;">
-                                                <telerik:RadAsyncUpload ID="rauImagenPerfil" MultipleFileSelection="Disabled" runat="server"
-                                                    AllowedFileExtensions="jpg,jpeg,gif" Width="220px" MaxFileInputsCount="1" MaxFileSize="524288">
-                                                </telerik:RadAsyncUpload>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: right;"></td>
-                                            <td style="text-align: left;">
-                                                <asp:Label ID="Label9" runat="server">Extensiones permitidas: jpg, jpeg, gif. Tamaño máximo: 500Kb.</asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" style="text-align: center;">
-                                                <asp:ImageButton ID="btnActualizarImagen" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ok.png"
-                                                    ValidationGroup="CambImagen" OnClick="btnActualizarImagen_Click" />
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </asp:Panel>
-                            </td>
-                        </tr>
-                    </table>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                                </td>
+                                <td>
+                                    <asp:ImageButton ID="btnCambioContrasena" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/CambiarContrasena.png"
+                                        OnClick="btnCambioContrasena_Click" Style="padding-left: 20px;" />
+                                    <asp:ImageButton ID="btnCambioImagen" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Usuario.png"
+                                        OnClick="btnCambioImagen_Click" Style="padding-left: 20px;" />
+                                    <asp:HyperLink ID="goToHome" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Home.png" Style="padding-left: 20px;" NavigateUrl="~/Modulos/Inicio.aspx"></asp:HyperLink></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Panel ID="pnlCambioContrasena" runat="server" Visible="False">
+                            <table class="CentrarElemento">
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <asp:Label ID="Label2" runat="server" Text="Contraseña anterior"></asp:Label>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <telerik:RadTextBox ID="txtPass" runat="server" MaxLength="20" TextMode="Password"
+                                            ValidationGroup="CambContrasena">
+                                        </telerik:RadTextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server"
+                                            ControlToValidate="txtPass" Display="Dynamic"
+                                            ValidationGroup="CambContrasena"></asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <asp:Label ID="Label3" runat="server" Text="Nueva contraseña"></asp:Label>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <telerik:RadTextBox ID="txtPassNueva" runat="server" MaxLength="20" TextMode="Password"
+                                            ValidationGroup="CambContrasena">
+                                        </telerik:RadTextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server"
+                                            ControlToValidate="txtPassNueva" Display="Dynamic"
+                                            ValidationGroup="CambContrasena"></asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <asp:Label ID="Label4" runat="server" Text="Confirmar contraseña"></asp:Label>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <telerik:RadTextBox ID="txtPassNuevaComparar" runat="server" MaxLength="20" TextMode="Password"
+                                            ValidationGroup="CambContrasena">
+                                        </telerik:RadTextBox>
+                                        <asp:CompareValidator ID="CompareValidator1" runat="server"
+                                            ControlToCompare="txtPassNueva" ControlToValidate="txtPassNuevaComparar"
+                                            Display="Dynamic" ErrorMessage="* Contraseñas no coinciden."
+                                            ValidationGroup="CambContrasena"></asp:CompareValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: center;">
+                                        <asp:ImageButton ID="btnEjecutarCambio" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ok.png"
+                                            ValidationGroup="CambContrasena" OnClick="btnEjecutarCambio_Click" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                        <asp:Panel ID="pnlActualizacionImagenPerfil" runat="server" Visible="False">
+                            <table class="CentrarElemento">
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <asp:Label ID="Label5" runat="server" Text="Imagen actual"></asp:Label>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <telerik:RadBinaryImage ID="rbiPerfil" runat="server" Height="100px" ResizeMode="Fit"
+                                            Width="100px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <asp:Label ID="Label6" runat="server" Text="Subir imagen"></asp:Label>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <telerik:RadAsyncUpload ID="rauImagenPerfil" MultipleFileSelection="Disabled" runat="server"
+                                            AllowedFileExtensions="jpg,jpeg,gif" Width="220px" MaxFileInputsCount="1" MaxFileSize="524288">
+                                        </telerik:RadAsyncUpload>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;"></td>
+                                    <td style="text-align: left;">
+                                        <asp:Label ID="Label9" runat="server">Extensiones permitidas: jpg, jpeg, gif. Tamaño máximo: 500Kb.</asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: center;">
+                                        <asp:ImageButton ID="btnActualizarImagen" runat="server" ImageUrl="~/Recursos/Diseno/Iconos/Ok.png"
+                                            ValidationGroup="CambImagen" OnClick="btnActualizarImagen_Click" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="MarcoPPal" style="background-image: url('<%=ResolveUrl("~/Recursos/Diseno/Imagenes/FIGURINES COSTADO DER.png")%>'); background-position: right bottom; background-repeat: no-repeat;">
             <div class="Logo">
@@ -213,25 +209,13 @@
             </div>
             <div class="Contenido">
                 <div class="Formulario_2">
-                    <asp:UpdatePanel ID="upPrincipal" runat="server">
-                        <ContentTemplate>
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
                 </div>
             </div>
             <div id="PieDePagina">
             </div>
         </div>
-        <asp:UpdateProgress ID="upProgresoPrincipal" runat="server" DisplayAfter="0">
-            <ProgressTemplate>
-                <div class="overlay" />
-                <div class="overlayContent">
-                    Cargando...
-                </div>
-            </ProgressTemplate>
-        </asp:UpdateProgress>
     </form>
 </body>
 </html>

@@ -92,7 +92,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     }
                     FichaTecnicaOAD _objFichaTecnica = new FichaTecnicaOAD();
                     Id = _objFichaTecnica.Guardar_2(objFichaTecnica);
-                    CrearRecursos(Id);
+                    CrearRecursos(Id, "Ref: " + objFichaTecnica.Codigo + " || " + objFichaTecnica.TipoPrenda);
                     objTransaccion.Complete();
                 }
                 return Id;
@@ -146,7 +146,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                             new ImagenesOAD().Actualizar(objImagen);
                         }
                     }
-                    CrearRecursos(objFichaTecnica.Id);
+                    CrearRecursos(objFichaTecnica.Id, "Ref: " + objFichaTecnica.Codigo + " || " + objFichaTecnica.TipoPrenda);
                     FichaTecnicaOAD _objFichaTecnica = new FichaTecnicaOAD();
                     _objFichaTecnica.Actualizar(objFichaTecnica);
                     objTransaccion.Complete();
@@ -157,7 +157,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 throw new Exception(ex.Message);
             }
         }
-        public void CrearRecursos(long Id_Ficha)
+        public void CrearRecursos(long Id_Ficha, string Nombre)
         {
             List<FichaTecnica_Color> lstColores = new FichaTecnica_ColorLN().Seleccionar_By_FichaTecnica(Id_Ficha);
             List<FichaTecnica_Talla> lstTallas = new FichaTecnica_TallaLN().Seleccionar_By_FichaTecnica(Id_Ficha);
@@ -172,12 +172,19 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     objRecurso.Id_TipoDeRecurso = (long)TipoDeRecurso_Enum.ProductoTerminado;
                     objRecurso.Id_UnidadDeMedida = (long)UnidadDeMedida_Enum.UND;
                     objRecurso.Talla = objFichaTecnica_Talla.Talla;
-                    objRecurso.Nombre = String.Empty;
+                    objRecurso.Nombre = Nombre;
                     objRecurso.Estado = true;
                     if (!new RecursoOAD().Verificar_Existencia_Recurso(objRecurso.Id_Color, objRecurso.Talla, objRecurso.Id_FichaTecnica))
                     {
                         RecursoOAD _objRecurso = new RecursoOAD();
                         _objRecurso.Guardar(objRecurso);
+                    }
+                    else
+                    {
+                        Entidades.Recurso objRecurso2 = new RecursoOAD().Tomar_Existencia_Recurso(objRecurso.Id_Color, objRecurso.Talla, objRecurso.Id_FichaTecnica);
+                        objRecurso2.Nombre = Nombre;
+                        RecursoOAD _objRecurso = new RecursoOAD();
+                        _objRecurso.Actualizar(objRecurso2);
                     }
                 }
             }

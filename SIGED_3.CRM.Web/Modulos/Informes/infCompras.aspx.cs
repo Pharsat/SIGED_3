@@ -29,7 +29,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes
                     }
                     else
                     {
-                        ((HtmlGenericControl)e.Item.FindControl("gcColor")).Attributes.Add("style", "width: 99px; height: 19px; border: 1px solid #000; background-color: " + ((SIGED_3.CRM.Model.Negocio.Entidades.LC_Recursos_ConCostoResult)e.Item.DataItem).Color + ";");
+                        ((HtmlGenericControl)e.Item.FindControl("gcColor")).Attributes.Add("style", "width: 99px; height: 19px; border: 1px solid #000; background-color: " + ((SIGED_3.CRM.Model.Negocio.Entidades.LC_Recursos_MezcladosResult)e.Item.DataItem).Color + ";");
                     }
                 }
             }
@@ -39,7 +39,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes
             rptViewer.Visible = true;
             rptViewer.LocalReport.ReportPath = "Modulos\\Informes\\infCompras.rdlc";
             ReportDataSource ObjReport_1 = new ReportDataSource("dtsGrupo", new GrupoDeMiembrosFachada().RelatorioGrupo_Tabla(SessionManager.Id_GrupoDeMiembros));
-            ReportDataSource ObjReport_2 = new ReportDataSource("dtsCompras", new CompraFachada().Informe_Compras(SessionManager.Id_GrupoDeMiembros,dtDesde.SelectedDate,dtHasta.SelectedDate,long.Parse(cboProveedor.SelectedValue), long.Parse(cboRecursos.SelectedValue)));
+            ReportDataSource ObjReport_2 = new ReportDataSource("dtsCompras", new CompraFachada().Informe_Compras(SessionManager.Id_GrupoDeMiembros, dtDesde.SelectedDate, dtHasta.SelectedDate, long.Parse(cboProveedor.SelectedValue), long.Parse(cboRecursos.SelectedValue)));
             rptViewer.LocalReport.DataSources.Clear();
             rptViewer.LocalReport.DataSources.Add(ObjReport_1);
             rptViewer.LocalReport.DataSources.Add(ObjReport_2);

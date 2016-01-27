@@ -10,6 +10,7 @@ namespace SIGED_3.CRM.Web.Modulos.Informes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnCompras.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infCompras.aspx") + "');return false;";
             btnPedidos.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infPedidos.aspx") + "');return false;";
             btnPlanCompras.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infPlanDeCompras.aspx") + "');return false;";
             btnDespachos.OnClientClick = "javascript:openWin('0','" + ResolveUrl("~/Modulos/Informes/infOrdenesDeTrabajo.aspx") + "');return false;";

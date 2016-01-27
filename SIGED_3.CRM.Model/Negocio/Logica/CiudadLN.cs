@@ -14,7 +14,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Lista de registros tipo Bodega</returns>
         public List<Ciudad> Seleccionar_All()
         {
-            CiudadOAD objCiudad = new CiudadOAD();
+            CiudadOad objCiudad = new CiudadOad();
             return objCiudad.Seleccionar_All();
         }
         /// <summary>
@@ -24,7 +24,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Lista de ciudades.</returns>
         public List<Ciudad> Seleccionar_PorProvincia(int Id_Provincia)
         {
-            CiudadOAD objCiudad = new CiudadOAD();
+            CiudadOad objCiudad = new CiudadOad();
             return objCiudad.Seleccionar_PorProvincia(Id_Provincia);
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Objeto singular del tipo Bodega</returns>
         public Ciudad Seleccionar_Id(long Id)
         {
-            CiudadOAD objCiudad = new CiudadOAD();
+            CiudadOad objCiudad = new CiudadOad();
             return objCiudad.Seleccionar_Id(Id);
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=objBodega>Objeto Bodega a guardar</param>
         public void Guardar(Ciudad objCiudad)
         {
-            CiudadOAD _objCiudad = new CiudadOAD();
+            CiudadOad _objCiudad = new CiudadOad();
             _objCiudad.Guardar(objCiudad);
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=Id>Identificativo del(a) Bodega</param>
         public void Eliminar(Ciudad objCiudad)
         {
-            CiudadOAD _objCiudad = new CiudadOAD();
+            CiudadOad _objCiudad = new CiudadOad();
             _objCiudad.Eliminar(objCiudad);
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=objBodega>Objeto del tipo Bodega</param>
         public void Actualizar(Ciudad objCiudad)
         {
-            CiudadOAD _objCiudad = new CiudadOAD();
+            CiudadOad _objCiudad = new CiudadOad();
             _objCiudad.Actualizar(objCiudad);
         }
     }

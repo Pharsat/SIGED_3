@@ -92,7 +92,7 @@ namespace SIGED_3.CRM.Web.Modulos.GrupoDeMiembros
         {
             e.KeepInEditMode = true;
             (this.Master as Ppal_NoSearch).CargarImagenGrupo();
-            ScriptManager.RegisterStartupScript((this.Master as Ppal_NoSearch).Expose_upLista, (this.Master as Ppal_NoSearch).Expose_upLista.GetType(), "CallMyFunction", "Mensaje('Su información ha sido actualizada.')", true);
+            //ScriptManager.RegisterStartupScript((this.Master as Ppal_NoSearch).Expose_upLista, (this.Master as Ppal_NoSearch).Expose_upLista.GetType(), "CallMyFunction", "Mensaje('Su información ha sido actualizada.')", true);
         }
     }
 }

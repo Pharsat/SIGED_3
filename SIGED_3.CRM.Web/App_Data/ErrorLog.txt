@@ -1,896 +1,397 @@
-﻿********** 23/03/2015 6:58:31 p. m. **********
-Inner Exception Type: System.Web.HttpCompileException
-Inner Exception: c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal.Master(20): error CS0103: El nombre 'btnBuscar' no existe en el contexto actual
-Inner Source: System.Web
-Inner Stack Trace: 
-   en System.Web.Compilation.BuildManager.PostProcessFoundBuildResult(BuildResult result, Boolean keyFromVPP, VirtualPath virtualPath)
-   en System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.UI.BaseTemplateParser.GetReferencedType(VirtualPath virtualPath, Boolean allowNoCompile)
-   en System.Web.UI.PageParser.ProcessMainDirectiveAttribute(String deviceName, String name, String value, IDictionary parseData)
-   en System.Web.UI.TemplateParser.ProcessMainDirective(IDictionary mainDirective)
-Exception Type: System.Web.HttpParseException
-Exception: c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal.Master(20): error CS0103: El nombre 'btnBuscar' no existe en el contexto actual
-Source: System.Web.HttpParseException
-Stack Trace: 
-   en System.Web.UI.TemplateParser.ProcessException(Exception ex)
-   en System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
-   en System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
-   en System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
-   en System.Web.UI.TemplateParser.ParseInternal()
-   en System.Web.UI.TemplateParser.Parse()
-   en System.Web.Compilation.BaseTemplateBuildProvider.get_CodeCompilerType()
-   en System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
-   en System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
-   en System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   en System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   en System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
-   en System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
-   en System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
-   en System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 23/03/2015 7:02:36 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: DefaultButton de 'form1' debe ser el identificador de un control del tipo IButtonControl.
-Inner Source: System.Web
-Inner Stack Trace: 
-   en System.Web.UI.HtmlControls.HtmlForm.RenderAttributes(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Control.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Page.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_grupodemiembros_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_phpodhhx.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 23/03/2015 7:08:58 p. m. **********
-Inner Exception Type: System.Web.HttpCompileException
-Inner Exception: c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master(67): error CS1061: 'ASP.masterpage_ppal_nosearch_master' no contiene una definición de 'btnSalir_Click' ni se encontró ningún método de extensión 'btnSalir_Click' que acepte un primer argumento de tipo 'ASP.masterpage_ppal_nosearch_master' (¿falta una directiva using o una referencia de ensamblado?)
-Inner Source: System.Web
-Inner Stack Trace: 
-   en System.Web.Compilation.BuildManager.PostProcessFoundBuildResult(BuildResult result, Boolean keyFromVPP, VirtualPath virtualPath)
-   en System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.UI.BaseTemplateParser.GetReferencedType(VirtualPath virtualPath, Boolean allowNoCompile)
-   en System.Web.UI.PageParser.ProcessMainDirectiveAttribute(String deviceName, String name, String value, IDictionary parseData)
-   en System.Web.UI.TemplateParser.ProcessMainDirective(IDictionary mainDirective)
-Exception Type: System.Web.HttpParseException
-Exception: c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master(67): error CS1061: 'ASP.masterpage_ppal_nosearch_master' no contiene una definición de 'btnSalir_Click' ni se encontró ningún método de extensión 'btnSalir_Click' que acepte un primer argumento de tipo 'ASP.masterpage_ppal_nosearch_master' (¿falta una directiva using o una referencia de ensamblado?)
-Source: System.Web.HttpParseException
-Stack Trace: 
-   en System.Web.UI.TemplateParser.ProcessException(Exception ex)
-   en System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
-   en System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
-   en System.Web.UI.TemplateParser.ParseFile(String physicalPath, VirtualPath virtualPath)
-   en System.Web.UI.TemplateParser.ParseInternal()
-   en System.Web.UI.TemplateParser.Parse()
-   en System.Web.Compilation.BaseTemplateBuildProvider.get_CodeCompilerType()
-   en System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
-   en System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
-   en System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
-   en System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   en System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   en System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
-   en System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
-   en System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
-   en System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 02/04/2015 2:52:11 p. m. **********
-Inner Exception Type: System.Data.SqlClient.SqlException
-Inner Exception: Cannot open server 'xo6zq4as64' requested by the login. Client with IP address '190.159.223.243' is not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
-Login failed for user 'DB3894_ADMIN'.
-This session has been assigned a tracing ID of '4f873c8b-2223-47f8-8ac5-bd95dbe096c0'.  Provide this tracing ID to customer support when you need assistance.
-Inner Source: .Net SqlClient Data Provider
-Inner Stack Trace: 
-   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-   en System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
-   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
-   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   en System.Data.SqlClient.SqlConnection.Open()
-   en System.Data.Linq.SqlClient.SqlConnectionManager.UseConnection(IConnectionUser user)
-   en System.Data.Linq.SqlClient.SqlProvider.get_IsSqlCe()
-   en System.Data.Linq.SqlClient.SqlProvider.InitializeProviderMode()
-   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
-   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
-   en System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
-   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.CuentasOAD.Validar_Usuario(String Usuario, String Contrasena) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\CuentasOAD.cs:línea 119
-   en SIGED_3.CRM.Model.Negocio.Logica.CuentasLN.Validar_Usuario(String Usuario, String Contrasena) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\CuentasLN.cs:línea 80
-   en SIGED_3.CRM.Model.Servicios.Fachadas.CuentasFachada.Validar_Usuario(String Usuario, String Contrasena) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\CuentasFachada.cs:línea 77
-   en SIGED_3.CRM.Web.Modulos.Login.btnEntrar_Click(Object sender, ImageClickEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Login.aspx.cs:línea 43
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_login_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_fnk2me3t.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 02/04/2015 3:16:47 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: La secuencia no contiene elementos
-Inner Source: System.Data.Linq
-Inner Stack Trace: 
-   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
-   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
-   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
-   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
-   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
-   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.GrupoDeMiembrosOAD.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\GrupoDeMiembrosOAD.cs:línea 33
-   en SIGED_3.CRM.Model.Negocio.Logica.GrupoDeMiembrosLN.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\GrupoDeMiembrosLN.cs:línea 31
-   en SIGED_3.CRM.Model.Servicios.Fachadas.GrupoDeMiembrosFachada.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\GrupoDeMiembrosFachada.cs:línea 31
-   en SIGED_3.CRM.Web.MasterPage.Reports.CargarImagenGrupo() en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Reports.Master.cs:línea 24
-   en SIGED_3.CRM.Web.MasterPage.Reports.Page_Load(Object sender, EventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Reports.Master.cs:línea 19
-   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
-   en System.Web.UI.Control.OnLoad(EventArgs e)
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_informes_impfichatecnica_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_ez1iuj2r.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 02/04/2015 3:17:52 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: DefaultButton de 'form1' debe ser el identificador de un control del tipo IButtonControl.
-Inner Source: System.Web
-Inner Stack Trace: 
-   en System.Web.UI.HtmlControls.HtmlForm.RenderAttributes(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Control.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Page.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_informes_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_ez1iuj2r.3.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 02/04/2015 6:33:30 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: DefaultButton de 'form1' debe ser el identificador de un control del tipo IButtonControl.
-Inner Source: System.Web
-Inner Stack Trace: 
-   en System.Web.UI.HtmlControls.HtmlForm.RenderAttributes(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Control.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Page.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_informes_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_50ktxb31.8.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 02/04/2015 6:34:32 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: DefaultButton de 'form1' debe ser el identificador de un control del tipo IButtonControl.
-Inner Source: System.Web
-Inner Stack Trace: 
-   en System.Web.UI.HtmlControls.HtmlForm.RenderAttributes(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
-   en System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Control.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
-   en System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
-   en System.Web.UI.Page.Render(HtmlTextWriter writer)
-   en System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
-   en System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_informes_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_50ktxb31.8.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 09/04/2015 4:43:11 p. m. **********
-Inner Exception Type: System.NullReferenceException
-Inner Exception: Referencia a objeto no establecida como instancia de un objeto.
-Inner Source: SIGED_3.CRM.Web
-Inner Stack Trace: 
-   en SIGED_3.CRM.Web.Modulos.GrupoDeMiembros.Lista.frmPpal_ItemUpdated(Object sender, FormViewUpdatedEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\GrupoDeMiembros\Lista.aspx.cs:línea 94
-   en System.Web.UI.WebControls.FormView.OnItemUpdated(FormViewUpdatedEventArgs e)
-   en System.Web.UI.WebControls.FormView.HandleUpdateCallback(Int32 affectedRows, Exception ex)
-   en System.Web.UI.DataSourceView.Update(IDictionary keys, IDictionary values, IDictionary oldValues, DataSourceViewOperationCallback callback)
-   en System.Web.UI.WebControls.FormView.HandleUpdate(String commandArg, Boolean causesValidation)
-   en System.Web.UI.WebControls.FormView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
-   en System.Web.UI.WebControls.FormView.OnBubbleEvent(Object source, EventArgs e)
-   en System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args)
-   en System.Web.UI.WebControls.FormViewRow.OnBubbleEvent(Object source, EventArgs e)
-   en System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args)
-   en System.Web.UI.WebControls.ImageButton.OnCommand(CommandEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_grupodemiembros_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_dxwhohwr.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 12/04/2015 2:42:05 p. m. **********
+﻿********** 22/12/2015 2:50:42 a. m. **********
 Inner Exception Type: System.Reflection.TargetInvocationException
-Inner Exception: Se produjo una excepción en el destino de la invocación.
+Inner Exception: Exception has been thrown by the target of an invocation.
 Inner Source: mscorlib
 Inner Stack Trace: 
-   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
-   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
-   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   en System.Web.UI.WebControls.ObjectDataSourceView.InvokeMethod(ObjectDataSourceMethod method, Boolean disposeInstance, Object& instance)
-   en System.Web.UI.WebControls.ObjectDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
-   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
-   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
-   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
-   en System.Web.UI.WebControls.GridView.DataBind()
-   en SIGED_3.CRM.Web.Modulos.Inventario.Lista.btnBuscar_Click(Object sender, ImageClickEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Inventario\Lista.aspx.cs:línea 36
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Web.UI.WebControls.ObjectDataSourceView.InvokeMethod(ObjectDataSourceMethod method, Boolean disposeInstance, Object& instance)
+   at System.Web.UI.WebControls.ObjectDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at Telerik.Web.UI.RadComboBox.OnDataBinding(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at Telerik.Web.UI.RadComboBox.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.FormView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.FormView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.FormView.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.FormView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.FormView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.FormView.DataBind()
+   at System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
+   at System.Web.UI.WebControls.FormView.EnsureDataBound()
+   at System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at System.Web.UI.Control.FindControl(String id)
+   at SIGED_3.CRM.Web.Modulos.Costo.Detalle.Page_Load(Object sender, EventArgs e) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Detalle.aspx.cs:line 41
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
 Source: System.Web.HttpUnhandledException
 Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_inventario_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_4aqvourv.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) in c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_idst3bf1.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
-********** 12/05/2015 6:28:15 p. m. **********
+********** 22/12/2015 2:54:24 a. m. **********
+Inner Exception Type: System.Reflection.TargetInvocationException
+Inner Exception: Exception has been thrown by the target of an invocation.
+Inner Source: mscorlib
+Inner Stack Trace: 
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Web.UI.WebControls.ObjectDataSourceView.InvokeMethod(ObjectDataSourceMethod method, Boolean disposeInstance, Object& instance)
+   at System.Web.UI.WebControls.ObjectDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at Telerik.Web.UI.RadComboBox.OnDataBinding(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at Telerik.Web.UI.RadComboBox.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.FormView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.FormView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.FormView.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.FormView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.FormView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.FormView.DataBind()
+   at System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
+   at System.Web.UI.WebControls.FormView.EnsureDataBound()
+   at System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at System.Web.UI.Control.FindControl(String id)
+   at SIGED_3.CRM.Web.Modulos.Costo.Detalle.Page_Load(Object sender, EventArgs e) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Detalle.aspx.cs:line 41
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: System.Web.HttpUnhandledException
+Stack Trace: 
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) in c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_idst3bf1.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 22/12/2015 4:04:57 a. m. **********
 Inner Exception Type: System.Exception
-Inner Exception: El objeto que acepta valores Null debe tener un valor.
+Inner Exception: Sequence contains no elements
 Inner Source: SIGED_3.CRM.Model
 Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.Costo_ProcesoDeFabricacionLN.Eliminar(Costo_ProcesoDeFabricacion objCosto_ProcesoDeFabricacion) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\Costo_ProcesoDeFabricacionLN.cs:línea 85
-   en SIGED_3.CRM.Model.Servicios.Fachadas.Costo_ProcesoDeFabricacionFachada.Eliminar(Costo_ProcesoDeFabricacion objCosto_ProcesoDeFabricacion) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\Costo_ProcesoDeFabricacionFachada.cs:línea 58
-   en SIGED_3.CRM.Web.Modulos.Costo.Detalle.btnEliminar_Costo_Proceso_Click(Object sender, ImageClickEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Detalle.aspx.cs:línea 172
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at SIGED_3.CRM.Model.Negocio.Logica.CostoLn.MultiplicarCostos(Nullable`1 idCostoAMultiplicar) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\CostoLN.cs:line 218
+   at SIGED_3.CRM.Model.Servicios.Fachadas.CostoFachada.MultiplicarCostos(Nullable`1 Id_Costo) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\CostoFachada.cs:line 118
+   at SIGED_3.CRM.Web.Modulos.Costo.Lista.imgMultiplicar_Click(Object sender, ImageClickEventArgs e) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Lista.aspx.cs:line 56
+   at System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
+   at System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
 Source: System.Web.HttpUnhandledException
 Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_ltmytn4o.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.modulos_costo_lista_aspx.ProcessRequest(HttpContext context) in c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_dvcvrc3t.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
-********** 12/05/2015 6:40:08 p. m. **********
+********** 22/12/2015 4:06:29 a. m. **********
 Inner Exception Type: System.Exception
-Inner Exception: La secuencia no contiene elementos
+Inner Exception: Sequence contains no elements
 Inner Source: SIGED_3.CRM.Model
 Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.Costo_RecursoLN.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\Costo_RecursoLN.cs:línea 86
-   en SIGED_3.CRM.Model.Servicios.Fachadas.Costo_RecursoFachada.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\Costo_RecursoFachada.cs:línea 58
-   en SIGED_3.CRM.Web.Modulos.Costo.Detalle.btnEliminar_Costo_Recurso_Click(Object sender, ImageClickEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Detalle.aspx.cs:línea 124
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at SIGED_3.CRM.Model.Negocio.Logica.CostoLn.MultiplicarCostos(Nullable`1 idCostoAMultiplicar) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\CostoLN.cs:line 218
+   at SIGED_3.CRM.Model.Servicios.Fachadas.CostoFachada.MultiplicarCostos(Nullable`1 Id_Costo) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\CostoFachada.cs:line 118
+   at SIGED_3.CRM.Web.Modulos.Costo.Lista.imgMultiplicar_Click(Object sender, ImageClickEventArgs e) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Lista.aspx.cs:line 56
+   at System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
+   at System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
 Source: System.Web.HttpUnhandledException
 Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_cvoe5ms0.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.modulos_costo_lista_aspx.ProcessRequest(HttpContext context) in c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_dvcvrc3t.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
-********** 12/05/2015 6:40:47 p. m. **********
+********** 22/01/2016 3:14:45 a. m. **********
 Inner Exception Type: System.InvalidOperationException
-Inner Exception: La secuencia no contiene elementos
-Inner Source: System.Data.Linq
-Inner Stack Trace: 
-   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
-   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
-   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
-   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
-   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
-   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.GrupoDeMiembrosOAD.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\GrupoDeMiembrosOAD.cs:línea 33
-   en SIGED_3.CRM.Model.Negocio.Logica.GrupoDeMiembrosLN.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\GrupoDeMiembrosLN.cs:línea 31
-   en SIGED_3.CRM.Model.Servicios.Fachadas.GrupoDeMiembrosFachada.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\GrupoDeMiembrosFachada.cs:línea 31
-   en SIGED_3.CRM.Web.MasterPage.Details.CargarImagenGrupo() en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Details.Master.cs:línea 32
-   en SIGED_3.CRM.Web.MasterPage.Details.Page_Load(Object sender, EventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Details.Master.cs:línea 27
-   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
-   en System.Web.UI.Control.OnLoad(EventArgs e)
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_cvoe5ms0.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 12/05/2015 6:41:39 p. m. **********
-Inner Exception Type: System.Exception
-Inner Exception: La secuencia no contiene elementos
-Inner Source: SIGED_3.CRM.Model
-Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.Costo_RecursoLN.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\Costo_RecursoLN.cs:línea 86
-   en SIGED_3.CRM.Model.Servicios.Fachadas.Costo_RecursoFachada.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\Costo_RecursoFachada.cs:línea 58
-   en SIGED_3.CRM.Web.Modulos.Costo.Detalle.btnEliminar_Costo_Recurso_Click(Object sender, ImageClickEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Detalle.aspx.cs:línea 124
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_cvoe5ms0.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 12/05/2015 6:44:50 p. m. **********
-Inner Exception Type: System.Exception
-Inner Exception: La secuencia no contiene elementos
-Inner Source: SIGED_3.CRM.Model
-Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.Costo_RecursoLN.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\Costo_RecursoLN.cs:línea 86
-   en SIGED_3.CRM.Model.Servicios.Fachadas.Costo_RecursoFachada.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\Costo_RecursoFachada.cs:línea 58
-   en SIGED_3.CRM.Web.Modulos.Costo.Detalle.btnEliminar_Costo_Recurso_Click(Object sender, ImageClickEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Detalle.aspx.cs:línea 124
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_cvoe5ms0.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 12/05/2015 6:46:50 p. m. **********
-Inner Exception Type: System.Exception
-Inner Exception: La secuencia no contiene elementos
-Inner Source: SIGED_3.CRM.Model
-Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.Costo_RecursoLN.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\Costo_RecursoLN.cs:línea 86
-   en SIGED_3.CRM.Model.Servicios.Fachadas.Costo_RecursoFachada.Eliminar(Costo_Recurso objCosto_Recurso) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\Costo_RecursoFachada.cs:línea 58
-   en SIGED_3.CRM.Web.Modulos.Costo.Detalle.btnEliminar_Costo_Recurso_Click(Object sender, ImageClickEventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Costo\Detalle.aspx.cs:línea 124
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_costo_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_cvoe5ms0.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 23/06/2015 2:50:46 a. m. **********
-Inner Exception Type: System.Web.HttpException
-Inner Exception: No se encontró ningún campo o propiedad 'Talla' en el origen de datos seleccionado.
+Inner Exception: Databinding methods such as Eval(), XPath(), and Bind() can only be used in the context of a databound control.
 Inner Source: System.Web
 Inner Stack Trace: 
-   en System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
-   en System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
-   en System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
-   en System.Web.UI.Control.OnDataBinding(EventArgs e)
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.Control.DataBind()
-   en System.Web.UI.Control.DataBindChildren()
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.Control.DataBind()
-   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
-   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
-   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
-   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
-   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
-   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
-   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
-   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
-   en System.Web.UI.WebControls.GridView.DataBind()
-   en System.Web.UI.Control.DataBindChildren()
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.Control.DataBind()
-   en System.Web.UI.Control.DataBindChildren()
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.Control.DataBind()
-   en System.Web.UI.Control.DataBindChildren()
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.Control.DataBind()
-   en System.Web.UI.Control.DataBindChildren()
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.Control.DataBind()
-   en System.Web.UI.Control.DataBindChildren()
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.Control.DataBind()
-   en System.Web.UI.Control.DataBindChildren()
-   en System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
-   en System.Web.UI.WebControls.FormView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
-   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
-   en System.Web.UI.WebControls.FormView.PerformDataBinding(IEnumerable data)
-   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
-   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
-   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
-   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
-   en System.Web.UI.WebControls.FormView.DataBind()
-   en System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
-   en System.Web.UI.WebControls.FormView.EnsureDataBound()
-   en System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls()
-   en System.Web.UI.Control.EnsureChildControls()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.GetDataItem()
+   at ASP.modulos_informes_infcompras_aspx.__DataBindingcboRecursos(Object sender, EventArgs e) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Informes\infCompras.aspx:line 49
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.OnDataBinding(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at Telerik.Web.UI.RadComboBox.DataBind()
+   at System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
+   at System.Web.UI.WebControls.BaseDataBoundControl.OnPreRender(EventArgs e)
+   at Telerik.Web.UI.RadDataBoundControl.OnPreRender(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
 Source: System.Web.HttpUnhandledException
 Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_venta_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_jmbcmlsx.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.modulos_informes_infcompras_aspx.ProcessRequest(HttpContext context) in c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_2rrxakmy.11.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
-********** 23/06/2015 2:50:59 a. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: La secuencia no contiene elementos
-Inner Source: System.Data.Linq
+********** 22/01/2016 3:19:35 a. m. **********
+Exception Type: System.Web.HttpCompileException
+Exception: f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Informes\infCompras.aspx(50): error CS1061: 'ASP.modulos_informes_infcompras_aspx' does not contain a definition for 'cboRecursos_SelectedIndexChanged' and no extension method 'cboRecursos_SelectedIndexChanged' accepting a first argument of type 'ASP.modulos_informes_infcompras_aspx' could be found (are you missing a using directive or an assembly reference?)
+Source: System.Web.HttpCompileException
+Stack Trace: 
+   at System.Web.Compilation.BuildManager.PostProcessFoundBuildResult(BuildResult result, Boolean keyFromVPP, VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetBuildResultFromCacheInternal(String cacheKey, Boolean keyFromVPP, VirtualPath virtualPath, Int64 hashCode, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultFromCacheInternal(VirtualPath virtualPath, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 22/01/2016 3:20:26 a. m. **********
+Exception Type: System.Web.HttpCompileException
+Exception: f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Informes\infCompras.aspx(50): error CS1061: 'ASP.modulos_informes_infcompras_aspx' does not contain a definition for 'cboRecursos_SelectedIndexChanged' and no extension method 'cboRecursos_SelectedIndexChanged' accepting a first argument of type 'ASP.modulos_informes_infcompras_aspx' could be found (are you missing a using directive or an assembly reference?)
+Source: System.Web.HttpCompileException
+Stack Trace: 
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 22/01/2016 3:24:45 a. m. **********
+Exception Type: System.Web.HttpCompileException
+Exception: f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Informes\infCompras.aspx(50): error CS1061: 'ASP.modulos_informes_infcompras_aspx' does not contain a definition for 'cboRecursos_SelectedIndexChanged' and no extension method 'cboRecursos_SelectedIndexChanged' accepting a first argument of type 'ASP.modulos_informes_infcompras_aspx' could be found (are you missing a using directive or an assembly reference?)
+Source: System.Web.HttpCompileException
+Stack Trace: 
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+********** 22/01/2016 3:27:33 a. m. **********
+Inner Exception Type: System.NotSupportedException
+Inner Exception: Object of type SIGED_3.CRM.Model.Negocio.Entidades.Proveedor does not have a NombreRecurso property.
+Inner Source: Telerik.Web.UI
 Inner Stack Trace: 
-   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
-   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
-   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
-   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
-   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
-   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.GrupoDeMiembrosOAD.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\GrupoDeMiembrosOAD.cs:línea 33
-   en SIGED_3.CRM.Model.Negocio.Logica.GrupoDeMiembrosLN.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\GrupoDeMiembrosLN.cs:línea 31
-   en SIGED_3.CRM.Model.Servicios.Fachadas.GrupoDeMiembrosFachada.Seleccionar_Id(Int64 Id) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\GrupoDeMiembrosFachada.cs:línea 31
-   en SIGED_3.CRM.Web.MasterPage.Details.CargarImagenGrupo() en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Details.Master.cs:línea 32
-   en SIGED_3.CRM.Web.MasterPage.Details.Page_Load(Object sender, EventArgs e) en c:\Users\CristianFelipe\Documents\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Details.Master.cs:línea 27
-   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
-   en System.Web.UI.Control.OnLoad(EventArgs e)
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at Telerik.Web.UI.PropertyDescriptorCache.GetPropertyValue(Object dataItem, String propertyName)
+   at Telerik.Web.UI.PropertyDescriptorCache.GetPropertyValue(Object dataItem, String propertyName, String format)
+   at Telerik.Web.UI.ControlItem.PopulateFromDataItem(PropertyDescriptorCache propertues, Object dataItem, String dataMember, Int32 depth)
+   at Telerik.Web.UI.RadComboBoxItem.PopulateFromDataItem(PropertyDescriptorCache properties, Object dataItem, String dataMember, Int32 depth)
+   at Telerik.Web.UI.ControlDataBinder.SetItemPropeties(ControlItem item, Object dataItem, String dataMember, Int32 depth)
+   at Telerik.Web.UI.ControlDataBinder.BindItem(ControlItemCollection items, Object dataObject, Object dataItem, String dataMember, Int32 depth)
+   at Telerik.Web.UI.ControlDataBinder.BindItem(ControlItemCollection items, Object dataItem, String dataMember, Int32 depth)
+   at Telerik.Web.UI.ControlDataBinder.BindToEnumerableData(IEnumerable dataSource)
+   at Telerik.Web.UI.ControlItemContainer.PerformDataBinding(IEnumerable data)
+   at Telerik.Web.UI.RadComboBox.PerformDataBinding(IEnumerable dataSource)
+   at Telerik.Web.UI.RadComboBox.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at Telerik.Web.UI.RadComboBox.OnDataBinding(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at Telerik.Web.UI.RadComboBox.DataBind()
+   at System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
+   at System.Web.UI.WebControls.BaseDataBoundControl.OnPreRender(EventArgs e)
+   at Telerik.Web.UI.RadDataBoundControl.OnPreRender(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
 Source: System.Web.HttpUnhandledException
 Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_venta_detalle_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\960f7299\88ed6dfc\App_Web_jmbcmlsx.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.modulos_informes_infcompras_aspx.ProcessRequest(HttpContext context) in c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_eshijp2m.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
-********** 01/07/2015 5:04:54 a. m. **********
+********** 22/01/2016 3:29:58 a. m. **********
 Inner Exception Type: System.InvalidCastException
-Inner Exception: No se puede convertir un objeto de tipo 'SIGED_3.CRM.Model.Negocio.Entidades.LP_VentasResult' al tipo 'SIGED_3.CRM.Model.Negocio.Entidades.LP_ComprasResult'.
+Inner Exception: Unable to cast object of type 'SIGED_3.CRM.Model.Negocio.Entidades.LC_Recursos_MezcladosResult' to type 'SIGED_3.CRM.Model.Negocio.Entidades.LC_Recursos_ConCostoResult'.
 Inner Source: SIGED_3.CRM.Web
 Inner Stack Trace: 
-   en SIGED_3.CRM.Web.Modulos.Venta.Lista.gvPrincipal_RowCreated(Object sender, GridViewRowEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Venta\Lista.aspx.cs:línea 58
-   en System.Web.UI.WebControls.GridView.OnRowCreated(GridViewRowEventArgs e)
-   en System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
-   en System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
-   en System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
-   en System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
-   en System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
-   en System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
-   en System.Web.UI.WebControls.DataBoundControl.PerformSelect()
-   en System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
-   en System.Web.UI.WebControls.GridView.DataBind()
-   en System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
-   en System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls()
-   en System.Web.UI.Control.EnsureChildControls()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Control.PreRenderRecursiveInternal()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at SIGED_3.CRM.Web.Modulos.Informes.infConpras.cboColores_ItemDataBound(Object sender, RadComboBoxItemEventArgs e) in f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Informes\infCompras.aspx.cs:line 32
+   at Telerik.Web.UI.RadComboBox.RaiseEvent(Object eventKey, RadComboBoxItemEventArgs e)
+   at Telerik.Web.UI.RadComboBox.OnItemDataBound(RadComboBoxItemEventArgs e)
+   at Telerik.Web.UI.RadComboBox.RaiseItemDataBound(ControlItem item)
+   at Telerik.Web.UI.ControlDataBinder.RaiseItemDataBound(ControlItem item, Object dataItem)
+   at Telerik.Web.UI.ControlDataBinder.BindItem(ControlItemCollection items, Object dataObject, Object dataItem, String dataMember, Int32 depth)
+   at Telerik.Web.UI.ControlDataBinder.BindItem(ControlItemCollection items, Object dataItem, String dataMember, Int32 depth)
+   at Telerik.Web.UI.ControlDataBinder.BindToEnumerableData(IEnumerable dataSource)
+   at Telerik.Web.UI.ControlItemContainer.PerformDataBinding(IEnumerable data)
+   at Telerik.Web.UI.RadComboBox.PerformDataBinding(IEnumerable dataSource)
+   at Telerik.Web.UI.RadComboBox.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at Telerik.Web.UI.RadComboBox.OnDataBinding(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at Telerik.Web.UI.RadComboBox.DataBind()
+   at System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound()
+   at System.Web.UI.WebControls.BaseDataBoundControl.OnPreRender(EventArgs e)
+   at Telerik.Web.UI.RadDataBoundControl.OnPreRender(EventArgs e)
+   at Telerik.Web.UI.RadComboBox.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
 Source: System.Web.HttpUnhandledException
 Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_venta_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_jn3eyncc.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 05/07/2015 5:34:56 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: La secuencia no contiene elementos
-Inner Source: System.Data.Linq
-Inner Stack Trace: 
-   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
-   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
-   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
-   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
-   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
-   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.RolesOAD.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\RolesOAD.cs:línea 23
-   en SIGED_3.CRM.Model.Negocio.Logica.RolesLN.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\RolesLN.cs:línea 31
-   en SIGED_3.CRM.Model.Servicios.Fachadas.RolesFachada.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\RolesFachada.cs:línea 32
-   en SIGED_3.CRM.Web.MasterPage.Ppal_NoSearch.Page_Load(Object sender, EventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master.cs:línea 34
-   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
-   en System.Web.UI.Control.OnLoad(EventArgs e)
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_inicio_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_lbgdcas5.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 05/07/2015 5:37:42 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: La secuencia no contiene elementos
-Inner Source: System.Data.Linq
-Inner Stack Trace: 
-   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
-   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
-   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
-   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
-   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
-   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.RolesOAD.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\RolesOAD.cs:línea 21
-   en SIGED_3.CRM.Web.MasterPage.Ppal_NoSearch.Page_Load(Object sender, EventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master.cs:línea 30
-   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
-   en System.Web.UI.Control.OnLoad(EventArgs e)
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_inicio_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_lbgdcas5.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 05/07/2015 5:51:38 p. m. **********
-Inner Exception Type: System.InvalidOperationException
-Inner Exception: La secuencia no contiene elementos
-Inner Source: System.Data.Linq
-Inner Stack Trace: 
-   en System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
-   en System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
-   en System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
-   en System.Data.Linq.Table`1.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
-   en System.Linq.Queryable.Single[TSource](IQueryable`1 source, Expression`1 predicate)
-   en SIGED_3.CRM.Model.AccesoDeRecursos.OAD.RolesOAD.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\AccesoDeRecursos\OAD\RolesOAD.cs:línea 23
-   en SIGED_3.CRM.Model.Negocio.Logica.RolesLN.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\RolesLN.cs:línea 31
-   en SIGED_3.CRM.Model.Servicios.Fachadas.RolesFachada.Seleccionar_Id(Int64 Id) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\RolesFachada.cs:línea 32
-   en SIGED_3.CRM.Web.MasterPage.Ppal_NoSearch.Page_Load(Object sender, EventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\MasterPage\Ppal_NoSearch.Master.cs:línea 34
-   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
-   en System.Web.UI.Control.OnLoad(EventArgs e)
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Control.LoadRecursive()
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_inicio_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_lbgdcas5.1.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 18/07/2015 1:38:22 a. m. **********
-Inner Exception Type: System.Exception
-Inner Exception: Error en el nivel del transporte al recibir los resultados del servidor. (provider: TCP Provider, error: 0 - El sistema local anuló la conexión de red.)
-Inner Source: SIGED_3.CRM.Model
-Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.InventarioLN.CompletarInventario(Nullable`1 Id_GrupoDeMiembros) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\InventarioLN.cs:línea 244
-   en SIGED_3.CRM.Model.Servicios.Fachadas.InventarioFachada.CompletarInventario() en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\InventarioFachada.cs:línea 93
-   en SIGED_3.CRM.Web.Modulos.Inventario.Lista.btnGenerarProductos(Object sender, ImageClickEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Inventario\Lista.aspx.cs:línea 160
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_inventario_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_4gndrqny.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 18/07/2015 2:07:33 a. m. **********
-Inner Exception Type: System.Exception
-Inner Exception: La operación no es válida para el estado de la transacción.
-Inner Source: SIGED_3.CRM.Model
-Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.InventarioLN.CompletarInventario(Nullable`1 Id_GrupoDeMiembros) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\InventarioLN.cs:línea 244
-   en SIGED_3.CRM.Model.Servicios.Fachadas.InventarioFachada.CompletarInventario() en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\InventarioFachada.cs:línea 93
-   en SIGED_3.CRM.Web.Modulos.Inventario.Lista.btnGenerarProductos(Object sender, ImageClickEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Inventario\Lista.aspx.cs:línea 160
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_inventario_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_4gndrqny.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
-********** 18/07/2015 3:20:41 a. m. **********
-Inner Exception Type: System.Exception
-Inner Exception: La operación no es válida para el estado de la transacción.
-Inner Source: SIGED_3.CRM.Model
-Inner Stack Trace: 
-   en SIGED_3.CRM.Model.Negocio.Logica.InventarioLN.CompletarInventario(Nullable`1 Id_GrupoDeMiembros) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Negocio\Logica\InventarioLN.cs:línea 222
-   en SIGED_3.CRM.Model.Servicios.Fachadas.InventarioFachada.CompletarInventario() en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Model\Servicios\Fachadas\InventarioFachada.cs:línea 93
-   en SIGED_3.CRM.Web.Modulos.Inventario.Lista.btnGenerarProductos(Object sender, ImageClickEventArgs e) en f:\Fuentes\Visual Studio 2012\Projects\SIGED_3\SIGED_3.CRM.Web\Modulos\Inventario\Lista.aspx.cs:línea 160
-   en System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
-   en System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-Exception Type: System.Web.HttpUnhandledException
-Exception: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
-Source: System.Web.HttpUnhandledException
-Stack Trace: 
-   en System.Web.UI.Page.HandleError(Exception e)
-   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
-   en System.Web.UI.Page.ProcessRequest()
-   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
-   en System.Web.UI.Page.ProcessRequest(HttpContext context)
-   en ASP.modulos_inventario_lista_aspx.ProcessRequest(HttpContext context) en c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_5lepo4xt.0.cs:línea 0
-   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.modulos_informes_infcompras_aspx.ProcessRequest(HttpContext context) in c:\Users\CristianFelipe\AppData\Local\Temp\Temporary ASP.NET Files\vs\a0c35ac5\4ecb72a9\App_Web_vqlwc23q.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 

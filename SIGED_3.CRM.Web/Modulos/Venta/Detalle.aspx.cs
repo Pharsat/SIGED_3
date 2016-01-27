@@ -82,7 +82,7 @@ namespace SIGED_3.CRM.Web.Modulos.Venta
             ObjectDataSource1.SelectParameters["Id"].DefaultValue = this.Id.ToString();
             frmPpal.DataBind();
 
-            ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "closeWin('actualizado')", true);
+            ////ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "closeWin('actualizado')", true);
         }
         protected void frmVenta_Detalle_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
@@ -132,7 +132,7 @@ namespace SIGED_3.CRM.Web.Modulos.Venta
         protected void ObjectDataSource1_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
         {
             this.Id = (long)e.ReturnValue;
-            ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "MensajeDos('guardado')", true);
+            ////ScriptManager.RegisterStartupScript((this.Master as Details).Expose_upDetalle, (this.Master as Details).Expose_upDetalle.GetType(), "CallMyFunction", "MensajeDos('guardado')", true);
         }
         protected void cboColores_ItemDataBound(object sender, RadComboBoxItemEventArgs e)
         {

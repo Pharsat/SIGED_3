@@ -102,6 +102,7 @@
                                         <asp:BoundField DataField="Codigo" HeaderText="Código" SortExpression="Codigo" />
                                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                                         <asp:BoundField DataField="TipoPrenda" HeaderText="Tipo de Prenda" SortExpression="TipoPrenda" />
+                                        <asp:BoundField DataField="Talla" HeaderText="Talla" />
                                         <asp:BoundField DataField="CostoDeProduccion" HeaderText="Costo de Producción" SortExpression="CostoDeProduccion" />
                                         <asp:BoundField DataField="CostoConValirizacion" HeaderText="Costo con Valorización" SortExpression="CostoConValirizacion" />
                                     </Columns>

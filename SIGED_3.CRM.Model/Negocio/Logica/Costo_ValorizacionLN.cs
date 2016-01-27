@@ -15,8 +15,8 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Lista de registros tipo Bodega</returns>
         public List<Costo_Valorizacion> Seleccionar_All()
         {
-            Costo_ValorizacionOAD objCosto_Valorizacion = new Costo_ValorizacionOAD();
-            return objCosto_Valorizacion.Seleccionar_All(); 
+            CostoValorizacionOad objCosto_Valorizacion = new CostoValorizacionOad();
+            return objCosto_Valorizacion.Seleccionar_All();
         }
         /// <summary>
         /// Selecciona todos los registros de la tabla Bodega
@@ -25,7 +25,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Objeto singular del tipo Bodega</returns>
         public Costo_Valorizacion Seleccionar_Id(long Id)
         {
-            Costo_ValorizacionOAD objCosto_Valorizacion = new Costo_ValorizacionOAD();
+            CostoValorizacionOad objCosto_Valorizacion = new CostoValorizacionOad();
             return objCosto_Valorizacion.Seleccionar_Id(Id);
         }
         /// <summary>
@@ -35,13 +35,13 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns></returns>
         public List<Costo_Valorizacion> Seleccionar_By_Id(long? id_Costo)
         {
-            Costo_ValorizacionOAD objCosto_Valorizacion = new Costo_ValorizacionOAD();
+            CostoValorizacionOad objCosto_Valorizacion = new CostoValorizacionOad();
             return objCosto_Valorizacion.Seleccionar_By_Id(id_Costo);
         }
 
         public List<Costo_Valorizacion> Seleccionar_By_Id_Complete(long? id_Costo)
         {
-            Costo_ValorizacionOAD objCosto_Recurso = new Costo_ValorizacionOAD();
+            CostoValorizacionOad objCosto_Recurso = new CostoValorizacionOad();
             return objCosto_Recurso.Seleccionar_By_Id_Complete(id_Costo);
         }
 
@@ -55,9 +55,9 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             {
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
-                    Costo_ValorizacionOAD _objCosto_Valorizacion = new Costo_ValorizacionOAD();
+                    CostoValorizacionOad _objCosto_Valorizacion = new CostoValorizacionOad();
                     _objCosto_Valorizacion.Guardar(objCosto_Valorizacion);
-                    new CostoLN().Renovar_Valores(objCosto_Valorizacion.Id_Costo.Value);
+                    new CostoLn().Renovar_Valores(objCosto_Valorizacion.Id_Costo.Value);
                     objTransaccion.Complete();
                 }
             }
@@ -72,7 +72,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name="objCosto_Valorizacion">costo a actualizar</param>
         public void Guardar_IgnorarActualizacion(Costo_Valorizacion objCosto_Valorizacion)
         {
-            Costo_ValorizacionOAD _objCosto_Valorizacion = new Costo_ValorizacionOAD();
+            CostoValorizacionOad _objCosto_Valorizacion = new CostoValorizacionOad();
             _objCosto_Valorizacion.Guardar(objCosto_Valorizacion);
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
                     objCosto_Valorizacion = this.Seleccionar_Id(objCosto_Valorizacion.Id);
-                    Costo_ValorizacionOAD _objCosto_Valorizacion = new Costo_ValorizacionOAD();
+                    CostoValorizacionOad _objCosto_Valorizacion = new CostoValorizacionOad();
                     _objCosto_Valorizacion.Eliminar(objCosto_Valorizacion);
-                    new CostoLN().Renovar_Valores(objCosto_Valorizacion.Id_Costo.Value);
+                    new CostoLn().Renovar_Valores(objCosto_Valorizacion.Id_Costo.Value);
                     objTransaccion.Complete();
                 }
             }
@@ -107,11 +107,24 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
             {
                 using (TransactionScope objTransaccion = new TransactionScope())
                 {
-                    Costo_ValorizacionOAD _objCosto_Valorizacion = new Costo_ValorizacionOAD();
+                    CostoValorizacionOad _objCosto_Valorizacion = new CostoValorizacionOad();
                     _objCosto_Valorizacion.Actualizar(objCosto_Valorizacion);
-                    new CostoLN().Renovar_Valores(objCosto_Valorizacion.Id_Costo.Value);
+                    new CostoLn().Renovar_Valores(objCosto_Valorizacion.Id_Costo.Value);
                     objTransaccion.Complete();
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void GuardarCopia(Costo_Valorizacion newCostoConPorcentaje)
+        {
+            try
+            {
+                CostoValorizacionOad objCostoValorizacion = new CostoValorizacionOad();
+                objCostoValorizacion.Guardar(newCostoConPorcentaje);
             }
             catch (Exception ex)
             {

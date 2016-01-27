@@ -19,7 +19,7 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <returns>Lista de registros tipo Bodega</returns>
         public List<Costo> Seleccionar_All()
         {
-            CostoLN objCosto = new CostoLN();
+            CostoLn objCosto = new CostoLn();
             return objCosto.Seleccionar_All();
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <returns>Objeto singular del tipo Bodega</returns>
         public Costo Seleccionar_Id(long Id)
         {
-            CostoLN objCosto = new CostoLN();
+            CostoLn objCosto = new CostoLn();
             return objCosto.Seleccionar_Id(Id);
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <returns>Lista principal de costos</returns>
         public List<LP_CostosResult> Seleccionar_LP(int? id_GrupoDeMiembros, string codigo, string tipoPrenda)
         {
-            CostoLN objCosto = new CostoLN();
+            CostoLn objCosto = new CostoLn();
             return objCosto.Seleccionar_LP(id_GrupoDeMiembros, codigo, tipoPrenda);
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <param name=objBodega>Objeto Bodega a guardar</param>
         public void Guardar(Costo objCosto)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             _objCosto.Guardar(objCosto);
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <param name="objCosto">Licnete a guardar</param>
         public long Guardar_2(Costo objCosto)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.Guardar_2(objCosto);
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <param name=Id>Identificativo del(a) Bodega</param>
         public void Eliminar(Costo objCosto)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             _objCosto.Eliminar(objCosto);
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <param name=objBodega>Objeto del tipo Bodega</param>
         public void Actualizar(Costo objCosto)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             _objCosto.Actualizar(objCosto);
         }
         /// <summary>
@@ -88,48 +88,48 @@ namespace SIGED_3.CRM.Model.Servicios.Fachadas
         /// <returns>objeto costo</returns>
         public Costo Seleccionar_Id_Recurso(long Id_Recurso)
         {
-            CostoLN objCosto = new CostoLN();
+            CostoLn objCosto = new CostoLn();
             return objCosto.Seleccionar_Id_Recurso(Id_Recurso);
         }
         public List<R_Costos_CabeceraResult> InformeCostos_Cabecera(long? id_GrupoDeMiembros, long? id_Recurso)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.InformeCostos_Cabecera(id_GrupoDeMiembros, id_Recurso);
         }
         public List<R_Costos_ProcesosResult> InformeCostos_Procesos(long? id_GrupoDeMiembros, long? id_Recurso)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.InformeCostos_Procesos(id_GrupoDeMiembros, id_Recurso);
         }
         public List<R_Costos_RecursosResult> InformeCostos_Recursos(long? id_GrupoDeMiembros, long? id_Recurso)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.InformeCostos_Recursos(id_GrupoDeMiembros, id_Recurso);
         }
         public List<R_Costos_ValorizacionResult> InformeCostos_Valorizacion(long? id_GrupoDeMiembros, long? id_Recurso)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.InformeCostos_Valorizacion(id_GrupoDeMiembros, id_Recurso);
         }
 
         public void MultiplicarCostos(long? Id_Costo)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             _objCosto.MultiplicarCostos(Id_Costo);
         }
         public List<R_UtilidadesResult> Informe_Utilidades(long? id_GrupoDeMiembros, DateTime? desde, DateTime? hasta)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.Informe_Utilidades(id_GrupoDeMiembros, desde, hasta);
         }
         public DataTable Impresion_Lista_Precios(long? Id_GrupoDeMiembros)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.Impresion_Lista_Precios(Id_GrupoDeMiembros);
         }
         public DataTable Impresion_Lista_Precios_2(long? Id_GrupoDeMiembros, short? Selector)
         {
-            CostoLN _objCosto = new CostoLN();
+            CostoLn _objCosto = new CostoLn();
             return _objCosto.Impresion_Lista_Precios_2(Id_GrupoDeMiembros, Selector);
         }
     }

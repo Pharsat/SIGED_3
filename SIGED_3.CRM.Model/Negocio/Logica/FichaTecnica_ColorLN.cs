@@ -61,7 +61,8 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
                     FichaTecnica_ColorOAD _objFichaTecnica_Color = new FichaTecnica_ColorOAD();
                     _objFichaTecnica_Color.Guardar(objFichaTecnica_Color);
                     FichaTecnicaLN objFicha = new FichaTecnicaLN();
-                    objFicha.CrearRecursos(objFichaTecnica_Color.Id_FichaTecnica.Value);
+                    FichaTecnica objFic = objFicha.Seleccionar_Id(objFichaTecnica_Color.Id_FichaTecnica.Value);
+                    objFicha.CrearRecursos(objFichaTecnica_Color.Id_FichaTecnica.Value, "Ref: " + objFic.Codigo + " || " + objFic.TipoPrenda);
                     objTransaccion.Complete();
                 }
             }

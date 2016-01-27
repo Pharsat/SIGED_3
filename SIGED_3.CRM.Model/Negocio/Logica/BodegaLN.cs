@@ -15,7 +15,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Lista de registros tipo Bodega</returns>
         public List<Bodega> Seleccionar_All()
         {
-            BodegaOAD objBodega = new BodegaOAD();
+            BodegaOad objBodega = new BodegaOad();
             return objBodega.Seleccionar_All();
         }
         /// <summary>
@@ -25,7 +25,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Objeto singular del tipo Bodega</returns>
         public Bodega Seleccionar_Id(long Id)
         {
-            BodegaOAD objBodega = new BodegaOAD();
+            BodegaOad objBodega = new BodegaOad();
             return objBodega.Seleccionar_Id(Id);
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <returns>Lista de datos de la bodega</returns>
         public List<LP_BodegasResult> Seleccionar_LP(bool? Estado, long? Id_GrupoDeMiembros, string Nombre)
         {
-            BodegaOAD objBodega = new BodegaOAD();
+            BodegaOad objBodega = new BodegaOad();
             return objBodega.Seleccionar_LP(Estado, Id_GrupoDeMiembros, Nombre);
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=objBodega>Objeto Bodega a guardar</param>
         public void Guardar(Bodega objBodega)
         {
-            BodegaOAD _objBodega = new BodegaOAD();
+            BodegaOad _objBodega = new BodegaOad();
             _objBodega.Guardar(objBodega);
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name="objBodega">Licnete a guardar</param>
         public long Guardar_2(Bodega objBodega)
         {
-            BodegaOAD _objBodega = new BodegaOAD();
+            BodegaOad _objBodega = new BodegaOad();
             return _objBodega.Guardar_2(objBodega);
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=Id>Identificativo del(a) Bodega</param>
         public void Eliminar(Bodega objBodega)
         {
-            BodegaOAD _objBodega = new BodegaOAD();
+            BodegaOad _objBodega = new BodegaOad();
             _objBodega.Eliminar(objBodega);
         }
         /// <summary>
@@ -73,12 +73,12 @@ namespace SIGED_3.CRM.Model.Negocio.Logica
         /// <param name=objBodega>Objeto del tipo Bodega</param>
         public void Actualizar(Bodega objBodega)
         {
-            BodegaOAD _objBodega = new BodegaOAD();
+            BodegaOad _objBodega = new BodegaOad();
             _objBodega.Actualizar(objBodega);
         }
         public List<Bodega> Seleccionar_All_Activos(long? Id_Bodega)
         {
-            BodegaOAD _objBodega = new BodegaOAD();
+            BodegaOad _objBodega = new BodegaOad();
             return _objBodega.Seleccionar_All_Activos(SessionManager.Id_GrupoDeMiembros, Id_Bodega);
         }
     }

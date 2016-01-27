@@ -13,13 +13,13 @@ namespace SIGED_3.CRM.Web.MasterPage
 {
     public partial class Ppal_NoSearch : System.Web.UI.MasterPage
     {
-        public UpdatePanel Expose_upLista
-        {
-            get
-            {
-                return this.upPrincipal;
-            }
-        }
+        //public UpdatePanel Expose_upLista
+        //{
+        //    get
+        //    {
+        //        return this.upPrincipal;
+        //    }
+        //}
         public void CerrarSesion()
         {
             Session.Abandon();
@@ -56,11 +56,11 @@ namespace SIGED_3.CRM.Web.MasterPage
             {
                 if (new CuentasFachada().CambioContrasena(SessionManager.Id_Cuenta.Value, txtPass.Text.Trim(), txtPassNueva.Text.Trim()))
                 {
-                    ScriptManager.RegisterStartupScript(upUsuario, upUsuario.GetType(), "CallMyFunction", "Mensaje('Cambio de contraseña exitoso.')", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "CallMyFunction", "Mensaje('Cambio de contraseña exitoso.')", true);
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(upUsuario, upUsuario.GetType(), "CallMyFunction", "Mensaje('Cambio de contraseña invalido.')", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "CallMyFunction", "Mensaje('Cambio de contraseña invalido.')", true);
                 }
             }
         }
